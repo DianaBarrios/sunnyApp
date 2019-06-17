@@ -60,6 +60,20 @@ class App extends React.Component {
         </blockquote>
         <button type="button my-5" class="btn btn-primary btn-lg btn-block">Start</button>
       </div>
+
+      <div class="container my-5">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Project's name</label>
+            <input type="text" class="form-control" id="exampleInputProjectName" placeholder="Name of your project" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
       
     </div>
     );
