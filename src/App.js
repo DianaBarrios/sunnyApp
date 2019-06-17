@@ -8,7 +8,7 @@ class App extends React.Component {
     <div className="App">
       <header className="App-header">
         <p class="text-primary">
-          This will be the landing page.
+          This is the landing page.
         </p>
       </header>
 
