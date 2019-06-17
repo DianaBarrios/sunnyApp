@@ -14,21 +14,41 @@ class App extends React.Component {
 
       <div class="container my-5">
         <h1>Join a project</h1>
-        <div class="card mt-4">
-              <img
-                class="card-img-top"
-                src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
-                alt="Cap"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Help this kid!</h5>
-                <p class="card-text">Make a difference to children in your community.</p>
-                <a
-                  href=""
-                  class="btn btn-primary"
-                >
-                  Read more
-                </a>
+        <div class="card-deck mt-5">
+          <div class="card mt-4">
+                  <img
+                    class="card-img-top"
+                    src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
+                    alt="Cap"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Help this kid!</h5>
+                    <p class="card-text">Make a difference to children in your community.</p>
+                    <a
+                      href=""
+                      class="btn btn-primary"
+                    >
+                      Read more
+                    </a>
+                  </div>
+              </div>
+
+              <div class="card mt-4">
+                  <img
+                    class="card-img-top"
+                    src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
+                    alt="Cap"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Help this kid!</h5>
+                    <p class="card-text">Make a difference to children in your community.</p>
+                    <a
+                      href=""
+                      class="btn btn-primary"
+                    >
+                      Read more
+                    </a>
+                  </div>
               </div>
         </div>
       </div>
