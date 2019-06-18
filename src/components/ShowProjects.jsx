@@ -12,7 +12,7 @@ class ShowProjects extends React.Component {
     }
 
     componentDidMount() {
-        let projectsRef = db.collection("projects").orderBy('name').limit(2);;
+        let projectsRef = db.collection("projects").orderBy('projectName').limit(2);;
 
         let query = projectsRef.get().then(snapshot => {
             snapshot.docs.forEach(doc => {

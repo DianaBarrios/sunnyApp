@@ -8,9 +8,11 @@ class CreateProject extends React.Component {
     super(props);
     this.state = {
       email: "",
-      name: "",
+      firstName: "",
+      lastName: "",
       projectName: "",
-      description: ""
+      description: "",
+      segmentID: null
     };
   }
 
@@ -21,15 +23,19 @@ class CreateProject extends React.Component {
     });
     const projectRef = db.collection("projects").add({
       email: this.state.email,
-      name: this.state.name,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
       projectName: this.state.projectName,
-      description: this.state.description
+      description: this.state.description,
+      segmentID: null
     });
     this.setState({
       email: "",
-      name: "",
+      firstName: "",
+      lastName: "",
       projectName: "",
-      description: ""
+      description: "",
+      segmentID: null
     });
   };
 
@@ -58,15 +64,28 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="form-group">
-            <label for="exampleInputPassword1">Name</label>
+            <label for="exampleInputFirstName">First name</label>
             <input
               type="text"
-              name="name"
+              name="firstName"
               class="form-control"
-              id="exampleInputName"
-              placeholder="Your name"
+              id="exampleInputFirstName"
+              placeholder="Your first name"
               onChange={this.updateInput}
-              value={this.state.name}
+              value={this.state.firstName}
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputLastName">Last name</label>
+            <input
+              type="text"
+              name="lastName"
+              class="form-control"
+              id="exampleInputLastName"
+              placeholder="Your last name"
+              onChange={this.updateInput}
+              value={this.state.lastName}
             />
           </div>
 
