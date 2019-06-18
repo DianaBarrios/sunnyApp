@@ -1,6 +1,7 @@
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
+var firestore = require("firebase/firestore");
 
 // Add the Firebase products that you want to use
 require("firebase/firestore");
@@ -17,3 +18,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var db = firebase.firestore();
+
+module.exports = { db };
