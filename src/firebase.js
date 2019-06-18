@@ -13,7 +13,7 @@ const firebaseConfig = {
     storageBucket: "smiles-ai.appspot.com",
     messagingSenderId: "165351250419",
     appId: "1:165351250419:web:d08a3639876167ba"
-  };
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
