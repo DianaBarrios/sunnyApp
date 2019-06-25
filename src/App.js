@@ -23,10 +23,26 @@ class App extends React.Component {
           </div>
         </div>
         <div class="container my-5">
+          <h1>What you can do with Corthropy </h1>
+          <div class="row">
+          <div class="column">
+            <h2>Join a project</h2>
+            <p>Choose from a huge selection and find exactly the project that really suits you!</p>
+          </div>
+          <div class="column">
+            <h2>Propose a project</h2>
+            <p>Do you have some cool idea that you want to support? Tell us more!</p>
+          </div>
+          <div class="column">
+            <h2>Spend your time meaningfully </h2>
+            <p>With SmilesAI you can get involved quickly and easily!</p>
+          </div>
+        </div>
+        </div>
+        <div class="container my-5">
           <h1>Join a project</h1>
           <ShowProjects />
         </div>
-
         <div class="container my-5">
           <h1>Propose a project</h1>
           <blockquote class="blockquote my-4">
