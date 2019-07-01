@@ -53,7 +53,7 @@ class Projects extends React.Component {
                 </li>
               ))}
             </ul>
-        </div>  
+        </div>
 
       </div>
     );
