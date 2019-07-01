@@ -10,9 +10,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <div class="wrapper">
-          <div class="logo py-4 px-4">
-            <img src="https://firebasestorage.googleapis.com/v0/b/smiles-ai-images/o/logo_smile.ai.jpg?alt=media&token=ea199bd3-4c7c-47fe-9a58-7c9efd054ce4" class="float-left" alt="Our logo" />
-          </div>
           <div className="App-header body-content">
             <p class="text2">
               The Easiest Way to Help <br />your Community
@@ -24,7 +21,11 @@ class App extends React.Component {
         </div>
 
         <div class="container my-5">
-          <h1>What you can do with Corthropy </h1>
+          
+          <div class="container">
+            <h1>What you can do with Corthropy </h1>
+          </div>
+        
           <div class="row">
             <div class="column">
               <h2>Join a project</h2>
@@ -36,30 +37,45 @@ class App extends React.Component {
             </div>
             <div class="column">
               <h2>Spend your time meaningfully </h2>
-              <p>With SmilesAI you can get involved quickly and easily!</p>
+              <p>With Corthropy you can get involved quickly and easily!</p>
             </div>
           </div>
+
         </div>
 
-        <div class="container my-5">
-          <h1>Join a project</h1>
-          <ShowProjects />
+        <div class="App-join py-4">
+          <p class="h1">Join a project</p>
+          
+          <div class="container my-3"> 
+            <ShowProjects />
+          </div>
+
           <Link to="/projects">See more projects</Link>
         </div>
 
-        <div class="container my-5">
+        <div class="App-section container my-5">
           <h1>Propose a project</h1>
-          <blockquote class="blockquote my-4">
-            <p class="mb-0">We all want to change the world! Do you know about an existing project that you want to support or have one of your own? Tell us about your project and we'll help you make it a reality!</p>
-          </blockquote>
-
+     
+          <div class="container mt-3 mb-5">
+          <p>We all want to change the world! Do you know about an existing project that you want to support or have one of your own? Tell us about your project and we'll help you make it a reality!</p>
+          </div>
+          
           <Link to="/project-proposal">
-            <button type="button my-5" class="btn btn-primary btn-lg">Start</button>
+            <button type="button" class="btn btn-primary btn-lg">Start</button>
           </Link>
         </div>
 
-        <div class="container my-5">
-          Footer
+        <div className="App-footer container-fluid py-4 pl-4">
+          <div class="d-flex flex-row bd-highlight mb-3 text-nav-footer">
+            <div class="p-2 bd-highlight">About</div>
+            <a href="https://try.corthropy.com/" class="p-2 bd-highlight">Product</a>
+            <div class="p-2 bd-highlight">Team</div>
+          </div>
+
+          <div class="d-flex bd-highlight">
+            <div class="mr-auto p-2 bd-highlight">2019  All rights reserved</div>
+            <div class="ml-auto p-2 bd-highlight">Made with love by Smile.AI</div>
+          </div>
         </div>
 
       </div>

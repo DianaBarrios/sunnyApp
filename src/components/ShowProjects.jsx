@@ -13,7 +13,7 @@ class ShowProjects extends React.Component {
     }
 
     componentDidMount() {
-        let projectsRef = db.collection("projects").orderBy('projectName').limit(2);;
+        let projectsRef = db.collection("projects").orderBy('projectName').limit(4);
 
         let query = projectsRef.get().then(snapshot => {
             snapshot.docs.forEach(doc => {
@@ -27,14 +27,12 @@ class ShowProjects extends React.Component {
     render() {
         return (
             <div>
-
-                <div class="card-deck mt-5" id="projects-list">
-
+                <div class="card-deck my-4" id="projects-list">
                     {this.state.docs.map(doc => (
-                        <div class="card mt-4">
+                        <div class="card my-4">
                             <img
                                 class="card-img-top"
-                                src=""
+                                src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
                                 alt="Cap"
                             />
                             <div class="card-body">

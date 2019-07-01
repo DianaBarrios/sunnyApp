@@ -21,9 +21,7 @@
 }
 
 .logo img {
-
   height: 20px;
-
 }
 
 .sApp-header {
@@ -37,12 +35,16 @@
   color: #282c34;
 }
 
+.App-footer {
+  background-color: #8AC3FF;
+  min-height: 20vh;
+  font-size: 16px;
+}
+
 .body-content {
   display: block;
   height: 80%;
   margin-left: 550px;
-  /* background-color: red; */
-
 }
 
 .text2 {
@@ -54,9 +56,16 @@
   font-size: 46px;
 }
 
+.text-nav-footer {
+  font-size: 20px;
+}
 
 .App-link {
   color: #61dafb;
+}
+
+.App-join {
+  background-color: #E5E5E5;
 }
 
 @keyframes App-logo-spin {
@@ -73,6 +82,11 @@
   width: 33.33%;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.btn-primaryy {
+  background-color: #3F4C6C;
+  color: white;
 }
 
  /* Clear floats after the columns */
