@@ -2,6 +2,7 @@
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
 var firestore = require("firebase/firestore");
+//var admin = require('firebase-admin');
 
 // Add the Firebase products that you want to use
 require("firebase/firestore");

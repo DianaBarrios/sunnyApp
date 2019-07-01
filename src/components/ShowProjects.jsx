@@ -33,7 +33,7 @@ class ShowProjects extends React.Component {
                         <div class="card mt-4">
                             <img
                                 class="card-img-top"
-                                src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
+                                src=""
                                 alt="Cap"
                             />
                             <div class="card-body">
