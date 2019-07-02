@@ -21,11 +21,11 @@ class App extends React.Component {
         </div>
 
         <div class="container my-5">
-          
+
           <div class="container">
             <h1>What you can do with Corthropy </h1>
           </div>
-        
+
           <div class="row">
             <div class="column">
               <h2>Join a project</h2>
@@ -45,8 +45,8 @@ class App extends React.Component {
 
         <div class="App-join py-4">
           <p class="h1">Join a project</p>
-          
-          <div class="container my-3"> 
+
+          <div class="container my-3">
             <ShowProjects />
           </div>
 
@@ -55,11 +55,11 @@ class App extends React.Component {
 
         <div class="App-section container my-5">
           <h1>Propose a project</h1>
-     
+
           <div class="container mt-3 mb-5">
-          <p>We all want to change the world! Do you know about an existing project that you want to support or have one of your own? Tell us about your project and we'll help you make it a reality!</p>
+            <p>We all want to change the world! Do you know about an existing project that you want to support or have one of your own? Tell us about your project and we'll help you make it a reality!</p>
           </div>
-          
+
           <Link to="/project-proposal">
             <button type="button" class="btn btn-primary btn-lg">Start</button>
           </Link>
@@ -69,7 +69,6 @@ class App extends React.Component {
           <div class="d-flex flex-row bd-highlight mb-3 text-nav-footer">
             <div class="p-2 bd-highlight">About</div>
             <a href="https://try.corthropy.com/" class="p-2 bd-highlight">Product</a>
-            <div class="p-2 bd-highlight">Team</div>
           </div>
 
           <div class="d-flex bd-highlight">
