@@ -39,7 +39,7 @@ class ShowProjects extends React.Component {
                                 <h5 class="card-title" key={doc.id}>{doc.projectName}</h5>
                                 <p class="card-text" key={doc.id}> {doc.description}</p>
                                 <Link to={`projects/${doc.segmentID}`} key={doc.id}>
-                                <button type="button" class="btn btn-primary">Read more</button>
+                                    <button type="button" class="btn btn-primary">Read more</button>
                                 </Link>
                             </div>
                         </div>
