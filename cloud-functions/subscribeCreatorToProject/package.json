@@ -1,0 +1,9 @@
+{
+  "name": "subscribe-creator-to-project",
+  "version": "0.0.1",
+  "dependencies": {
+    "mailchimp-api-v3": "^1.13.0",
+    "@google-cloud/firestore": "^2.1.0",
+    "md5": "2.2.1"
+  }
+}
