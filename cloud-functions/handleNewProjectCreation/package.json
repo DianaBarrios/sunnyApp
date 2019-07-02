@@ -1,0 +1,8 @@
+{
+  "name": "handle-new-project-creation",
+  "version": "0.0.1",
+  "dependencies": {
+    "mailchimp-api-v3": "^1.13.0",
+    "@google-cloud/firestore": "^2.1.0"
+  }
+}
