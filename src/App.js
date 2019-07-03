@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./App.css";
 import Signup from "./Signup";
+import Signin from "./Signin";
 import ShowProjects from "./components/ShowProjects";
 import { Link } from "react-router-dom";
 import { UserAuthContext } from "./UserProvider";
@@ -18,6 +19,7 @@ function App() {
       <div className="wrapper">
         <div className="App-header body-content">
           <Signup />
+          <Signin />
           <p className="text2">
             The Easiest Way to Help <br />
             your Community

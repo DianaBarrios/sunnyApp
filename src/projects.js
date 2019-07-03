@@ -16,7 +16,7 @@ class Projects extends React.Component {
     projectsRef.get().then(snapshot => {
       snapshot.docs.forEach(doc => {
         const prevDocs = this.state.docs;
-        const newDocuments = [...prevDocs, doc.data()];
+        const newDocuments = [...prevDocs, { ...doc.data(), id: doc.id }];
         this.setState({ docs: newDocuments });
       });
     });
@@ -31,17 +31,17 @@ class Projects extends React.Component {
           <strong>Select a project</strong>
         </div>
         <div className="container">
-          <ul class="list-unstyled">
+          <ul className="list-unstyled">
             {this.state.docs.map(doc => (
-              <li class="media my-3">
+              <li className="media my-3" key={doc.id}>
                 <img
                   src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
-                  class="align-self-center mr-3"
+                  className="align-self-center mr-3"
                   alt="..."
                 />
-                <div class="media-body">
-                  <Link to={`projects/${doc.segmentID}`} key={doc.id}>
-                    <h5 class="mt-0 mb-1"> {doc.projectName} </h5>
+                <div className="media-body">
+                  <Link to={`projects/${doc.segmentID}`}>
+                    <h5 className="mt-0 mb-1"> {doc.projectName} </h5>
                   </Link>
                   <p>Contact: {doc.email}</p>
                   <p>

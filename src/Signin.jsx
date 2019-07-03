@@ -2,26 +2,12 @@ import React, { useReducer } from "react";
 import { auth, db } from "./firebase.js";
 
 const initialState = {
-  firstName: "",
-  lastName: "",
   email: "",
   password: ""
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "CHANGE_FIRSTNAME":
-      return {
-        ...state,
-        firstName: action.value
-      };
-
-    case "CHANGE_LASTNAME":
-      return {
-        ...state,
-        lastName: action.value
-      };
-
     case "CHANGE_EMAIL":
       return {
         ...state,
@@ -46,7 +32,7 @@ export default function Signup() {
     e.stopPropagation();
 
     auth
-      .createUserWithEmailAndPassword(state.email, state.password)
+      .signInWithEmailAndPassword(state.email, state.password)
       .then(res => {
         db.collection("users")
           .doc(res.user.uid)
@@ -67,24 +53,6 @@ export default function Signup() {
   return (
     <form>
       <input
-        type="text"
-        placeholder="First Name"
-        name="firstName"
-        value={state.firstName}
-        onChange={e =>
-          dispatch({ type: "CHANGE_FIRSTNAME", value: e.target.value })
-        }
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        name="lastName"
-        value={state.lastName}
-        onChange={e =>
-          dispatch({ type: "CHANGE_LASTNAME", value: e.target.value })
-        }
-      />
-      <input
         type="email"
         placeholder="Company Email"
         name="email"
@@ -103,7 +71,7 @@ export default function Signup() {
         }
       />
       <button type="submit" onClick={handleSubmit}>
-        Signup
+        Signin
       </button>
     </form>
   );
