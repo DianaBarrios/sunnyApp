@@ -11,22 +11,26 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 
 const routing = (
-    <Router>
-        <div>
-            <Link to="/">
-                <div class="logo py-4 px-4 mb-4">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/smiles-ai-images/o/logo_smile.ai.jpg?alt=media&token=ea199bd3-4c7c-47fe-9a58-7c9efd054ce4" class="float-left" alt="Our logo" />
-                </div>
-            </Link>
-            <Switch>
-                <Route exact path="/" component={App} />
-                <Route exact path="/projects" component={Projects} />
-                <Route exact path="/projects/:id" component={ProjectDescription} />
-                <Route exact path="/project-proposal" component={ProjectProposal} />
-                <Route component={Notfound} />
-            </Switch>
+  <Router>
+    <div>
+      <Link to="/">
+        <div className="logo py-4 px-4 mb-4">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/smiles-ai-images/o/logo_smile.ai.jpg?alt=media&token=ea199bd3-4c7c-47fe-9a58-7c9efd054ce4"
+            class="float-left"
+            alt="Our logo"
+          />
         </div>
-    </Router>
+      </Link>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/projects/:id" component={ProjectDescription} />
+        <Route exact path="/project-proposal" component={ProjectProposal} />
+        <Route component={Notfound} />
+      </Switch>
+    </div>
+  </Router>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));
