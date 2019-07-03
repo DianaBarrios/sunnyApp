@@ -1,10 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { from } from "rxjs";
 import ShowProjects from "./components/ShowProjects";
-import Signup from "./Signup";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class App extends React.Component {
   render() {
@@ -30,23 +27,19 @@ class App extends React.Component {
           </div>
 
           <div class="row">
-            <div class="column">
+            <div class="col">
               <h2>Join a project</h2>
               <p>
                 Choose from a huge selection and find exactly the project that
                 really suits you!
               </p>
             </div>
-            <div class="column">
+            <div class="col">
               <h2>Propose a project</h2>
               <p>
                 Do you have some cool idea that you want to support? Tell us
                 more!
               </p>
-            </div>
-            <div class="column">
-              <h2>Spend your time meaningfully </h2>
-              <p>With Corthropy you can get involved quickly and easily!</p>
             </div>
           </div>
         </div>
@@ -85,7 +78,6 @@ class App extends React.Component {
             <a href="https://try.corthropy.com/" class="p-2 bd-highlight">
               Product
             </a>
-            <div class="p-2 bd-highlight">Team</div>
           </div>
 
           <div class="d-flex bd-highlight">
