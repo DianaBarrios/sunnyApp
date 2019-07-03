@@ -1,6 +1,5 @@
 import React from "react";
-import { from } from "rxjs";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 const firebase = require("../firebase.js");
 const db = firebase.db;
 

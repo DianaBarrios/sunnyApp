@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
 import Popup from './components/Popup'; 
 const firebase = require("./firebase.js");
 const db = firebase.db;

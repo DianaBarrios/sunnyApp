@@ -1,7 +1,7 @@
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
-var firestore = require("firebase/firestore");
+//var firestore = require("firebase/firestore");
 
 require("firebase/functions");
 

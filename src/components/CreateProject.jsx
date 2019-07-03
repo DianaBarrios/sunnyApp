@@ -1,5 +1,4 @@
 import React from "react";
-import { from } from "rxjs";
 const firebase = require("../firebase.js");
 const db = firebase.db;
 

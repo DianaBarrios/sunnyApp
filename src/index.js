@@ -14,8 +14,8 @@ const routing = (
     <Router>
         <div>
             <Link to="/">
-                <div class="logo py-4 px-4 mb-4">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/smiles-ai-images/o/logo_smile.ai.jpg?alt=media&token=ea199bd3-4c7c-47fe-9a58-7c9efd054ce4" class="float-left" alt="Our logo" />
+                <div className="logo py-4 px-4 mb-4">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/smiles-ai-images/o/logo_smile.ai.jpg?alt=media&token=ea199bd3-4c7c-47fe-9a58-7c9efd054ce4" className="float-left" alt="Our logo" />
                 </div>
             </Link>
             <Switch>
