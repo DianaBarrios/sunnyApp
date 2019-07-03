@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import { auth, db } from "./firebase.js";
+import styles from "./signin.module.css";
 
 const initialState = {
   email: "",
@@ -24,9 +25,8 @@ const reducer = (state, action) => {
   }
 };
 
-export default function Signup() {
+export default function Signin(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
   const handleSubmit = e => {
     e.preventDefault();
     e.stopPropagation();
@@ -34,6 +34,9 @@ export default function Signup() {
     auth
       .signInWithEmailAndPassword(state.email, state.password)
       .then(res => {
+        if (props.onClick) {
+          props.onClick();
+        }
         db.collection("users")
           .doc(res.user.uid)
           .set({
@@ -51,28 +54,30 @@ export default function Signup() {
   };
 
   return (
-    <form>
-      <input
-        type="email"
-        placeholder="Company Email"
-        name="email"
-        value={state.email}
-        onChange={e =>
-          dispatch({ type: "CHANGE_EMAIL", value: e.target.value })
-        }
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        name="password"
-        value={state.password}
-        onChange={e =>
-          dispatch({ type: "CHANGE_PASSWORD", value: e.target.value })
-        }
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Signin
-      </button>
-    </form>
+    <div className="modall">
+      <form className={styles.form}>
+        <input
+          type="email"
+          placeholder="Company Email"
+          name="email"
+          value={state.email}
+          onChange={e =>
+            dispatch({ type: "CHANGE_EMAIL", value: e.target.value })
+          }
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={state.password}
+          onChange={e =>
+            dispatch({ type: "CHANGE_PASSWORD", value: e.target.value })
+          }
+        />
+        <button type="submit" onClick={handleSubmit}>
+          Login
+        </button>
+      </form>
+    </div>
   );
 }

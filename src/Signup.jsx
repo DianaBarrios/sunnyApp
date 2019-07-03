@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import styles from "./signup.module.css";
 import { auth, db } from "./firebase.js";
 
 const initialState = {
@@ -38,7 +39,7 @@ const reducer = (state, action) => {
   }
 };
 
-export default function Signup() {
+export default function Signup(props) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSubmit = e => {
@@ -48,6 +49,9 @@ export default function Signup() {
     auth
       .createUserWithEmailAndPassword(state.email, state.password)
       .then(res => {
+        if (props.onClick) {
+          props.onClick();
+        }
         db.collection("users")
           .doc(res.user.uid)
           .set({
@@ -65,46 +69,48 @@ export default function Signup() {
   };
 
   return (
-    <form>
-      <input
-        type="text"
-        placeholder="First Name"
-        name="firstName"
-        value={state.firstName}
-        onChange={e =>
-          dispatch({ type: "CHANGE_FIRSTNAME", value: e.target.value })
-        }
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        name="lastName"
-        value={state.lastName}
-        onChange={e =>
-          dispatch({ type: "CHANGE_LASTNAME", value: e.target.value })
-        }
-      />
-      <input
-        type="email"
-        placeholder="Company Email"
-        name="email"
-        value={state.email}
-        onChange={e =>
-          dispatch({ type: "CHANGE_EMAIL", value: e.target.value })
-        }
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        name="password"
-        value={state.password}
-        onChange={e =>
-          dispatch({ type: "CHANGE_PASSWORD", value: e.target.value })
-        }
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Signup
-      </button>
-    </form>
+    <div className="modall">
+      <form className={styles.form}>
+        <input
+          type="text"
+          placeholder="First Name"
+          name="firstName"
+          value={state.firstName}
+          onChange={e =>
+            dispatch({ type: "CHANGE_FIRSTNAME", value: e.target.value })
+          }
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lastName"
+          value={state.lastName}
+          onChange={e =>
+            dispatch({ type: "CHANGE_LASTNAME", value: e.target.value })
+          }
+        />
+        <input
+          type="email"
+          placeholder="Company Email"
+          name="email"
+          value={state.email}
+          onChange={e =>
+            dispatch({ type: "CHANGE_EMAIL", value: e.target.value })
+          }
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={state.password}
+          onChange={e =>
+            dispatch({ type: "CHANGE_PASSWORD", value: e.target.value })
+          }
+        />
+        <button type="submit" onClick={handleSubmit}>
+          Create Account
+        </button>
+      </form>
+    </div>
   );
 }
