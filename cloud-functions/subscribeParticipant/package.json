@@ -1,0 +1,10 @@
+{
+    "name": "subscribe-user-to-project",
+    "version": "0.0.1",
+    "dependencies": {
+      "mailchimp-api-v3": "^1.13.0",
+      "md5": "2.2.1",
+      "firebase-functions": "3.0.2",
+      "firebase-admin": "8.2.0"
+    }
+}
