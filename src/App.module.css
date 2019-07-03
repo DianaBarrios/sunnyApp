@@ -1,0 +1,138 @@
+.content {
+  text-align: center;
+  display: block;
+  max-width: 1248px;
+  margin: auto;
+  padding: 0 30px;
+  position: relative;
+}
+
+.header {
+  max-width: 1248px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 20px;
+}
+
+.auth {
+  margin-right: 30px;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.auth a {
+  margin: 15px;
+}
+
+.logo img {
+  height: 20px;
+}
+
+.people {
+  position: absolute;
+  width: 500px;
+  right: 60%;
+  top: 200px;
+}
+
+.bubble {
+  position: absolute;
+  width: 40%;
+  max-width: 400px;
+  right: 0;
+  top: 0;
+}
+
+.pushContent {
+  height: 250px;
+  width: 100%;
+}
+
+.slogan {
+  position: relative;
+  text-align: left;
+  margin-left: 47%;
+}
+
+.slogan h1 {
+  font-size: 48px;
+}
+
+.slogan p {
+  margin: 50px 0;
+  max-width: 450px;
+  font-size: 20px;
+  position: relative;
+}
+
+.slogan h1:nth-child(2)::after {
+  content: "";
+  width: 100px;
+  background-color: #ffc74c;
+  height: 5px;
+  position: absolute;
+  right: -15px;
+  top: 55px;
+}
+
+.pitch {
+  margin-top: 20%;
+}
+
+.pitch h1 {
+  font-size: 42px;
+  position: relative;
+}
+
+.pitch h1::before {
+  content: "";
+  width: 100px;
+  background-color: #ffc74c;
+  height: 5px;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+}
+
+.offers {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer {
+  max-width: 400px;
+  margin: 50px 10%;
+}
+
+.offer img {
+  margin: 20px;
+  max-width: 300px;
+}
+
+.offer p {
+  font-size: 20px;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 150px;
+  height: 200px;
+  width: 100vw;
+  background-image: linear-gradient(
+    to right,
+    rgba(138, 195, 255, 73%),
+    rgba(106, 143, 242, 59%)
+  );
+}
