@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const firebase = require("./firebase.js");
-const db = firebase.db;
+import { auth, db } from "./firebase.js";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -26,12 +25,12 @@ class Projects extends React.Component {
   render() {
     return (
       <div>
-        <div class="container">
+        <div className="container">
+          <button onClick={() => auth.signOut()}> Sign out </button>
           <h1>Projects</h1>
           <strong>Select a project</strong>
         </div>
-
-        <div class="container">
+        <div className="container">
           <ul class="list-unstyled">
             {this.state.docs.map(doc => (
               <li class="media my-3">
