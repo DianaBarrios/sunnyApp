@@ -20,7 +20,7 @@ class CreateProject extends React.Component {
     db.settings({
       timestampsInSnapshots: true
     });
-    const projectRef = db.collection("projects").add({
+    db.collection("projects").add({
       email: this.state.email,
       firstName: this.state.firstName,
       lastName: this.state.lastName,

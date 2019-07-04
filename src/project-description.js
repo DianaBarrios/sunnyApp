@@ -22,7 +22,7 @@ class Project extends React.Component {
     let id = Number(this.props.match.params.id);
     let projectsRef = db.collection("projects").where("segmentID", "==", id);
 
-    let query = projectsRef.get().then(snapshot => {
+    projectsRef.get().then(snapshot => {
       snapshot.docs.forEach(doc => {
         const prevDocs = this.state.docs;
         const newDocuments = [...prevDocs, doc.data()];
@@ -121,7 +121,10 @@ class Project extends React.Component {
 
           </div>
 
-
+            {this.state.showPopup ? (
+              <Popup closePopup={this.togglePopup.bind(this)} />
+            ) : null}
+          </div>
         ))}
       </div>
     );
