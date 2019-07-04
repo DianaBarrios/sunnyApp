@@ -10,38 +10,32 @@ class Popup extends React.Component {
         this.state = {
             subscribed: false
         };
-
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-
-        let firstName = document.getElementById("apply-firstName").value;
-        let lastName = document.getElementById("apply-lastName").value;
+    handleClick(e) {
+        e.preventDefault();
+        let first_name = document.getElementById("apply-firstName").value;
+        let last_name = document.getElementById("apply-lastName").value;
         let email = document.getElementById("apply-email").value;
-        let segmentID = window.location.pathname.split("/")[2];
+        let segment_id = window.location.pathname.split("/")[2];
+        const url =
+            "https://us-central1-smiles-ai.cloudfunctions.net/subscribeUserToProject";
 
-        var subscribeUserToProject = functions.httpsCallable('subscribeUserToProject');
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                first_name,
+                last_name,
+                email,
+                segment_id
+            })
+        };
 
-        subscribeUserToProject({
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            segmentID: segmentID
-        }).then(function (result) {
-            //show success
-            console.log("Success: subscribed to project!");
-        }).catch(function (error) {
-            //show the error
-            var code = error.code;
-            var message = error.message;
-            var details = error.details;
-
-            console.log("Error:");
-            console.log(code);
-            console.log(message);
-            console.log(details);
-        });
+        fetch(url, options);
     }
 
     render() {
