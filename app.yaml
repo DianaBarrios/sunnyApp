@@ -1,6 +1,4 @@
-runtime: nodejs
-api_version: 1
-threadsafe: true
+runtime: nodejs10
 service: main
 handlers:
   - url: /
