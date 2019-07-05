@@ -7,6 +7,8 @@ import bubbleSrc from "./bubble.svg";
 import peopleSrc from "./bubble-people.svg";
 import joinProjectSrc from "./join-project.svg";
 import proposeProjectSrc from "./propose-project.svg";
+import jellySrc from "./jelly.svg";
+import logoSrc from "./logo.svg";
 import { Link } from "react-router-dom";
 import { UserAuthContext } from "./UserProvider";
 import { Redirect } from "react-router-dom";
@@ -34,7 +36,7 @@ function App() {
 
   return (
     <>
-      <div className={styles.content}>
+      <div>
         {showSignup && (
           <Modal>
             <Signup onClick={() => setShowSignup(false)} />
@@ -46,13 +48,9 @@ function App() {
             <Signin onClick={() => setShowSignin(false)} />
           </Modal>
         )}
-        <header className={styles.header}>
+        <header className={[styles.header, styles.content].join(" ")}>
           <Link to="/">
-            <img
-              className={styles.logo}
-              src="https://firebasestorage.googleapis.com/v0/b/smiles-ai-images/o/logo_smile.ai.jpg?alt=media&token=ea199bd3-4c7c-47fe-9a58-7c9efd054ce4"
-              alt="Our logo"
-            />
+            <img className={styles.logo} src={logoSrc} alt="Our logo" />
           </Link>
           <div className={styles.auth}>
             {context.user && context.user.firstName && (
@@ -72,41 +70,46 @@ function App() {
                 <a onClick={() => setShowSignup(true)}> Sign up </a>
               </>
             )}
+            <img src={bubbleSrc} className={styles.bubble} />
           </div>
         </header>
-        <div className={styles.pushContent} />
-        <div>
-          <img src={bubbleSrc} className={styles.bubble} />
-          <img src={peopleSrc} className={styles.people} />
-        </div>
 
-        <section className={styles.slogan}>
-          <h1> We provide the time.</h1>
-          <h1> You provide the hands.</h1>
-          <p>
-            Corthropy wants to make an impact. You too. Let’s do it! Choose from
-            the available projects and we’ll give you time off your work week to
-            participate. It’s never been easier.
-          </p>
+        <section className={styles.content}>
+          <div className={styles.sloganWrapper}>
+            <div className={styles.slogan}>
+              <h1> We provide the time.</h1>
+              <h1> You provide the hands.</h1>
+              <p className="description">
+                Corthropy wants to make an impact. You too. Let’s do it! Choose
+                from the available projects and we’ll give you time off your
+                work week to participate. It’s never been easier.
+              </p>
+            </div>
+            <img src={peopleSrc} className={styles.people} />
+          </div>
         </section>
 
-        <section className={styles.pitch}>
-          <h1> What you can do with Corthropy & Fond Finaz </h1>
+        <section
+          className={[styles.pitch, styles.content, styles.paddingAround].join(
+            " "
+          )}
+        >
+          <h1> What you can do with Corthropy & FondsFinaz </h1>
           <div className={styles.offers}>
-            <Link
-              to="/projects"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <div className={styles.offer}>
+            <div className={styles.offer}>
+              <Link
+                to="/projects"
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 <img src={joinProjectSrc} />
                 <h3> Join an existing project </h3>
                 <p>
                   Choose from a huge selection and find exactly the project that
                   really suits you
                 </p>
-              </div>
-            </Link>
-            <div className={styles.offer}>
+              </Link>
+            </div>
+            <div className={[styles.offer, styles.content].join(" ")}>
               <img src={proposeProjectSrc} />
               <h3> Propose project </h3>
               <p>
@@ -114,6 +117,9 @@ function App() {
               </p>
             </div>
           </div>
+        </section>
+        <section className={styles.jellyWrapper}>
+          <img className={styles.jelly} src={jellySrc} />
         </section>
       </div>
 

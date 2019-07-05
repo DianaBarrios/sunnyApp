@@ -16,6 +16,7 @@ body,
 html,
 #root {
   height: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -37,4 +38,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #03216b;
+}
+
+.description {
+  color: #666666;
 }
