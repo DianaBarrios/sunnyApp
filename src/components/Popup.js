@@ -1,5 +1,8 @@
 import React from "react";
 import "./popup.css";
+import {
+	withRouter
+} from 'react-router-dom';
 const firebase = require("../firebase.js");
 const functions = firebase.functions;
 
@@ -8,17 +11,35 @@ class Popup extends React.Component {
         super();
 
         this.state = {
-            subscribed: false
+            email: "",
+            firstName: "",
+            lastName: ""
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    handleClick(e) {
+    handleChange(e)  {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    onSubmit(e) {
         e.preventDefault();
-        let first_name = document.getElementById("apply-firstName").value;
-        let last_name = document.getElementById("apply-lastName").value;
-        let email = document.getElementById("apply-email").value;
-        let segment_id = window.location.pathname.split("/")[2];
+        
+        const form = {
+            first_name: this.state.firstName,
+            last_name: this.state.lastName,
+            email: this.state.email,
+            segment_id: window.location.pathname.split("/")[2]
+        }
+        
+        let first_name = form.first_name;
+        let last_name = form.last_name;
+        let email = form.email;
+        let segment_id = form.segment_id;
+
         const url =
             "https://us-central1-smiles-ai.cloudfunctions.net/subscribeUserToProject";
 
@@ -36,6 +57,14 @@ class Popup extends React.Component {
         };
 
         fetch(url, options);
+
+        this.setState({
+            email: "",
+            firstName: "",
+            lastName: ""
+       })
+
+       this.props.history.push('/projects');
     }
 
     render() {
@@ -55,8 +84,10 @@ class Popup extends React.Component {
                                         type="text"
                                         id="apply-firstName"
                                         name="firstName"
+                                        value={this.state.firstName}
                                         class="form-control"
                                         placeholder="First name"
+                                        onChange={e => this.handleChange(e)}
                                     />
                                 </div>
                                 <div class="col">
@@ -64,8 +95,10 @@ class Popup extends React.Component {
                                         type="text"
                                         id="apply-lastName"
                                         name="lastName"
+                                        value={this.state.lastName}
                                         class="form-control"
                                         placeholder="Last name"
+                                        onChange={e => this.handleChange(e)}
                                     />
                                 </div>
                             </div>
@@ -75,13 +108,15 @@ class Popup extends React.Component {
                                         type="email"
                                         id="apply-email"
                                         name="email"
+                                        value={this.state.email}
                                         class="form-control"
                                         placeholder="Email"
+                                        onChange={e => this.handleChange(e)}
                                     />
                                 </div>
                             </div>
                             <button
-                                onClick={this.handleClick}
+                                onClick={(e) => this.onSubmit(e)}
                                 class="btn btn-danger btn-lg btn-block mb-4"
                             >
                                 Join now
@@ -94,4 +129,4 @@ class Popup extends React.Component {
     }
 }
 
-export default Popup;
+export default withRouter(Popup);
