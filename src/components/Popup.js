@@ -1,5 +1,8 @@
 import React from "react";
 import "./popup.css";
+import {
+	withRouter
+} from 'react-router-dom';
 const firebase = require("../firebase.js");
 const functions = firebase.functions;
 
@@ -60,6 +63,8 @@ class Popup extends React.Component {
             firstName: "",
             lastName: ""
        })
+
+       this.props.history.push('/projects');
     }
 
     render() {
@@ -124,4 +129,4 @@ class Popup extends React.Component {
     }
 }
 
-export default Popup;
+export default withRouter(Popup);
