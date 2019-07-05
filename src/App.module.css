@@ -223,11 +223,19 @@
   height: 200px;
 }
 
+.cardImg--two {
+  background-image: url("./clean.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
 .cardImgPath {
   position: relative;
   top: -23px;
 }
 
 .cardImgPath--two {
-  top: -8px;
+  top: -10px;
+  position: relative;
 }

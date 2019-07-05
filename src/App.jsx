@@ -142,13 +142,10 @@ function App() {
                   specimen book.
                 </div>
                 <div className={[styles.card].join("")}>
-                  <div className={styles.cardImg} />
+                  <div className={styles["cardImg--two"]} />
                   <img
                     src={anotherMaskSrc}
-                    className={[
-                      styles.cardImgPath,
-                      styles["cardImgPath--two"]
-                    ].join(" ")}
+                    className={[styles["cardImgPath--two"]].join(" ")}
                   />
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
