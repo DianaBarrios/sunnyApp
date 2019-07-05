@@ -136,7 +136,7 @@
 }
 
 .offer p {
-  font-size: 20px;
+  font-size: 18px;
   max-width: 400px;
   margin-top: 20px;
 }
@@ -153,11 +153,81 @@
 }
 
 .jelly {
-  height: 2000px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 }
 
 .jellyWrapper {
+  min-height: 1500px;
+  margin-top: 150px;
+  padding-top: 150px;
   text-align: center;
+  position: relative;
+}
+
+.jellyWrapper::after {
+  overflow: hidden;
+}
+
+.joinProject h1 {
+  position: relative;
+}
+
+.joinProject h1::after {
+  content: "";
+  width: 100px;
+  background-color: #ffc74c;
+  height: 5px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 15px;
+}
+
+.faqs {
+  font-size: 18px;
+  margin-top: 50px;
+  font-weight: 400;
+  color: black;
+}
+
+.faqs a {
+  color: black;
+}
+
+.joinProject h1 {
+  margin-top: 40px;
+}
+
+.cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+}
+
+.cardImg {
+  background-image: url("./blood-donation.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.cardImgPath {
+  position: relative;
+  top: -23px;
+}
+
+.cardImgPath--two {
+  top: -8px;
 }

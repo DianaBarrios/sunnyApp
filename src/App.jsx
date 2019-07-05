@@ -7,6 +7,8 @@ import bubbleSrc from "./bubble.svg";
 import peopleSrc from "./bubble-people.svg";
 import joinProjectSrc from "./join-project.svg";
 import proposeProjectSrc from "./propose-project.svg";
+import bloodDonationMaskSrc from "./blood-donation-mask.svg";
+import anotherMaskSrc from "./another-mask.svg";
 import jellySrc from "./jelly.svg";
 import logoSrc from "./logo.svg";
 import { Link } from "react-router-dom";
@@ -49,6 +51,7 @@ function App() {
           </Modal>
         )}
         <header className={[styles.header, styles.content].join(" ")}>
+          <img src={bubbleSrc} className={styles.bubble} />
           <Link to="/">
             <img className={styles.logo} src={logoSrc} alt="Our logo" />
           </Link>
@@ -70,7 +73,6 @@ function App() {
                 <a onClick={() => setShowSignup(true)}> Sign up </a>
               </>
             )}
-            <img src={bubbleSrc} className={styles.bubble} />
           </div>
         </header>
 
@@ -117,9 +119,60 @@ function App() {
               </p>
             </div>
           </div>
+          <p className={styles.faqs}>
+            Want to know more? Check out our <Link to="/faqs">FAQs</Link>.
+          </p>
         </section>
         <section className={styles.jellyWrapper}>
           <img className={styles.jelly} src={jellySrc} />
+          <div className={styles.content}>
+            <div className={[styles.joinProject, styles.card].join(" ")}>
+              <h1>Join an existing project</h1>
+              <div className={styles.cards}>
+                <div className={[styles.card].join("")}>
+                  <div className={styles.cardImg} />
+                  <img
+                    src={bloodDonationMaskSrc}
+                    className={styles.cardImgPath}
+                  />
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                </div>
+                <div className={[styles.card].join("")}>
+                  <div className={styles.cardImg} />
+                  <img
+                    src={anotherMaskSrc}
+                    className={[
+                      styles.cardImgPath,
+                      styles["cardImgPath--two"]
+                    ].join(" ")}
+                  />
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                </div>
+                <div className={[styles.card].join("")}>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                </div>
+                <div className={[styles.card].join("")}>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book.
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
 
