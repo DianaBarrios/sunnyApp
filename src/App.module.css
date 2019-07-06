@@ -172,12 +172,8 @@
   overflow: hidden;
 }
 
-.joinProject {
-  max-width: 1240px;
-}
-
 .joinProject.card {
-  margin: 0 auto;
+  margin: 0 5%;
   padding-bottom: 60px;
 }
 
