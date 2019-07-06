@@ -172,11 +172,20 @@
   overflow: hidden;
 }
 
+.joinProject {
+  max-width: 1240px;
+}
+
+.joinProject.card {
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
 .joinProject h1 {
   position: relative;
 }
 
-.joinProject h1::after {
+.yellowUnderline::after {
   content: "";
   width: 100px;
   background-color: #ffc74c;
@@ -187,11 +196,31 @@
   transform: translateX(-50%);
 }
 
+.joinProject h1 {
+  margin-top: 40px;
+}
+
+.joinProject h4 {
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #fe6348;
+}
+
 .card {
   background: #ffffff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   margin: 15px;
   padding: 15px;
+}
+
+.card--project {
+  text-align: left;
+  cursor: pointer;
+}
+
+.card--project p {
+  font-size: 16px;
 }
 
 .faqs {
@@ -203,10 +232,7 @@
 
 .faqs a {
   color: black;
-}
-
-.joinProject h1 {
-  margin-top: 40px;
+  text-decoration: underline;
 }
 
 .cards {
@@ -214,6 +240,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
+  max-width: 1240px;
 }
 
 .cardImg {
@@ -224,18 +251,60 @@
 }
 
 .cardImg--two {
-  background-image: url("./clean.png");
+  background-image: url("./teach-kids.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
 }
 
-.cardImgPath {
+.cardImg--three {
+  background-image: url("./teach-kids.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.cardImg--four {
+  background-image: url("./tree-planting.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.cardImgPath--wave {
   position: relative;
   top: -23px;
 }
 
-.cardImgPath--two {
+.cardImgPath--valley {
   top: -10px;
   position: relative;
+}
+
+.howItWorks h2 {
+  font-size: 30px;
+  margin: 150px auto 80px auto;
+  color: black;
+}
+
+.howItWorksSteps {
+  display: flex;
+  justify-content: space-around;
+}
+
+.howItWorksStep h1 {
+  color: #ffc74c;
+  font-size: 60px;
+}
+
+.howItWorksStep p {
+  color: black;
+  font-size: 24px;
+  max-width: 300px;
+}
+
+.card--project .employeesJoined {
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: center;
 }

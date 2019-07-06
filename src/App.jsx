@@ -7,8 +7,8 @@ import bubbleSrc from "./bubble.svg";
 import peopleSrc from "./bubble-people.svg";
 import joinProjectSrc from "./join-project.svg";
 import proposeProjectSrc from "./propose-project.svg";
-import bloodDonationMaskSrc from "./blood-donation-mask.svg";
-import anotherMaskSrc from "./another-mask.svg";
+import waveMaskSrc from "./wave-mask.svg";
+import valleyMaskSrc from "./valley-mask.svg";
 import jellySrc from "./jelly.svg";
 import logoSrc from "./logo.svg";
 import { Link } from "react-router-dom";
@@ -127,47 +127,102 @@ function App() {
           <img className={styles.jelly} src={jellySrc} />
           <div className={styles.content}>
             <div className={[styles.joinProject, styles.card].join(" ")}>
-              <h1>Join an existing project</h1>
+              <h1 className={styles.yellowUnderline}>Example projects</h1>
               <div className={styles.cards}>
-                <div className={[styles.card].join("")}>
+                <div
+                  className={[styles.card, styles["card--project"]].join(" ")}
+                >
                   <div className={styles.cardImg} />
                   <img
-                    src={bloodDonationMaskSrc}
-                    className={styles.cardImgPath}
+                    src={waveMaskSrc}
+                    className={styles["cardImgPath--wave"]}
                   />
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  <h4> Every Weekend · 1.5 hours </h4>
+                  <h5> Blood Donation </h5>
+                  <p>
+                    Give blood and help with one donation up to three humans to
+                    survive.
+                  </p>
+                  <p className={styles.employeesJoined}>
+                    16 employees have joined
+                  </p>
                 </div>
-                <div className={[styles.card].join("")}>
+                <div
+                  className={[styles.card, styles["card--project"]].join(" ")}
+                >
                   <div className={styles["cardImg--two"]} />
                   <img
-                    src={anotherMaskSrc}
-                    className={[styles["cardImgPath--two"]].join(" ")}
+                    src={valleyMaskSrc}
+                    className={[styles["cardImgPath--valley"]].join(" ")}
                   />
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                  <h4> 7/3 Sun · 1pm · 4 hours </h4>
+                  <h5> The Ocean Cleanup </h5>
+                  <p>
+                    Plastic and garbage are destroying our oceans. We will save
+                    them together.
+                  </p>
+                  <p className={styles.employeesJoined}>
+                    7 employees have joined
+                  </p>
                 </div>
-                <div className={[styles.card].join("")}>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <div
+                  className={[styles.card, styles["card--project"]].join(" ")}
+                >
+                  <div className={styles["cardImg--three"]} />
+                  <img
+                    src={waveMaskSrc}
+                    className={[styles["cardImgPath--wave"]].join(" ")}
+                  />
+                  <h4> 7/3 Wed · 3pm · 3 hours </h4>
+                  <h5> Teaching Kids </h5>
+                  <p>
+                    You want to help refugee children to make their way in life?
+                    Teach them.
+                  </p>
+                  <p className={styles.employeesJoined}>
+                    13 employees have joined
+                  </p>
                 </div>
-                <div className={[styles.card].join("")}>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <div
+                  className={[styles.card, styles["card--project"]].join(" ")}
+                >
+                  <div className={styles["cardImg--four"]} />
+                  <img
+                    src={valleyMaskSrc}
+                    className={[styles["cardImgPath--valley"]].join(" ")}
+                  />
+                  <h4> 9/13 Mon · 10am · 5 hours </h4>
+                  <h5>Tree Planting </h5>
+                  <p>
+                    Planting trees for a better and more healthier world to save
+                    our future.
+                  </p>
+                  <p className={styles.employeesJoined}>
+                    9 employees have joined
+                  </p>
                 </div>
               </div>
+              <section className={[styles.howItWorks].join(" ")}>
+                <h2> How it works </h2>
+                <div className={styles.howItWorksSteps}>
+                  <div className={styles.howItWorksStep}>
+                    <h1>01</h1>
+                    <p>Pick a project which you feel excited about</p>
+                  </div>
+
+                  <div className={styles.howItWorksStep}>
+                    <h1>02</h1>
+                    <p>
+                      Choose the date and ask for free time from your company
+                    </p>
+                  </div>
+
+                  <div className={styles.howItWorksStep}>
+                    <h1>03</h1>
+                    <p>Get confirmation and be part of the community</p>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </section>
