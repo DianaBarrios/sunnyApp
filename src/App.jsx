@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { UserAuthContext } from "./UserProvider";
 import { Redirect } from "react-router-dom";
 import { auth } from "./firebase.js";
+import workersSrc from "./workers.svg";
 
 function App() {
   const context = useContext(UserAuthContext);
@@ -226,6 +227,37 @@ function App() {
             </div>
           </div>
         </section>
+        <section className={[styles.content, styles.proposeProject].join(" ")}>
+          <h1 className={styles.yellowUnderline}> Propose a project </h1>
+          <p>
+            We all want to change the world! Do you know of an existing project
+            that you want to support? Tell us more and we’ll help you make it a
+            reality!
+          </p>
+          <button>Propose </button>
+        </section>
+        <section className={[styles.howItWorks, styles.content].join(" ")}>
+          <h2> How it works </h2>
+          <div className={styles.howItWorksSteps}>
+            <div className={styles.howItWorksStep}>
+              <h1>01</h1>
+              <p>Fill up a form and tell your company about your idea.</p>
+            </div>
+
+            <div className={styles.howItWorksStep}>
+              <h1>02</h1>
+              <p>Your company is checking how they can support it.</p>
+            </div>
+
+            <div className={styles.howItWorksStep}>
+              <h1>03</h1>
+              <p>Project is listed and you are part of the community</p>
+            </div>
+          </div>
+        </section>
+        <div className={styles.content}>
+          <img src={workersSrc} className={styles.workers} />
+        </div>
       </div>
 
       <footer className={styles.footer} />
