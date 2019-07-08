@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./popup.css";
 import {
-	withRouter
+    withRouter
 } from 'react-router-dom';
+import { UserAuthContext } from "../UserProvider";
 const firebase = require("../firebase.js");
-const functions = firebase.functions;
 
 class Popup extends React.Component {
     constructor() {
@@ -19,7 +19,7 @@ class Popup extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    handleChange(e)  {
+    handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         });
@@ -27,14 +27,14 @@ class Popup extends React.Component {
 
     onSubmit(e) {
         e.preventDefault();
-        
+
         const form = {
             first_name: this.state.firstName,
             last_name: this.state.lastName,
             email: this.state.email,
             segment_id: window.location.pathname.split("/")[2]
         }
-        
+
         let first_name = form.first_name;
         let last_name = form.last_name;
         let email = form.email;
@@ -62,9 +62,9 @@ class Popup extends React.Component {
             email: "",
             firstName: "",
             lastName: ""
-       })
+        })
 
-       this.props.history.push('/projects');
+        this.props.history.push('/projects');
     }
 
     render() {
@@ -73,7 +73,7 @@ class Popup extends React.Component {
                 <div className="popup-inner">
                     <div class="row mt-4 mx-auto">
                         <div class="col">
-                            <h2>JOIN THIS PROJECT</h2>
+                            <h2>{this.props.title}</h2>
                         </div>
                     </div>
                     <form>

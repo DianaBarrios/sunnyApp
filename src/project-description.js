@@ -1,5 +1,8 @@
-import React from "react";
-import Popup from "./components/Popup";
+import React, { useContext, useState, useEffect } from "react";
+import JoinProject from "./JoinProject";
+import Modal from "./Modal";
+import { UserAuthContext } from "./UserProvider";
+import { withRouter } from "react-router-dom";
 const firebase = require("./firebase.js");
 const db = firebase.db;
 
@@ -8,17 +11,25 @@ class Project extends React.Component {
     super(props);
     this.state = {
       docs: [],
-      showPopup: false
+      isHidden: true
     };
   }
 
-  togglePopup() {
+  toggleHidden() {
     this.setState({
-      showPopup: !this.state.showPopup
+      isHidden: !this.state.isHidden
     });
   }
 
   componentDidMount() {
+    const close = e => {
+      if (e.keyCode === 27) {
+        this.setState({ isHidden: true });
+      }
+    };
+
+    document.addEventListener("keydown", close, false);
+
     let id = Number(this.props.match.params.id);
     let projectsRef = db.collection("projects").where("segmentID", "==", id);
 
@@ -73,12 +84,18 @@ class Project extends React.Component {
                   <div className="card">
                     <div className="card-body">
                       <button
-                        onClick={this.togglePopup.bind(this)}
+                        onClick={this.toggleHidden.bind(this)}
                         className="btn btn-danger btn-lg btn-block mt-3 mb-4"
                       >
                         {" "}
-                        Apply now
+                        Request off-days
                       </button>
+                      {!this.state.isHidden && (
+                        <Modal>
+                          <JoinProject />
+                        </Modal>
+                      )}
+
                       <h5 className="card-title text-warning">TIME</h5>
                       <p className="card-text">Some quick example</p>
                       <h5 className="card-title  text-warning">WHEN</h5>
@@ -126,18 +143,16 @@ class Project extends React.Component {
                 </div>
               </div>
             </div>
-
-            {this.state.showPopup ? (
-              <Popup closePopup={this.togglePopup.bind(this)} />
-            ) : null}
           </div>
         ))}
-        {this.state.showPopup ? (
-          <Popup closePopup={this.togglePopup.bind(this)} />
+        {this.state.showModal ? (
+          <Modal closeModal={this.toggleModal.bind(this)} />
         ) : null}
       </div>
     );
   }
 }
+
+Project.contextType = UserAuthContext;
 
 export default Project;
