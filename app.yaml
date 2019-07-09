@@ -1,14 +1,15 @@
 runtime: nodejs10
 service: main
 handlers:
-  - url: /
-    build_files: build/index.html
+  - url: /static
+    static_dir: build/static
+
+  - url: /(.*\.(json|ico|js))$
+    static_files: build/\1
+    upload: build/.*\.(json|ico|js)$
+
+  - url: .*
+    static_files: build/index.html
     upload: build/index.html
-    secure: always
-    expiration: 1s
-  - url: /
-    expiration: 1s
-    build_dir: build
-    secure: always
 
 default_expiration: 1s
