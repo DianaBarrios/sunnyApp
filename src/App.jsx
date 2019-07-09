@@ -65,7 +65,7 @@ function App() {
           <img className={styles.jelly} src={jellySrc} />
           <div className="content">
             <div className={[styles.joinProject, styles.card].join(" ")}>
-              <h1 className={styles.yellowUnderline}>Example projects</h1>
+              <h1 className="yellowUnderline">Example projects</h1>
               <div className={styles.cards}>
                 <div
                   className={[styles.card, styles["card--project"]].join(" ")}
@@ -165,7 +165,7 @@ function App() {
           </div>
         </section>
         <section className={["content", styles.proposeProject].join(" ")}>
-          <h1 className={styles.yellowUnderline}> Propose a project </h1>
+          <h1 className="yellowUnderline"> Propose a project </h1>
           <p>
             We all want to change the world! Do you know of an existing project
             that you want to support? Tell us more and we’ll help you make it a

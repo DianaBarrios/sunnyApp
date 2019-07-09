@@ -104,8 +104,8 @@
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
-  justify-content: space-between;
-  max-width: 1240px;
+  justify-content: space-evenly;
+  padding-bottom: 80px;
 }
 
 .cardImg {

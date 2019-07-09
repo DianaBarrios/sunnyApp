@@ -136,21 +136,6 @@
   position: relative;
 }
 
-.yellowUnderline {
-  position: relative;
-}
-
-.yellowUnderline::after {
-  content: "";
-  width: 100px;
-  background-color: #ffc74c;
-  height: 5px;
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .joinProject h1 {
   margin-top: 40px;
 }

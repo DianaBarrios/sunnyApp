@@ -77,8 +77,46 @@ class Projects extends React.Component {
           </section>
         </main>
 
-        <div className="container">
-          <ul className={["list-unstyled", styles.cards].join(" ")}>
+        <section
+          className="content"
+          style={{
+            backgroundColor: "#E5E5E5",
+            paddingTop: "100px",
+            marginTop: "-140px",
+            position: "relative"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center"
+            }}
+          >
+            <h3
+              className={["yellowUnderline"].join(" ")}
+              style={{
+                textAlign: "center",
+                marginBottom: "50px"
+              }}
+            >
+              Join a Project
+            </h3>
+            <p
+              style={{
+                maxWidth: "800px"
+              }}
+            >
+              We as a company support you with 3 volunteering days a year. Just
+              select a project you like and register for that. After your boss
+              has confirmed your free time, you’ll get a conformation and change
+              the world a little bit.
+            </p>
+          </div>
+
+          <div className={["list-unstyled", styles.cards].join(" ")}>
             {this.state.docs.map((doc, index) => (
               <li
                 className={[styles.card, styles["card--project"]].join(" ")}
@@ -109,8 +147,8 @@ class Projects extends React.Component {
                 </Link>
               </li>
             ))}
-          </ul>
-        </div>
+          </div>
+        </section>
       </>
     );
   }
