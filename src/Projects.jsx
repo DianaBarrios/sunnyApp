@@ -9,6 +9,7 @@ import styles from "./projects.module.css";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
 import { relative } from "path";
+import Footer from "./components/Footer";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class Projects extends React.Component {
             position: "relative"
           }}
         >
-          <Header hideBubble={true} />
+          <Header hideBubble={true} logoWhite={true} />
         </div>
         <main className={[styles.main, "content"].join(" ")}>
           <div className={styles.slogan}>
@@ -204,6 +205,7 @@ class Projects extends React.Component {
         >
           Do you have questions? We help you!
         </h5>
+        <Footer />
       </>
     );
   }

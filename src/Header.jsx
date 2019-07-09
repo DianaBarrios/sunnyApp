@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import bubbleSrc from "./assets/bubble.svg";
 import Signup from "./Signup";
 import logoSrc from "./assets/logo.svg";
+import logoWhiteSrc from "./components/logo_white.png";
 import { auth } from "./firebase.js";
 import { Link } from "react-router-dom";
 import Signin from "./Signin";
@@ -45,7 +46,11 @@ export default function Header(props) {
       <header className={[styles.header, "content"].join(" ")}>
         {!props.hideBubble && <img src={bubbleSrc} className={styles.bubble} />}
         <Link to="/">
-          <img className={styles.logo} src={logoSrc} alt="Our logo" />
+          <img
+            className={styles.logo}
+            src={props.logoWhite ? logoWhiteSrc : logoSrc}
+            alt="Our logo"
+          />
         </Link>
         <div className={styles.auth}>
           {context.user && context.user.firstName && (
