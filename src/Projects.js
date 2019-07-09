@@ -149,6 +149,61 @@ class Projects extends React.Component {
             ))}
           </div>
         </section>
+
+        <section
+          className="content"
+          style={{
+            marginTop: "80px",
+            marginBottom: "80px",
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center"
+          }}
+        >
+          <h2
+            className="yellowUnderline"
+            style={{
+              color: "black"
+            }}
+          >
+            Propose a Project
+          </h2>
+          <p
+            style={{
+              maxWidth: "800px",
+              marginBottom: "50px",
+              marginTop: "50px"
+            }}
+          >
+            We all want to change the world! Do you know of an existing project
+            that you want to support? Tell us more and we’ll help you make it a
+            reality!
+          </p>
+
+          <button
+            style={{
+              width: "290px",
+              height: "45px",
+              background: "#FE6348",
+              borderRadius: "6px",
+              color: "white",
+              border: 0
+            }}
+          >
+            Propose
+          </button>
+        </section>
+        <h5
+          style={{
+            marginTop: "50px",
+            textAlign: "center",
+            color: "black"
+          }}
+        >
+          Do you have questions? We help you!
+        </h5>
       </>
     );
   }
