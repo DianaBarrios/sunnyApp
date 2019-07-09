@@ -9,7 +9,9 @@ import styles from "./projects.module.css";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
 import { relative } from "path";
+import charlesSrc from "./assets/charles.png";
 import Footer from "./components/Footer";
+import projectsWaveSrc from "./assets/projects-wave.svg";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -198,13 +200,66 @@ class Projects extends React.Component {
         </section>
         <h5
           style={{
-            marginTop: "50px",
+            marginTop: "150px",
             textAlign: "center",
             color: "black"
           }}
         >
           Do you have questions? We help you!
         </h5>
+
+        <section
+          className="content"
+          style={{
+            marginTop: "30px",
+            marginBottom: "150px"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItem: "center",
+              justifyContent: "center"
+            }}
+          >
+            <img
+              src={charlesSrc}
+              style={{
+                height: "200px",
+                margin: "30px"
+              }}
+            />
+            <div
+              style={{
+                margin: "30px",
+                paddingTop: "30px"
+              }}
+            >
+              <h5
+                style={{
+                  color: "black"
+                }}
+              >
+                Jonas Laimer
+              </h5>
+              <p>CSR Manager</p>
+              <p>Tel: +xx xxx xxxxxx</p>
+              <p> Email: xxxxxxxxxx@gmail.com</p>
+            </div>
+          </div>
+        </section>
+        <section className="content">
+          <img
+            src={projectsWaveSrc}
+            style={{
+              width: "100%",
+              position: "absolute",
+              bottom: "0",
+              maxHeight: "700px"
+            }}
+          />
+        </section>
+
         <Footer />
       </>
     );
