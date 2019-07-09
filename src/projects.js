@@ -51,20 +51,14 @@ class Projects extends React.Component {
               " "
             )}
           >
-            <h1> What you can do with Corthropy & FondsFinanz </h1>
             <div className={styles.offers}>
               <div className={styles.offer}>
-                <Link
-                  to="/projects"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  <img src={joinProjectSrc} />
-                  <h3> Join an existing project </h3>
-                  <p>
-                    Choose from a huge selection and find exactly the project
-                    that really suits you
-                  </p>
-                </Link>
+                <img src={joinProjectSrc} />
+                <h3> Join an existing project </h3>
+                <p>
+                  Choose from a huge selection and find exactly the project that
+                  really suits you
+                </p>
               </div>
               <div className={[styles.offer, "content"].join(" ")}>
                 <img src={proposeProjectSrc} />

@@ -27,7 +27,7 @@
 }
 
 .pitch {
-  margin-top: 200px;
+  margin-top: 150px;
   text-align: center;
 }
 
@@ -52,12 +52,20 @@
   margin-top: 80px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
 }
 
 .offer {
   max-width: 500px;
   margin: 25px 50px;
+  padding: 25px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
+    ),
+    rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
 }
 
 .offer img {
