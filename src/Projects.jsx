@@ -62,7 +62,7 @@ class Projects extends React.Component {
             <div className={styles.offers}>
               <div className={styles.offer}>
                 <img src={joinProjectSrc} />
-                <h3> Join an existing project </h3>
+                <h3 style={{ color: "black" }}> Join an existing project </h3>
                 <p>
                   Choose from a huge selection and find exactly the project that
                   really suits you
@@ -70,7 +70,7 @@ class Projects extends React.Component {
               </div>
               <div className={[styles.offer, "content"].join(" ")}>
                 <img src={proposeProjectSrc} />
-                <h3> Propose project </h3>
+                <h3 style={{ color: "black" }}> Propose project </h3>
                 <p>
                   Do you know of a project that you want to support? Tell us
                   more!
@@ -101,6 +101,7 @@ class Projects extends React.Component {
             <h3
               className={["yellowUnderline"].join(" ")}
               style={{
+                color: "black",
                 textAlign: "center",
                 marginBottom: "50px"
               }}
@@ -141,7 +142,9 @@ class Projects extends React.Component {
                     className={styles["cardImgPath--wave"]}
                   />
 
-                  <h4 className="mt-0 mb-1"> {doc.projectName} </h4>
+                  <h4 className="mt-0 mb-1" style={{ color: "black" }}>
+                    {doc.projectName}
+                  </h4>
                   <p>Contact: {doc.email}</p>
                   <p>
                     Organizer: {doc.firstName} {doc.lastName}
