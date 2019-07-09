@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { auth, db } from "./firebase.js";
 import Header from "./Header.jsx";
+import joinProjectSrc from "./assets/join-project.svg";
+import proposeProjectSrc from "./assets/propose-project.svg";
 import aliensSrc from "./assets/aliens.svg";
 import styles from "./projects.module.css";
 import { relative } from "path";
@@ -44,6 +46,36 @@ class Projects extends React.Component {
               <img src={aliensSrc} />
             </div>
           </div>
+          <section
+            className={[styles.pitch, "content", styles.paddingAround].join(
+              " "
+            )}
+          >
+            <h1> What you can do with Corthropy & FondsFinanz </h1>
+            <div className={styles.offers}>
+              <div className={styles.offer}>
+                <Link
+                  to="/projects"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <img src={joinProjectSrc} />
+                  <h3> Join an existing project </h3>
+                  <p>
+                    Choose from a huge selection and find exactly the project
+                    that really suits you
+                  </p>
+                </Link>
+              </div>
+              <div className={[styles.offer, "content"].join(" ")}>
+                <img src={proposeProjectSrc} />
+                <h3> Propose project </h3>
+                <p>
+                  Do you know of a project that you want to support? Tell us
+                  more!
+                </p>
+              </div>
+            </div>
+          </section>
         </main>
 
         <div className="container">

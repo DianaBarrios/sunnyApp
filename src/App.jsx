@@ -34,7 +34,7 @@ function App() {
         <section
           className={[styles.pitch, "content", styles.paddingAround].join(" ")}
         >
-          <h1> What you can do with Corthropy & FondsFinaz </h1>
+          <h1> What you can do with Corthropy & FondsFinanz </h1>
           <div className={styles.offers}>
             <div className={styles.offer}>
               <Link

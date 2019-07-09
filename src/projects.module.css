@@ -1,7 +1,7 @@
 .main {
   top: -140px;
   padding-top: 220px;
-  height: calc(100% + 50px);
+  min-height: calc(100% + 50px);
   background: linear-gradient(
     254.88deg,
     rgba(255, 199, 76, 0.73) 1.1%,
@@ -24,4 +24,54 @@
   color: white;
   width: 400px;
   min-width: 350px;
+}
+
+.pitch {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.pitch h1 {
+  font-size: 42px;
+  position: relative;
+}
+
+.pitch h1::after {
+  content: "";
+  width: 100px;
+  background-color: #ffc74c;
+  height: 5px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.offers {
+  display: flex;
+  margin-top: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.offer {
+  max-width: 500px;
+  margin: 25px 50px;
+}
+
+.offer img {
+  margin: 20px;
+  max-width: 300px;
+}
+
+.offer p {
+  font-size: 18px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.offer h3 {
+  color: black;
+  font-size: 30px;
 }
