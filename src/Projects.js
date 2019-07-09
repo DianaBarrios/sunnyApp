@@ -6,6 +6,8 @@ import joinProjectSrc from "./assets/join-project.svg";
 import proposeProjectSrc from "./assets/propose-project.svg";
 import aliensSrc from "./assets/aliens.svg";
 import styles from "./projects.module.css";
+import waveMaskSrc from "./assets/wave-mask.svg";
+import valleyMaskSrc from "./assets/valley-mask.svg";
 import { relative } from "path";
 
 class Projects extends React.Component {
@@ -17,7 +19,10 @@ class Projects extends React.Component {
   }
 
   componentDidMount() {
-    let projectsRef = db.collection("projects").orderBy("projectName");
+    let projectsRef = db
+      .collection("projects")
+      .orderBy("projectName")
+      .limit(4);
 
     projectsRef.get().then(snapshot => {
       snapshot.docs.forEach(doc => {
@@ -73,24 +78,35 @@ class Projects extends React.Component {
         </main>
 
         <div className="container">
-          <ul className="list-unstyled">
-            {this.state.docs.map(doc => (
-              <li className="media my-3" key={doc.id}>
-                <img
-                  src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
-                  className="align-self-center mr-3"
-                  alt="..."
-                />
-                <div className="media-body">
-                  <Link to={`projects/${doc.segmentID}`}>
-                    <h5 className="mt-0 mb-1"> {doc.projectName} </h5>
-                  </Link>
+          <ul className={["list-unstyled", styles.cards].join(" ")}>
+            {this.state.docs.map((doc, index) => (
+              <li
+                className={[styles.card, styles["card--project"]].join(" ")}
+                key={doc.id}
+              >
+                <Link
+                  to={`projects/${doc.segmentID}`}
+                  className={styles.projectLink}
+                >
+                  <div
+                    className={styles.cardImg}
+                    style={{
+                      backgroundImage:
+                        "url(https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg)"
+                    }}
+                  />
+                  <img
+                    src={index % 2 === 0 ? waveMaskSrc : valleyMaskSrc}
+                    className={styles["cardImgPath--wave"]}
+                  />
+
+                  <h4 className="mt-0 mb-1"> {doc.projectName} </h4>
                   <p>Contact: {doc.email}</p>
                   <p>
                     Organizer: {doc.firstName} {doc.lastName}
                   </p>
                   <p>Description: {doc.description}</p>
-                </div>
+                </Link>
               </li>
             ))}
           </ul>

@@ -12,4 +12,4 @@ handlers:
     static_files: build/index.html
     upload: build/index.html
 
-default_expiration: 1s
+default_expiration: 10m

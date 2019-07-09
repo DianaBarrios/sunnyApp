@@ -83,3 +83,49 @@
   color: black;
   font-size: 30px;
 }
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 15px;
+}
+
+.card--project {
+  text-align: left;
+  cursor: pointer;
+}
+
+.card--project p {
+  font-size: 16px;
+}
+
+.cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: space-between;
+  max-width: 1240px;
+}
+
+.cardImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.cardImgPath--wave {
+  position: relative;
+  top: -23px;
+}
+
+.cardImgPath--valley {
+  top: -10px;
+  position: relative;
+}
+
+.projectLink,
+.projectLink:hover {
+  color: black;
+  text-decoration: none;
+}
