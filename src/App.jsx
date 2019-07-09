@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Signup from "./Signup";
 import Signin from "./Signin";
 import Modal from "./Modal";
+import Footer from "./components/Footer"
 import bubbleSrc from "./bubble.svg";
 import peopleSrc from "./bubble-people.svg";
 import joinProjectSrc from "./join-project.svg";
@@ -259,8 +260,7 @@ function App() {
           <img src={workersSrc} className={styles.workers} />
         </div>
       </div>
-
-      <footer className={styles.footer} />
+      <Footer/>
     </>
   );
 }

@@ -1,0 +1,52 @@
+.nav {
+  clear: both;
+  height: auto;
+  width: 100vw;
+
+  background-image: linear-gradient(
+    to right,
+    rgba(138, 195, 255, 73%),
+    rgba(106, 143, 242, 59%)
+  );
+}
+
+.nav ul{
+  padding: 4% 0 0 10%;
+  list-style: none;
+}
+
+.nav a{
+  color: black;
+}
+
+.nav a{
+  color: black;
+}
+
+.nav a:hover{
+  color: #FFC74C;
+  text-decoration: none;
+}
+
+.nav span{
+  color: #C6343A;
+}
+
+.nav li{
+  display: inline;
+  padding: 1%;
+}
+
+.nav img{
+  display: block;
+  margin-left: 80%;
+  width: 20%;
+}
+
+.nav p{
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 1%;
+}
