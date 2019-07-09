@@ -1,0 +1,37 @@
+.auth {
+  margin-right: 30px;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.auth a {
+  margin: 15px;
+}
+
+.logo img {
+  height: 20px;
+}
+
+.header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 30px;
+}
+
+.bubble {
+  position: absolute;
+  width: 40%;
+  max-width: 400px;
+  right: 0;
+  top: 0;
+}

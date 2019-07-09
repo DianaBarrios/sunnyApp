@@ -1,50 +1,5 @@
-.content {
-  display: block;
-  max-width: 1440px;
-  margin: auto;
-  position: relative;
-}
-
 .paddingAround {
   padding: 0 30px;
-}
-
-.header {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  height: 50px;
-  margin-left: 30px;
-}
-
-.auth {
-  margin-right: 30px;
-  color: black;
-  font-size: 18px;
-  font-weight: 600;
-  z-index: 1;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.auth a {
-  margin: 15px;
-}
-
-.logo img {
-  height: 20px;
-}
-
-.bubble {
-  position: absolute;
-  width: 40%;
-  max-width: 400px;
-  right: 0;
-  top: 0;
 }
 
 .pushContent {
@@ -244,28 +199,28 @@
 }
 
 .cardImg {
-  background-image: url("./blood-donation.png");
+  background-image: url("./assets/blood-donation.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
 }
 
 .cardImg--two {
-  background-image: url("./teach-kids.png");
+  background-image: url("./assets/teach-kids.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
 }
 
 .cardImg--three {
-  background-image: url("./teach-kids.png");
+  background-image: url("./assets/teach-kids.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
 }
 
 .cardImg--four {
-  background-image: url("./tree-planting.png");
+  background-image: url("./assets/tree-planting.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;

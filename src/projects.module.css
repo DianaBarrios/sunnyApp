@@ -1,0 +1,27 @@
+.main {
+  top: -140px;
+  padding-top: 220px;
+  height: calc(100% + 50px);
+  background: linear-gradient(
+    254.88deg,
+    rgba(255, 199, 76, 0.73) 1.1%,
+    rgba(254, 98, 72, 0.73) 100%
+  );
+}
+
+.aliensImageWrap {
+  min-width: 0px;
+}
+
+.slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.slogan h1 {
+  color: white;
+  width: 400px;
+  min-width: 350px;
+}

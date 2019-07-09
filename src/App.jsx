@@ -1,83 +1,22 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import styles from "./App.module.css";
-import Signup from "./Signup";
-import Signin from "./Signin";
-import Modal from "./Modal";
-import bubbleSrc from "./bubble.svg";
-import peopleSrc from "./bubble-people.svg";
-import joinProjectSrc from "./join-project.svg";
-import proposeProjectSrc from "./propose-project.svg";
-import waveMaskSrc from "./wave-mask.svg";
-import valleyMaskSrc from "./valley-mask.svg";
-import jellySrc from "./jelly.svg";
-import logoSrc from "./logo.svg";
+import peopleSrc from "./assets/bubble-people.svg";
+import joinProjectSrc from "./assets/join-project.svg";
+import proposeProjectSrc from "./assets/propose-project.svg";
+import waveMaskSrc from "./assets/wave-mask.svg";
+import valleyMaskSrc from "./assets/valley-mask.svg";
 import { Link } from "react-router-dom";
-import { UserAuthContext } from "./UserProvider";
+import jellySrc from "./assets/jelly.svg";
 import { Redirect } from "react-router-dom";
-import { auth } from "./firebase.js";
-import workersSrc from "./workers.svg";
+import workersSrc from "./assets/workers.svg";
+import Header from "./Header";
 
 function App() {
-  const context = useContext(UserAuthContext);
-  const [showSignup, setShowSignup] = useState(false);
-  const [showSignin, setShowSignin] = useState(false);
-
-  useEffect(() => {
-    function close(e) {
-      if (e.keyCode === 27) {
-        setShowSignup(false);
-        setShowSignin(false);
-      }
-    }
-
-    document.addEventListener("keydown", close, false);
-
-    return function cleanup() {
-      document.removeEventListener("keydown", close, false);
-    };
-  }, []);
-
   return (
     <>
       <div>
-        {showSignup && (
-          <Modal>
-            <Signup onClick={() => setShowSignup(false)} />
-          </Modal>
-        )}
-
-        {showSignin && (
-          <Modal>
-            <Signin onClick={() => setShowSignin(false)} />
-          </Modal>
-        )}
-        <header className={[styles.header, styles.content].join(" ")}>
-          <img src={bubbleSrc} className={styles.bubble} />
-          <Link to="/">
-            <img className={styles.logo} src={logoSrc} alt="Our logo" />
-          </Link>
-          <div className={styles.auth}>
-            {context.user && context.user.firstName && (
-              <>
-                <span style={{ fontSize: "12px" }}>
-                  Hello, {context.user.firstName}
-                </span>
-                <a onClick={() => auth.signOut()} style={{ fontSize: "12px" }}>
-                  Sign out
-                </a>
-              </>
-            )}
-
-            {!context.user && (
-              <>
-                <a onClick={() => setShowSignin(true)}> Sign in </a>
-                <a onClick={() => setShowSignup(true)}> Sign up </a>
-              </>
-            )}
-          </div>
-        </header>
-
-        <section className={styles.content}>
+        <Header />
+        <section className="content">
           <div className={styles.sloganWrapper}>
             <div className={styles.slogan}>
               <h1> We provide the time.</h1>
@@ -93,9 +32,7 @@ function App() {
         </section>
 
         <section
-          className={[styles.pitch, styles.content, styles.paddingAround].join(
-            " "
-          )}
+          className={[styles.pitch, "content", styles.paddingAround].join(" ")}
         >
           <h1> What you can do with Corthropy & FondsFinaz </h1>
           <div className={styles.offers}>
@@ -112,7 +49,7 @@ function App() {
                 </p>
               </Link>
             </div>
-            <div className={[styles.offer, styles.content].join(" ")}>
+            <div className={[styles.offer, "content"].join(" ")}>
               <img src={proposeProjectSrc} />
               <h3> Propose project </h3>
               <p>
@@ -126,7 +63,7 @@ function App() {
         </section>
         <section className={styles.jellyWrapper}>
           <img className={styles.jelly} src={jellySrc} />
-          <div className={styles.content}>
+          <div className="content">
             <div className={[styles.joinProject, styles.card].join(" ")}>
               <h1 className={styles.yellowUnderline}>Example projects</h1>
               <div className={styles.cards}>
@@ -227,7 +164,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className={[styles.content, styles.proposeProject].join(" ")}>
+        <section className={["content", styles.proposeProject].join(" ")}>
           <h1 className={styles.yellowUnderline}> Propose a project </h1>
           <p>
             We all want to change the world! Do you know of an existing project
@@ -236,7 +173,7 @@ function App() {
           </p>
           <button>Propose </button>
         </section>
-        <section className={[styles.howItWorks, styles.content].join(" ")}>
+        <section className={[styles.howItWorks, "content"].join(" ")}>
           <h2> How it works </h2>
           <div className={styles.howItWorksSteps}>
             <div className={styles.howItWorksStep}>
@@ -255,7 +192,7 @@ function App() {
             </div>
           </div>
         </section>
-        <div className={styles.content}>
+        <div className="content">
           <img src={workersSrc} className={styles.workers} />
         </div>
       </div>

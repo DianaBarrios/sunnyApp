@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import App from "./App";
-import Projects from "./projects";
+import Projects from "./Projects";
 import ProjectDescription from "./project-description";
 import ProjectProposal from "./project-proposal";
 import Notfound from "./notfound";

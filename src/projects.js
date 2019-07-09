@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { auth, db } from "./firebase.js";
+import Header from "./Header.jsx";
+import aliensSrc from "./assets/aliens.svg";
+import styles from "./projects.module.css";
+import { relative } from "path";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -24,12 +28,24 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="container">
-          <button onClick={() => auth.signOut()}> Sign out </button>
-          <h1>Projects</h1>
-          <strong>Select a project</strong>
+      <>
+        <div
+          style={{
+            zIndex: 2,
+            position: "relative"
+          }}
+        >
+          <Header hideBubble={true} />
         </div>
+        <main className={[styles.main, "content"].join(" ")}>
+          <div className={styles.slogan}>
+            <h1> Let's make together the world a better place </h1>
+            <div className={styles.aliensImageWrap}>
+              <img src={aliensSrc} />
+            </div>
+          </div>
+        </main>
+
         <div className="container">
           <ul className="list-unstyled">
             {this.state.docs.map(doc => (
@@ -53,7 +69,7 @@ class Projects extends React.Component {
             ))}
           </ul>
         </div>
-      </div>
+      </>
     );
   }
 }
