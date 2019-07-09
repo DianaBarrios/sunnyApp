@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./App.module.css";
 import peopleSrc from "./assets/bubble-people.svg";
 import joinProjectSrc from "./assets/join-project.svg";
+
+import Footer from "./components/Footer";
 import proposeProjectSrc from "./assets/propose-project.svg";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
@@ -196,8 +198,7 @@ function App() {
           <img src={workersSrc} className={styles.workers} />
         </div>
       </div>
-
-      <footer className={styles.footer} />
+      <Footer />
     </>
   );
 }
