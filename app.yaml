@@ -2,46 +2,13 @@ runtime: nodejs10
 service: main
 handlers:
   - url: /
-    static_files: build/index.html
+    build_files: build/index.html
     upload: build/index.html
     secure: always
-    expiration: 10m
-
-  # Attention /? won't work to catch both cases
-  # path and path/, therefore write them separately
-  # matches path/ to path/index.html
-  - url: /([^.]+)/
-    static_files: build/\1/index.html
-    upload: build/([^.]+)/index.html
+    expiration: 1s
+  - url: /
+    expiration: 1s
+    build_dir: build
     secure: always
-    expiration: 10m
 
-  # matches path to path/index.html
-  - url: /([^.]+)
-    static_files: build/\1/index.html
-    upload: build/([^.]+)/index.html
-    secure: always
-    expiration: 10m
-
-  # matches path/other/ to path/other/index.html
-  - url: /([^.]+)/([^.]+)/
-    static_files: build/\1/\2/index.html
-    upload: build/([^.]+)/([^.]+)/index.html
-    secure: always
-    expiration: 10m
-
-  # matches path/other to path/other/index.html
-  - url: /([^.]+)/([^.]+)
-    static_files: build/\1/\2/index.html
-    upload: build/([^.]+)/([^.]+)/index.html
-    secure: always
-    expiration: 10m
-
-  # catch everything else
-  - url: /(.*)
-    static_files: build/\1
-    upload: build/(.*)
-    secure: always
-    expiration: 10m
-
-default_expiration: 10m
+default_expiration: 1s
