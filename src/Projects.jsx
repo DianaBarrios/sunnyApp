@@ -142,14 +142,13 @@ class Projects extends React.Component {
                     className={styles["cardImgPath--wave"]}
                   />
 
-                  <h4 className="mt-0 mb-1" style={{ color: "black" }}>
+                  <h5 className="mt-0 mb-1" style={{ color: "black" }}>
                     {doc.projectName}
-                  </h4>
-                  <p>Contact: {doc.email}</p>
-                  <p>
-                    Organizer: {doc.firstName} {doc.lastName}
-                  </p>
-                  <p>Description: {doc.description}</p>
+                  </h5>
+
+                  <h6 style={{ color: "#FE6348" }}>{doc.date.seconds}</h6>
+                    
+                  <p>Description: {doc.description.slice(0, 150) + "..."}</p>
                 </Link>
               </li>
             ))}

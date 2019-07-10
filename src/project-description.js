@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import JoinProject from "./JoinProject";
 import Modal from "./Modal";
+import Footer from "./components/Footer";
 import { UserAuthContext } from "./UserProvider";
 import { withRouter } from "react-router-dom";
 const firebase = require("./firebase.js");
@@ -72,11 +73,12 @@ class Project extends React.Component {
                 <div className="col-8">
                   <div className="container mt-4">
                     <h1 key={doc.id}>{doc.projectName}</h1>
-                    <p>Contact: {doc.email}</p>
-                    <p>
-                      Organizer: {doc.firstName} {doc.lastName}
-                    </p>
-                    <p>Description of project: {doc.description}</p>
+                    <hr />
+                    <h6>TIME</h6>
+                    <p> {doc.time} </p>
+                    <h3> Goal of the project </h3>
+                    <p>{doc.description}</p>
+                    <hr />
                   </div>
                 </div>
 
@@ -87,7 +89,6 @@ class Project extends React.Component {
                         onClick={this.toggleHidden.bind(this)}
                         className="btn btn-danger btn-lg btn-block mt-3 mb-4"
                       >
-                        {" "}
                         Request off-days
                       </button>
                       {!this.state.isHidden && (
@@ -95,15 +96,6 @@ class Project extends React.Component {
                           <JoinProject />
                         </Modal>
                       )}
-
-                      <h5 className="card-title text-warning">TIME</h5>
-                      <p className="card-text">Some quick example</p>
-                      <h5 className="card-title  text-warning">WHEN</h5>
-                      <p className="card-text">Some quick example</p>
-                      <h5 className="card-title text-warning">WHERE</h5>
-                      <p className="card-text">Some quick example</p>
-                      <h5 className="card-title  text-warning">REQUIREMENTS</h5>
-                      <p className="card-text">Some quick example</p>
                     </div>
                   </div>
                 </div>
@@ -123,26 +115,7 @@ class Project extends React.Component {
               </div>
             </div>
 
-            <div className="App-footer container-fluid py-4 pl-4">
-              <div className="d-flex flex-row bd-highlight mb-3 text-nav-footer">
-                <div className="p-2 bd-highlight">About</div>
-                <a
-                  href="https://try.corthropy.com/"
-                  className="p-2 bd-highlight"
-                >
-                  Product
-                </a>
-              </div>
-
-              <div className="d-flex bd-highlight">
-                <div className="mr-auto p-2 bd-highlight">
-                  2019 All rights reserved
-                </div>
-                <div className="ml-auto p-2 bd-highlight">
-                  Made with love by Smile.AI
-                </div>
-              </div>
-            </div>
+            <Footer />
           </div>
         ))}
         {this.state.showModal ? (
