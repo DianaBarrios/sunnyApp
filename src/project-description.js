@@ -76,9 +76,20 @@ class Project extends React.Component {
                     <hr />
                     <h6>TIME</h6>
                     <p> {doc.time} </p>
-                    <h3> Goal of the project </h3>
+                    <hr />
+                    <h6>WHEN</h6>
+                    <p> {doc.date} </p>
+                    <h6>WHERE</h6>
+                    <p> {doc.location} </p>
+                    <hr />
+                    <h6> REQUIREMENTS </h6>
+                    <p> {doc.requirements} </p>
+                    <hr />
+                    <h5> GOAL OF THE PROJECT </h5>
                     <p>{doc.description}</p>
                     <hr />
+                    <h5> YOUR ROLE AS A VOLUNTEER </h5>
+                    <p>{doc.role}</p>
                   </div>
                 </div>
 
@@ -99,19 +110,6 @@ class Project extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="container my-5">
-              <div className="row">
-                <div className="col">Testimony</div>
-                <div className="col">Space to ask questions</div>
-              </div>
-            </div>
-
-            <div className="container my-5">
-              <div className="row justify-content-md-center">
-                <div className="col-md-auto">Recommend to a friend.</div>
               </div>
             </div>
 
