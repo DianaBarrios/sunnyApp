@@ -98,7 +98,7 @@ class Project extends React.Component {
                         onClick={this.toggleHidden.bind(this)}
                         className="btn btn-danger btn-lg btn-block mt-3 mb-4"
                       >
-                        Request off-days
+                        Apply for project
                       </button>
                       {!this.state.isHidden && (
                         <Modal>
@@ -114,9 +114,7 @@ class Project extends React.Component {
             <Footer />
           </div>
         ))}
-        {this.state.showModal ? (
-          <Modal closeModal={this.toggleModal.bind(this)} />
-        ) : null}
+      
       </div>
     );
   }

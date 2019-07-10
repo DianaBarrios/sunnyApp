@@ -8,7 +8,7 @@ class JoinProject extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bossEmail: ""
+            message: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,13 +27,14 @@ class JoinProject extends React.Component {
             first_name: this.context.user.firstName,
             last_name: this.context.user.lastName,
             email: this.context.user.email,
-            bossEmail: this.state.bossEmail,
+            message: this.state.message,
             segment_id: window.location.pathname.split("/")[2]
         }
 
         let first_name = data.first_name;
         let last_name = data.last_name;
         let email = data.email;
+        let message = data.message;
         let segment_id = data.segment_id;
 
         const url =
@@ -48,6 +49,7 @@ class JoinProject extends React.Component {
                 first_name,
                 last_name,
                 email,
+                message,
                 segment_id
             })
         };
@@ -55,7 +57,7 @@ class JoinProject extends React.Component {
         fetch(url, options);
 
         this.setState({
-            bossEmail: ""
+            message: ""
         })
 
     };
@@ -64,15 +66,14 @@ class JoinProject extends React.Component {
         return (
             <div className="modall">
                 <form className={styles.form}>
-                    <input
-                        type="email"
-                        placeholder="Boss Email"
-                        name="bossEmail"
-                        value={this.state.bossEmail}
-                        onChange={e => this.handleChange(e)}
-                    />
+                    <h4>THANKS FOR YOUR HELP</h4>
+                    
+                    <p><hr />
+                        We will get in touch with you soon to give <br/> you further information about the event.</p>
+                    <p>Please, ask your boss for the time off!</p> 
+                    <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to take part with a colleague please write his/her name" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
                     <button onClick={(e) => this.handleSubmit(e) } class="btn btn-danger btn-lg btn-block my-4" >
-                        Request off-days
+                        APPLY
             </button>
                 </form>
             </div>
