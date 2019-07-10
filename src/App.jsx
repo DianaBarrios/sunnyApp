@@ -57,13 +57,23 @@ function App() {
         <Header />
         {openSignup && (
           <Modal>
-            <Signup onClick={() => setOpenSignup(false)} />
+            <Signup
+              onClick={() => {
+                setOpenSignup(false);
+                setRequestReg(false);
+              }}
+            />
           </Modal>
         )}
 
         {openSignin && (
           <Modal>
-            <Signin onClick={() => setOpenSignin(false)} />
+            <Signin
+              onClick={() => {
+                setOpenSignin(false);
+                setRequestReg(false);
+              }}
+            />
           </Modal>
         )}
 
