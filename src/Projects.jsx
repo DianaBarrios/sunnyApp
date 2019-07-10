@@ -133,8 +133,9 @@ class Projects extends React.Component {
                   <div
                     className={styles.cardImg}
                     style={{
-                      backgroundImage:
-                        "url(https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg)"
+                      backgroundImage: !!doc.pictures
+                        ? `url(${doc.pictures[0]})`
+                        : ""
                     }}
                   />
                   <img
@@ -146,8 +147,8 @@ class Projects extends React.Component {
                     {doc.projectName}
                   </h5>
 
-                  <h6 style={{ color: "#FE6348" }}>{doc.date.seconds}</h6>
-                    
+                  <h6 style={{ color: "#FE6348" }}>{doc.date}</h6>
+
                   <p>Description: {doc.description.slice(0, 150) + "..."}</p>
                 </Link>
               </li>
