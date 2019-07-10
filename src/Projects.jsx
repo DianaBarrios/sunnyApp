@@ -18,7 +18,7 @@ class Projects extends React.Component {
     super(props);
     this.state = {
       docs: [],
-      redirectToPropseProject: false
+      redirectToProposeProject: false
     };
   }
 
@@ -37,12 +37,14 @@ class Projects extends React.Component {
     });
   }
 
-  setRedirectToPropseProject() {
-    this.setState({ redirectToPropseProject: true });
+  setRedirectToProposeProject() {
+    console.log("ff");
+    this.setState({ redirectToProposeProject: true });
   }
 
   render() {
-    if (this.state.redirectToPropseProject) {
+    console.log(this.state);
+    if (this.state.redirectToProposeProject) {
       return <Redirect to="/project-proposal" />;
     }
 
@@ -204,9 +206,10 @@ class Projects extends React.Component {
               background: "#FE6348",
               borderRadius: "6px",
               color: "white",
-              border: 0
+              border: 0,
+              zIndex: 2
             }}
-            onClick={() => this.setRedirectToPropseProject(true)}
+            onClick={() => this.setRedirectToProposeProject()}
           >
             Propose
           </button>

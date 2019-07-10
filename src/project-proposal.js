@@ -5,9 +5,7 @@ import { UserAuthContext } from "./UserProvider";
 
 class ProjectProposal extends React.Component {
   render() {
-    const context = useContext(UserAuthContext);
-
-    if (!context.user) {
+    if (!this.context.user) {
       return <Redirect to="/" />;
     }
 
@@ -23,5 +21,7 @@ class ProjectProposal extends React.Component {
     );
   }
 }
+
+ProjectProposal.contextType = UserAuthContext;
 
 export default ProjectProposal;
