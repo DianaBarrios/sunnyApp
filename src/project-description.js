@@ -42,7 +42,6 @@ class Project extends React.Component {
       });
     });
   }
-
   render() {
     return (
       <div>
@@ -50,21 +49,15 @@ class Project extends React.Component {
           <div>
             <div className="container">
               <div className="d-flex justify-content-around">
-                <img
-                  src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
-                  className="img-fluid"
-                  alt="..."
-                />
-                <img
-                  src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
-                  className="img-fluid"
-                  alt="..."
-                />
-                <img
-                  src="https://www.xing.com/image/c_2_b_d6d996c21_22325856_4/thomas-stanner-foto.256x256.jpg"
-                  className="img-fluid"
-                  alt="..."
-                />
+                {doc.pictures &&
+                  Object.values(doc.pictures).map(url => (
+                    <img
+                      src={url}
+                      className="img-fluid"
+                      alt="..."
+                      style={{ maxHeight: "200px" }}
+                    />
+                  ))}
               </div>
             </div>
 
