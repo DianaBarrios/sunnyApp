@@ -9,7 +9,7 @@ import styles from "./projects.module.css";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
 import { relative } from "path";
-import charlesSrc from "./assets/charles.png";
+import charlesSrc from "./assets/simon.jpg";
 import Footer from "./components/Footer";
 import projectsWaveSrc from "./assets/projects-wave.svg";
 
@@ -256,11 +256,11 @@ class Projects extends React.Component {
                   color: "black"
                 }}
               >
-                Jonas Laimer
+                Simon Bödecker
               </h5>
               <p>CSR Manager</p>
-              <p>Tel: +xx xxx xxxxxx</p>
-              <p> Email: xxxxxxxxxx@gmail.com</p>
+              <p>Tel: +49 89 158815406</p>
+              <p> Email: s.boedecker@fondsfinanz.de</p>
             </div>
           </div>
         </section>
