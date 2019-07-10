@@ -1,5 +1,5 @@
 runtime: nodejs10
-service: main
+service: default
 handlers:
   - url: /static
     static_dir: build/static
