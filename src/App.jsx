@@ -55,13 +55,13 @@ function App() {
     <>
       <div>
         <Header />
-        {openSignin && (
+        {openSignup && (
           <Modal>
             <Signup onClick={() => setOpenSignup(false)} />
           </Modal>
         )}
 
-        {openSignup && (
+        {openSignin && (
           <Modal>
             <Signin onClick={() => setOpenSignin(false)} />
           </Modal>
