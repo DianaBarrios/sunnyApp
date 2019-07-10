@@ -4,6 +4,7 @@ import Modal from "./Modal";
 import Footer from "./components/Footer";
 import { UserAuthContext } from "./UserProvider";
 import { withRouter } from "react-router-dom";
+import Header from "./Header";
 const firebase = require("./firebase.js");
 const db = firebase.db;
 
@@ -45,8 +46,9 @@ class Project extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         {this.state.docs.map(doc => (
-          <div>
+          <div style={{ marginTop: "50px" }}>
             <div className="container">
               <div className="d-flex justify-content-around">
                 {doc.pictures &&
