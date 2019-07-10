@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styles from "./App.module.css";
 import peopleSrc from "./assets/bubble-people.svg";
 import joinProjectSrc from "./assets/join-project.svg";
@@ -8,16 +8,94 @@ import proposeProjectSrc from "./assets/propose-project.svg";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
 import { Link } from "react-router-dom";
+import Signin from "./Signin";
+import Signup from "./Signup";
 import jellySrc from "./assets/jelly.svg";
 import { Redirect } from "react-router-dom";
 import workersSrc from "./assets/workers.svg";
 import Header from "./Header";
+import { UserAuthContext } from "./UserProvider";
+import Modal from "./Modal";
 
 function App() {
+  const context = useContext(UserAuthContext);
+  const [requestReg, setRequestReg] = useState(false);
+  const [openSignin, setOpenSignin] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
+  const [redirectToProjects, setRedirectToProjects] = useState(false);
+  const [redirectToProjectProposal, setRedirectToProjectProposal] = useState(
+    false
+  );
+
+  useEffect(() => {
+    function close(e) {
+      if (e.keyCode === 27) {
+        setOpenSignup(false);
+        setOpenSignin(false);
+        setRequestReg(false);
+      }
+    }
+
+    document.addEventListener("keydown", close, false);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", close, false);
+    };
+  }, []);
+
+  if (context.user || redirectToProjects) {
+    return <Redirect to="/projects" />;
+  }
+
+  if (redirectToProjectProposal) {
+    return <Redirect to="/project-proposal" />;
+  }
+
   return (
     <>
       <div>
         <Header />
+        {openSignin && (
+          <Modal>
+            <Signup onClick={() => setOpenSignup(false)} />
+          </Modal>
+        )}
+
+        {openSignup && (
+          <Modal>
+            <Signin onClick={() => setOpenSignin(false)} />
+          </Modal>
+        )}
+
+        {requestReg && (
+          <Modal>
+            <div className="modall">
+              <div
+                style={{
+                  width: "300px",
+                  height: "200px",
+                  backgroundColor: "white",
+                  textAlign: "center",
+                  paddingTop: "45px"
+                }}
+              >
+                <p>Please Sign up or Sign in to continue.</p>
+                <button
+                  style={{ margin: "5px" }}
+                  onClick={() => setOpenSignin(true)}
+                >
+                  Sign in
+                </button>
+                <button
+                  style={{ margin: "5px" }}
+                  onClick={() => setOpenSignup(true)}
+                >
+                  Sign up
+                </button>
+              </div>
+            </div>
+          </Modal>
+        )}
         <section className="content">
           <div className={styles.sloganWrapper}>
             <div className={styles.slogan}>
@@ -38,18 +116,22 @@ function App() {
         >
           <h1> What you can do with Corthropy & FondsFinanz </h1>
           <div className={styles.offers}>
-            <div className={styles.offer}>
-              <Link
-                to="/projects"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <img src={joinProjectSrc} />
-                <h3> Join an existing project </h3>
-                <p>
-                  Choose from a huge selection and find exactly the project that
-                  really suits you
-                </p>
-              </Link>
+            <div
+              className={styles.offer}
+              onClick={() => {
+                if (!context.user) {
+                  setRequestReg(true);
+                } else {
+                  setRedirectToProjects(true);
+                }
+              }}
+            >
+              <img src={joinProjectSrc} />
+              <h3> Join an existing project </h3>
+              <p>
+                Choose from a huge selection and find exactly the project that
+                really suits you
+              </p>
             </div>
             <div className={[styles.offer, "content"].join(" ")}>
               <img src={proposeProjectSrc} />
@@ -173,7 +255,17 @@ function App() {
             that you want to support? Tell us more and we’ll help you make it a
             reality!
           </p>
-          <button>Propose </button>
+          <button
+            onClick={() => {
+              if (!context.user) {
+                setRequestReg(true);
+              } else {
+                setRedirectToProjectProposal(true);
+              }
+            }}
+          >
+            Propose
+          </button>
         </section>
         <section className={[styles.howItWorks, "content"].join(" ")}>
           <h2> How it works </h2>
