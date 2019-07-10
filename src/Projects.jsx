@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { auth, db } from "./firebase.js";
 import Header from "./Header.jsx";
 import joinProjectSrc from "./assets/join-project.svg";
@@ -17,7 +17,8 @@ class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      docs: []
+      docs: [],
+      redirectToPropseProject: false
     };
   }
 
@@ -36,7 +37,15 @@ class Projects extends React.Component {
     });
   }
 
+  setRedirectToPropseProject() {
+    this.setState({ redirectToPropseProject: true });
+  }
+
   render() {
+    if (this.state.redirectToPropseProject) {
+      return <Redirect to="/project-proposal" />;
+    }
+
     return (
       <>
         <div
@@ -197,6 +206,7 @@ class Projects extends React.Component {
               color: "white",
               border: 0
             }}
+            onClick={() => this.setRedirectToPropseProject(true)}
           >
             Propose
           </button>
