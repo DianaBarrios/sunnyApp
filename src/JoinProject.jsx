@@ -72,9 +72,9 @@ class JoinProject extends React.Component {
                     </p>
                     <textarea class="form-control" id="textArea" rows="3" placeholder="Optional" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
                     <button onClick={(e) => this.handleSubmit(e) } class="btn btn-danger btn-lg btn-block my-4" >
-                        APPLY
+                    Apply for project
             </button>
-            <p class="font-weight-light">Click "APPLY" to confirm</p>
+            <p class="font-weight-light">Click "Apply for project" to confirm</p>
                 </form>
             </div>
         );
