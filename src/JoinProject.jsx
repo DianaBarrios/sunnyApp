@@ -71,7 +71,7 @@ class JoinProject extends React.Component {
                     
                     <p><hr />
                         We will get in touch with you soon to give <br/> you further information about the event.</p>
-                    <p>Please, ask your boss for the time off!</p> 
+                    <p>You’ll receive an email with the date of the <br/> event. Please, ask your boss for the time off!</p> 
                     <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to take part with a colleague please write his/her name" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
                     <button onClick={(e) => this.handleSubmit(e) } class="btn btn-danger btn-lg btn-block my-4" >
                         APPLY

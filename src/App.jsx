@@ -143,7 +143,13 @@ function App() {
                 really suits you
               </p>
             </div>
-            <div className={[styles.offer, "content"].join(" ")}>
+            <div className={[styles.offer, "content"].join(" ")} onClick={() => {
+              if (!context.user) {
+                setRequestReg(true);
+              } else {
+                setRedirectToProjects(true);
+              }
+            }}>
               <img src={proposeProjectSrc} />
               <h3> Propose project </h3>
               <p>
