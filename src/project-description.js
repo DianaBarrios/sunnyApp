@@ -79,22 +79,30 @@ class Project extends React.Component {
                     <hr />
                     <h6>TIME</h6>
                     <p> {doc.time} </p>
+                    <br />
                     <h6>LOCATION</h6>
                     <p> {doc.location} </p>
+                    <br />
                     <h6>DURATION</h6>
                     <p> {doc.duration} </p>
+                    <br />
                     <h6>ORGANISATION</h6>
                     <p> {doc.organisation} </p>
+                    <br />
                     <hr />
                     <h6> GOAL OF THE PROJECT </h6>
                     <p>{doc.goal}</p>
+                    <br />
                     <h6> YOUR ROLE AS A VOLUNTEER </h6>
                     <p>{doc.role}</p>
+                    <br />
                     <h6> REQUIREMENTS </h6>
                     <p> {doc.requirements} </p>
+                    <br />
                     <hr />
                     <h6>ABOUT THE NON-PROFIT ORGANISATION</h6>
                     <p> {doc.aboutNGO} </p>
+                    <br />
                     <hr />
                   </div>
                 </div>
