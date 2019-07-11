@@ -160,7 +160,7 @@ class Projects extends React.Component {
 
                   <h6 style={{ color: "#FE6348" }}>{doc.date}</h6>
 
-                  <p>Description: {doc.description.slice(0, 150) + "..."}</p>
+                  <p> {doc.description.slice(0, 150) + "..."}</p>
                 </Link>
               </li>
             ))}
