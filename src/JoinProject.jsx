@@ -67,15 +67,14 @@ class JoinProject extends React.Component {
         return (
             <div className="modall">
                 <form className={styles.form}>
-                    <h4>THANKS FOR YOUR HELP</h4>
-                    
-                    <p><hr />
-                        We will get in touch with you soon to give <br/> you further information about the event.</p>
-                    <p>You’ll receive an email with the date of the <br/> event. Please, ask your boss for the time off!</p> 
-                    <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to take part with a colleague please write his/her name" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
+                    <h4>ALMOST THERE!</h4>
+                    <p class="font-italic"> <hr /> Want to participate with more people?
+                    </p>
+                    <textarea class="form-control" id="textArea" rows="3" placeholder="Optional" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
                     <button onClick={(e) => this.handleSubmit(e) } class="btn btn-danger btn-lg btn-block my-4" >
                         APPLY
             </button>
+            <p class="font-weight-light">Click "APPLY" to confirm</p>
                 </form>
             </div>
         );
