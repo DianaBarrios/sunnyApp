@@ -15,6 +15,7 @@ class Project extends React.Component {
       docs: [],
       isHidden: true
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleHidden() {
@@ -43,6 +44,13 @@ class Project extends React.Component {
       });
     });
   }
+
+  handleSubmit() {
+    this.setState({ 
+      isHidden: true
+    });
+  };
+
   render() {
     return (
       <div>
@@ -102,7 +110,7 @@ class Project extends React.Component {
                       </button>
                       {!this.state.isHidden && (
                         <Modal>
-                          <JoinProject />
+                          <JoinProject onSubmit={this.handleSubmit}/>
                         </Modal>
                       )}
                     </div>

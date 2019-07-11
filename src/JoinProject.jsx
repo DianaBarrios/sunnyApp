@@ -60,6 +60,7 @@ class JoinProject extends React.Component {
             message: ""
         })
 
+        this.props.onSubmit();
     };
 
     render(){
