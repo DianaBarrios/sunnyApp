@@ -68,9 +68,9 @@ class JoinProject extends React.Component {
             <div className="modall">
                 <form className={styles.form}>
                     <h4>ALMOST THERE!</h4>
-                    <p class="font-italic"> <hr /> Want to participate with more people?
+                    <p class="font-italic"> <hr /> Want to participate with more people? (Optional)
                     </p>
-                    <textarea class="form-control" id="textArea" rows="3" placeholder="Optional" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
+                    <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to participate with colleagues please write their names" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
                     <button onClick={(e) => this.handleSubmit(e) } class="btn btn-danger btn-lg btn-block my-4" >
                     Apply for project
             </button>
