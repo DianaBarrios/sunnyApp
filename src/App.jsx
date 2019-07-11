@@ -152,7 +152,7 @@ function App() {
             </div>
           </div>
           <p className={styles.faqs}>
-            Want to know more? Check out our <Link to="/faqs">FAQs</Link>.
+            Want to know more? Check out our <Link to="/faq">FAQs</Link>.
           </p>
         </section>
         <section className={styles.jellyWrapper}>
