@@ -82,26 +82,39 @@ function App() {
             <div className="modall">
               <div
                 style={{
-                  width: "300px",
-                  height: "200px",
+                  width: "600px",
+                  height: "300px",
                   backgroundColor: "white",
                   textAlign: "center",
                   paddingTop: "45px"
                 }}
               >
-                <p>Please Sign up or Sign in to continue.</p>
-                <button
-                  style={{ margin: "5px" }}
-                  onClick={() => setOpenSignin(true)}
-                >
-                  Sign in
-                </button>
-                <button
-                  style={{ margin: "5px" }}
-                  onClick={() => setOpenSignup(true)}
-                >
-                  Sign up
-                </button>
+                 
+            
+                <p><h3>Want to participate?</h3></p>
+
+                <div className="container">
+                  <h6>In order for you to access the projects, you need to create an account.<br/> Don’t worry, it’s really easy.</h6>
+                  <button
+                    className="btn btn-danger"
+                    //style={{ margin: "5px" }}
+                    onClick={() => setOpenSignup(true)}
+                  >
+                    Sign up
+                  </button>
+                </div>
+                
+                <div className="container mt-4">
+                  <h6>Already have an account?</h6>
+                  <button
+                    className="btn btn-danger"
+                    //style={{ margin: "5px" }}
+                    onClick={() => setOpenSignin(true)}
+                  >
+                    Sign in
+                  </button>
+                </div>
+                
               </div>
             </div>
           </Modal>
