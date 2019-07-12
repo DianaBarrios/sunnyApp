@@ -56,8 +56,12 @@ export default function Signin(props) {
   return (
     <div className="modall">
       <form className={styles.form}>
+        <label for="name of the form"><h3>Sign into my account</h3></label>
+        
+        <div className="form-group mt-3">
         <input
           type="email"
+          class="form-control"
           placeholder="Company Email"
           name="email"
           value={state.email}
@@ -65,8 +69,12 @@ export default function Signin(props) {
             dispatch({ type: "CHANGE_EMAIL", value: e.target.value })
           }
         />
+        </div>
+    
+        <div className="form-group">
         <input
           type="password"
+          class="form-control"
           placeholder="Password"
           name="password"
           value={state.password}
@@ -74,7 +82,9 @@ export default function Signin(props) {
             dispatch({ type: "CHANGE_PASSWORD", value: e.target.value })
           }
         />
-        <button type="submit" onClick={handleSubmit}>
+        </div>
+
+        <button type="submit" className="btn btn-danger" onClick={handleSubmit}>
           Login
         </button>
       </form>
