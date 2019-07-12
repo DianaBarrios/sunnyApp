@@ -71,8 +71,13 @@ export default function Signup(props) {
   return (
     <div className="modall">
       <form className={styles.form}>
+      <label for="name of the form"><h3>Sign up for an account</h3></label>
+        
+      <div class="form-row mt-3">
+       <div class="col">
         <input
           type="text"
+          class="form-control"
           placeholder="First Name"
           name="firstName"
           value={state.firstName}
@@ -80,8 +85,11 @@ export default function Signup(props) {
             dispatch({ type: "CHANGE_FIRSTNAME", value: e.target.value })
           }
         />
+        </div>
+      <div class="form-group col">
         <input
           type="text"
+          class="form-control"
           placeholder="Last Name"
           name="lastName"
           value={state.lastName}
@@ -89,8 +97,13 @@ export default function Signup(props) {
             dispatch({ type: "CHANGE_LASTNAME", value: e.target.value })
           }
         />
+        </div>
+    </div>
+        
+    <div class="form-group"> 
         <input
           type="email"
+          class="form-control"
           placeholder="Company Email"
           name="email"
           value={state.email}
@@ -98,8 +111,12 @@ export default function Signup(props) {
             dispatch({ type: "CHANGE_EMAIL", value: e.target.value })
           }
         />
+        </div>
+
+     <div class="form-group">    
         <input
           type="password"
+          class="form-control"
           placeholder="Password"
           name="password"
           value={state.password}
@@ -107,7 +124,10 @@ export default function Signup(props) {
             dispatch({ type: "CHANGE_PASSWORD", value: e.target.value })
           }
         />
-        <button type="submit" onClick={handleSubmit}>
+        </div>
+
+
+        <button type="submit" className="btn btn-danger" onClick={handleSubmit}>
           Create Account
         </button>
       </form>
