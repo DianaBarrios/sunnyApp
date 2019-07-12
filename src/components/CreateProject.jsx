@@ -50,7 +50,7 @@ class CreateProject extends React.Component {
       numVolunteers: this.state.numVolunteers,
       duration: this.state.duration,
       time: this.state.time,
-      status: "draft",
+      status: "pending",
       segmentID: null
     });
     this.setState({

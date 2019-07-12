@@ -25,7 +25,7 @@ class Projects extends React.Component {
   componentDidMount() {
     let projectsRef = db
       .collection("projects")
-      .orderBy("projectName")
+      .where("status", "==", "active")
       .limit(4);
 
     projectsRef.get().then(snapshot => {
@@ -38,7 +38,6 @@ class Projects extends React.Component {
   }
 
   setRedirectToProposeProject() {
-    console.log("ff");
     this.setState({ redirectToProposeProject: true });
   }
 
