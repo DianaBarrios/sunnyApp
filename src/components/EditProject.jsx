@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "./Footer";
+import Header from "../Header";
 const firebase = require("../firebase.js");
 const db = firebase.db;
 
@@ -114,7 +116,6 @@ class EditProject extends React.Component {
                 time: "",
                 status: ""
             });
-            //this.props.history.push("")
         }).catch((error) => {
             console.error("Error updating document", error);
         });
@@ -125,9 +126,13 @@ class EditProject extends React.Component {
         return (
         <div>
 
-        <div>Edit a project</div>
+        <Header />
 
-        <div>
+        <div class="container my-5">
+          <h1>Edit project</h1>
+        </div>
+
+        <div className="container my-5">
         <form onSubmit={this.addProject}>
           <div class="mt-5 form-group">
             <label for="exampleInputPName">Name of the project</label>
@@ -301,6 +306,8 @@ class EditProject extends React.Component {
 
         
       </div>
+
+      <Footer />
 
         </div>
 
