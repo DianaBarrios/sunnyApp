@@ -6,6 +6,7 @@ import App from "./App";
 import Projects from "./Projects";
 import ProjectDescription from "./project-description";
 import ProjectProposal from "./project-proposal";
+import EditProject from "./components/EditProject";
 import Notfound from "./notfound";
 import UserProvider from "./UserProvider";
 import "bootstrap/dist/css/bootstrap.css";
@@ -19,6 +20,7 @@ const routing = (
         <ProtectedRoute>
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/:id" component={ProjectDescription} />
+          <Route exact path="/edit/:id" component={EditProject} />
           <Route exact path="/project-proposal" component={ProjectProposal} />
         </ProtectedRoute>
         <Route component={Notfound} />
