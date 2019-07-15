@@ -1,5 +1,7 @@
 import React from "react";
 import { UserAuthContext } from "../UserProvider";
+import Modal from "../Modal";
+import { Link } from "react-router-dom";
 const firebase = require("../firebase.js");
 const db = firebase.db;
 
@@ -19,9 +21,16 @@ class CreateProject extends React.Component {
       duration: "",
       time: "",
       status: "",
-      segmentID: null
+      segmentID: null,
+      isHidden: true
     };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  toggleHidden() {
+    this.setState({
+      isHidden: !this.state.isHidden
+    });
   }
 
   handleChange = e => {
@@ -66,7 +75,8 @@ class CreateProject extends React.Component {
       duration: "",
       time: "",
       status: "",
-      segmentID: null
+      segmentID: null,
+      isHidden: false
     });
   };
 
@@ -248,10 +258,57 @@ class CreateProject extends React.Component {
               zIndex: 2,
               alignSelf: "center"
             }}
-
           >
             Submit
           </button>
+
+          {!this.state.isHidden && (<Modal>
+            <div className="modall">
+              <div
+                style={{
+                  width: "600px",
+                  height: "350px",
+                  backgroundColor: "white",
+                  textAlign: "center",
+                  paddingTop: "30px",
+                  paddingLeft: "20px",
+                  paddingRight: "20px"
+                }}
+              >
+                <div className="d-flex bd-highlight">
+                  <div className="p-2 w-100 bd-highlight"><h4>Thanks!</h4></div>
+                  <div className="p-2 flex-shrink-1 bd-highlight">
+                    <button onClick={this.toggleHidden.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="container">
+                  <p>We will review your project proposal</p>
+                  <Link to={`/projects`}>
+                  <button
+                    style={{
+                      width: "290px",
+                      height: "45px",
+                      background: "#FE6348",
+                      borderRadius: "6px",
+                      color: "white",
+                      border: 0,
+                      zIndex: 2
+                    }}
+                    onClick={this.toggleHidden.bind(this)}
+                  >
+                    Go back to projects
+                  </button>
+                  </Link>
+                </div>
+
+              </div>
+            </div>
+          </Modal> 
+          )}
+
         </form>
 
         

@@ -22,6 +22,8 @@ class Projects extends React.Component {
   }
 
   componentDidMount() {
+    document.getElementById("root").scrollTo(0, 0);
+    
     let projectsRef = db
       .collection("projects")
       .where("status", "==", "active")
