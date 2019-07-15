@@ -237,8 +237,18 @@ class CreateProject extends React.Component {
 
           <button
             type="submit"
-            class="btn btn-danger"
             onClick={e => this.addProject(e)}
+            style={{
+              width: "290px",
+              height: "45px",
+              background: "#FE6348",
+              borderRadius: "6px",
+              color: "white",
+              border: 0,
+              zIndex: 2,
+              alignSelf: "center"
+            }}
+
           >
             Submit
           </button>

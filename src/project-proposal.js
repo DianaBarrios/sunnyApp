@@ -6,6 +6,10 @@ import Footer from "./components/Footer";
 import Header from "./Header";
 
 class ProjectProposal extends React.Component {
+  componentDidMount() {
+    document.getElementById("root").scrollTo(0, 0);
+  }
+
   render() {
     if (!this.context.user) {
       return <Redirect to="/" />;
