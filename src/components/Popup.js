@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import "./popup.css";
 import {
     withRouter
 } from 'react-router-dom';
-import { UserAuthContext } from "../UserProvider";
 const firebase = require("../firebase.js");
 
 class Popup extends React.Component {

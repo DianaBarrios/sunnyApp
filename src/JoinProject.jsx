@@ -1,8 +1,6 @@
-import React, { useContext, useReducer } from "react";
-import { auth, db } from "./firebase.js";
+import React from "react";
 import { UserAuthContext } from "./UserProvider";
 import styles from "./signin.module.css";
-import Project from "./project-description.js";
 
 class JoinProject extends React.Component {
     constructor(props) {

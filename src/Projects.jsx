@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
-import { auth, db } from "./firebase.js";
+import { db } from "./firebase.js";
 import Header from "./Header.jsx";
 import joinProjectSrc from "./assets/join-project.svg";
 import proposeProjectSrc from "./assets/propose-project.svg";
@@ -8,7 +8,6 @@ import aliensSrc from "./assets/aliens.svg";
 import styles from "./projects.module.css";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
-import { relative } from "path";
 import charlesSrc from "./assets/simon.jpg";
 import Footer from "./components/Footer";
 import projectsWaveSrc from "./assets/projects-wave.svg";
@@ -42,7 +41,6 @@ class Projects extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     if (this.state.redirectToProposeProject) {
       return <Redirect to="/project-proposal" />;
     }

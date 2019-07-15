@@ -93,9 +93,9 @@ function App() {
                 }}
               >
 
-                <div class="d-flex bd-highlight">
-                  <div class="p-2 w-100 bd-highlight"><h4>Want to participate?</h4></div>
-                  <div class="p-2 flex-shrink-1 bd-highlight">
+                <div className="d-flex bd-highlight">
+                  <div className="p-2 w-100 bd-highlight"><h4>Want to participate?</h4></div>
+                  <div className="p-2 flex-shrink-1 bd-highlight">
                     <button onClick={(e) => {setRequestReg(false)}} type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
