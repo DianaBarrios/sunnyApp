@@ -72,9 +72,6 @@ export default function Signup(props) {
         // const errorMessage = error.message;
         // ...
       });
-
-      //let user = auth.currentUser;
-      
   };
 
   return (
