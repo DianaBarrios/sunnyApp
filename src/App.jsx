@@ -140,7 +140,7 @@ function App() {
               <h1> We provide the time.</h1>
               <h1> You provide the hands.</h1>
               <p className="description">
-                <i className="fa fa-coffee"></i>Corthropy wants to make an impact. You too?. Let’s do it! Choose
+                We at Corthropy want to change the world. You too? Let’s do it! Choose
                 from the available projects and we’ll give you time off your
                 work week to participate. It’s never been easier.
               </p>
@@ -271,19 +271,19 @@ function App() {
                 <div className={styles.howItWorksSteps}>
                   <div className={styles.howItWorksStep}>
                     <h1>01</h1>
-                    <p>Pick a project that excites you</p>
+                    <p>Pick a project that you want to participate in.</p>
                   </div>
 
                   <div className={styles.howItWorksStep}>
                     <h1>02</h1>
                     <p>
-                      Apply for the project and ask for free time at your company.
+                      Apply and ask for free time at your company.
                     </p>
                   </div>
 
                   <div className={styles.howItWorksStep}>
                     <h1>03</h1>
-                    <p>When your application is accepted, go change the world!</p>
+                    <p>Get accepted and... go change the world!</p>
                   </div>
                 </div>
               </section>

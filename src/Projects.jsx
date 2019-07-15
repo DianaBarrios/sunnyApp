@@ -123,10 +123,10 @@ class Projects extends React.Component {
                 maxWidth: "800px"
               }}
             >
-              We as a company support you with 3 volunteering days a year. Just
-              select a project you like and register for that. After your boss
-              has confirmed your free time, you’ll get a conformation and change
-              the world a little bit.
+              We want you to help the world and make an impact.
+              That's why we give you 3 extra off-days every year so you can participate in any CSR project.
+              Just select one from the list, or propose your own, and ask your boss for permission.
+              We'll take care of the rest.
             </p>
           </div>
 
@@ -220,7 +220,7 @@ class Projects extends React.Component {
             color: "black"
           }}
         >
-          Do you have questions? We help you!
+          Do you have questions? We have answers!
         </h5>
 
         <section
