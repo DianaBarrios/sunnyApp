@@ -76,8 +76,7 @@ class Project extends React.Component {
                   <div className="container mt-4">
                     <h1 key={doc.id}>{doc.projectName}</h1>
                     <hr />
-                    
-                    <h6><i className="fa fa-clock-o"></i> TIME</h6>
+                    <h6>TIME</h6>
                     <p> {doc.time} </p>
                     <br />
                     <h6>LOCATION</h6>
@@ -111,8 +110,17 @@ class Project extends React.Component {
                   <div className="card">
                     <div className="card-body">
                       <button
+                        style={{
+                          width: "290px",
+                          height: "45px",
+                          background: "#FE6348",
+                          borderRadius: "6px",
+                          color: "white",
+                          border: 0,
+                          zIndex: 2
+                        }}
                         onClick={this.toggleHidden.bind(this)}
-                        className="btn btn-danger btn-lg btn-block mt-3 mb-4"
+                        
                       >
                         Apply for project
                       </button>

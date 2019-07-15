@@ -20,7 +20,9 @@ class EditProject extends React.Component {
             numVolunteers: "",
             duration: "",
             time: "",
-            status: ""
+            status: "",
+            segmentID: "",
+            pictures: "",
         };
         this.handleEdit = this.handleEdit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -51,7 +53,9 @@ class EditProject extends React.Component {
                     numVolunteers: project.numVolunteers,
                     duration: project.duration,
                     time: project.time,
-                    status: project.status
+                    status: project.status,
+                    segmentID: project.segmentID,
+                    pictures: project.pictures
                 })
             });
 
@@ -69,15 +73,8 @@ class EditProject extends React.Component {
     }
 
     handleAccept(e) {
-
-    }
-
-    handleReject(e){
-        
-    }
-
-    handleEdit(e) {
         e.preventDefault();
+
         const {
             projectName,
             description,
@@ -90,7 +87,8 @@ class EditProject extends React.Component {
             numVolunteers,
             duration,
             time,
-            status
+            segmentID,
+            pictures
         } = this.state;
 
         const updateRef = db.collection('projects').doc(this.state.key);
@@ -107,7 +105,88 @@ class EditProject extends React.Component {
             numVolunteers,
             duration,
             time,
-            status
+            status: "active",
+            segmentID,
+            pictures
+        });
+
+    }
+
+    handleReject(e){
+        e.preventDefault();
+
+        const {
+            projectName,
+            description,
+            goal,
+            location,
+            organisation,
+            aboutNGO,
+            role,
+            requirements,
+            numVolunteers,
+            duration,
+            time,
+            segmentID,
+            pictures
+        } = this.state;
+
+        const updateRef = db.collection('projects').doc(this.state.key);
+
+        updateRef.set({
+            projectName,
+            description,
+            goal,
+            location,
+            organisation,
+            aboutNGO,
+            role,
+            requirements,
+            numVolunteers,
+            duration,
+            time,
+            status: "rejected",
+            segmentID,
+            pictures
+        });
+    }
+
+    handleEdit(e) {
+        e.preventDefault();
+        const {
+            projectName,
+            description,
+            goal,
+            location,
+            organisation,
+            aboutNGO,
+            role,
+            requirements,
+            numVolunteers,
+            duration,
+            time,
+            status,
+            segmentID,
+            pictures
+        } = this.state;
+
+        const updateRef = db.collection('projects').doc(this.state.key);
+
+        updateRef.set({
+            projectName,
+            description,
+            goal,
+            location,
+            organisation,
+            aboutNGO,
+            role,
+            requirements,
+            numVolunteers,
+            duration,
+            time,
+            status,
+            segmentID,
+            pictures
         }).then((docRef) => {
             this.setState({
                 key: "",
@@ -122,7 +201,9 @@ class EditProject extends React.Component {
                 numVolunteers: "",
                 duration: "",
                 time: "",
-                status: ""
+                status: "",
+                segmentID: "",
+                pictures: ""
             });
         }).catch((error) => {
             console.error("Error updating document", error);
@@ -137,7 +218,7 @@ class EditProject extends React.Component {
                 <Header />
 
                 <div class="container my-5">
-                    <h1>Edit project</h1>
+                    <h1>Project review</h1>
                 </div>
 
                 <div className="container my-5">
@@ -338,7 +419,5 @@ class EditProject extends React.Component {
         );
     }
 }
-
-//EditProject.contextType = UserAuthContext;
 
 export default EditProject;

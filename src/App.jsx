@@ -94,8 +94,15 @@ function App() {
                 <div className="container">
                   <h6>In order for you to access the projects, you need to create an account.<br /> Don’t worry, it’s really easy.</h6>
                   <button
-                    className="btn btn-danger"
-                    style={{ margin: "5px" }}
+                    style={{
+                      width: "290px",
+                      height: "45px",
+                      background: "#FE6348",
+                      borderRadius: "6px",
+                      color: "white",
+                      border: 0,
+                      zIndex: 2
+                    }}
                     onClick={() => setOpenSignup(true)}
                   >
                     Sign up
@@ -105,8 +112,15 @@ function App() {
                 <div className="container mt-4">
                   <h6>Already have an account?</h6>
                   <button
-                    className="btn btn-danger"
-                    style={{ margin: "5px" }}
+                    style={{
+                      width: "290px",
+                      height: "45px",
+                      background: "#FE6348",
+                      borderRadius: "6px",
+                      color: "white",
+                      border: 0,
+                      zIndex: 2
+                    }}
                     onClick={() => setOpenSignin(true)}
                   >
                     Sign in

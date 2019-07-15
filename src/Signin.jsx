@@ -84,7 +84,15 @@ export default function Signin(props) {
         />
         </div>
 
-        <button type="submit" className="btn btn-danger" onClick={handleSubmit}>
+        <button style={{
+              width: "290px",
+              height: "45px",
+              background: "#FE6348",
+              borderRadius: "6px",
+              color: "white",
+              border: 0,
+              zIndex: 2
+            }} type="submit" className="btn btn-danger" onClick={handleSubmit}>
           Login
         </button>
       </form>

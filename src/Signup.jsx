@@ -127,9 +127,19 @@ export default function Signup(props) {
         </div>
 
 
-        <button type="submit" className="btn btn-danger" onClick={handleSubmit}>
+        <button style={{
+              width: "290px",
+              height: "45px",
+              background: "#FE6348",
+              borderRadius: "6px",
+              color: "white",
+              border: 0,
+              zIndex: 2,
+              alignSelf: "center"
+            }} type="submit" onClick={handleSubmit}>
           Create Account
         </button>
+
       </form>
     </div>
   );

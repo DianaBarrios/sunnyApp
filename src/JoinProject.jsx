@@ -13,7 +13,7 @@ class JoinProject extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
@@ -63,18 +63,27 @@ class JoinProject extends React.Component {
         this.props.onSubmit();
     };
 
-    render(){
+    render() {
         return (
             <div className="modall">
                 <form className={styles.form}>
                     <h4>ALMOST THERE!</h4>
                     <p class="font-italic"> <hr /> Want to participate with more people? (Optional)
                     </p>
-                    <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to participate with colleagues please write their names" name="message" value={this.state.message}  onChange={e => this.handleChange(e)}></textarea>
-                    <button onClick={(e) => this.handleSubmit(e) } class="btn btn-danger btn-lg btn-block my-4" >
-                    Apply for project
+                    <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to participate with colleagues please write their names" name="message" value={this.state.message} onChange={e => this.handleChange(e)}></textarea>
+                    <button style={{
+                        width: "290px",
+                        height: "45px",
+                        background: "#FE6348",
+                        borderRadius: "6px",
+                        color: "white",
+                        border: 0,
+                        zIndex: 2,
+                        alignSelf: "center"
+                    }} onClick={(e) => this.handleSubmit(e)} class="btn btn-block my-4" >
+                        Apply for project
             </button>
-            <p class="font-weight-light">Click "Apply for project" to confirm</p>
+                    <p class="font-weight-light">Click "Apply for project" to confirm</p>
                 </form>
             </div>
         );
