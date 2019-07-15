@@ -22,7 +22,7 @@ class EditProject extends React.Component {
             time: "",
             status: "",
             segmentID: "",
-            pictures: "",
+            pictures: null,
         };
         this.handleEdit = this.handleEdit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -73,6 +73,7 @@ class EditProject extends React.Component {
     }
 
     handleAccept(e) {
+        console.log("Project accepted");
         e.preventDefault();
 
         const {
@@ -107,12 +108,13 @@ class EditProject extends React.Component {
             time,
             status: "active",
             segmentID,
-            pictures
+            pictures: null
         });
 
     }
 
     handleReject(e){
+        console.log("Project rejected");
         e.preventDefault();
 
         const {
@@ -147,7 +149,7 @@ class EditProject extends React.Component {
             time,
             status: "rejected",
             segmentID,
-            pictures
+            pictures: null
         });
     }
 
@@ -203,7 +205,7 @@ class EditProject extends React.Component {
                 time: "",
                 status: "",
                 segmentID: "",
-                pictures: ""
+                pictures: null
             });
         }).catch((error) => {
             console.error("Error updating document", error);
