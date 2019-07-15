@@ -61,7 +61,7 @@ export default function Signin(props) {
         <div className="form-group mt-3">
         <input
           type="email"
-          class="form-control"
+          className="form-control"
           placeholder="Company Email"
           name="email"
           value={state.email}
@@ -74,7 +74,7 @@ export default function Signin(props) {
         <div className="form-group">
         <input
           type="password"
-          class="form-control"
+          className="form-control"
           placeholder="Password"
           name="password"
           value={state.password}

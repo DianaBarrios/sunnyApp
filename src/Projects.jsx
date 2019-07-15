@@ -71,7 +71,7 @@ class Projects extends React.Component {
           >
             <div className={styles.offers}>
               <div className={styles.offer}>
-                <img src={joinProjectSrc} />
+                <img src={joinProjectSrc} alt="join"/>
                 <h3 style={{ color: "black" }}> Join an existing project </h3>
                 <p>
                   Choose from a huge selection and find exactly the project that
