@@ -25,7 +25,7 @@ class Projects extends React.Component {
   componentDidMount() {
     let projectsRef = db
       .collection("projects")
-      .orderBy("projectName")
+      .where("status", "==", "active")
       .limit(4);
 
     projectsRef.get().then(snapshot => {
@@ -38,7 +38,6 @@ class Projects extends React.Component {
   }
 
   setRedirectToProposeProject() {
-    console.log("ff");
     this.setState({ redirectToProposeProject: true });
   }
 
@@ -158,9 +157,9 @@ class Projects extends React.Component {
                     {doc.projectName}
                   </h5>
 
-                  <h6 style={{ color: "#FE6348" }}>{doc.date}</h6>
+                  <h6 style={{ color: "#FE6348" }}>{doc.time}</h6>
 
-                  <p>Description: {doc.description.slice(0, 150) + "..."}</p>
+                  <p> {doc.description.slice(0, 150) + "..."}</p>
                 </Link>
               </li>
             ))}

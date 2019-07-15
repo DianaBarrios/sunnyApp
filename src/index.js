@@ -6,11 +6,16 @@ import App from "./App";
 import Projects from "./Projects";
 import ProjectDescription from "./project-description";
 import ProjectProposal from "./project-proposal";
+import EditProject from "./components/EditProject";
 import Notfound from "./notfound";
 import UserProvider from "./UserProvider";
 import "bootstrap/dist/css/bootstrap.css";
 import ProtectedRoute from "./ProtectedRoute";
+<<<<<<< HEAD
 import 'font-awesome/css/font-awesome.min.css';
+=======
+import "font-awesome/css/font-awesome.min.css";
+>>>>>>> 0ab31e8e3fd50ccb383bb1082c49546a694f6a0a
 
 const routing = (
   <UserProvider>
@@ -20,6 +25,7 @@ const routing = (
         <ProtectedRoute>
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/:id" component={ProjectDescription} />
+          <Route exact path="/edit/:id" component={EditProject} />
           <Route exact path="/project-proposal" component={ProjectProposal} />
         </ProtectedRoute>
         <Route component={Notfound} />

@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import JoinProject from "./JoinProject";
 import Modal from "./Modal";
 import Footer from "./components/Footer";
 import { UserAuthContext } from "./UserProvider";
-import { withRouter } from "react-router-dom";
 import Header from "./Header";
 const firebase = require("./firebase.js");
 const db = firebase.db;
@@ -15,6 +14,7 @@ class Project extends React.Component {
       docs: [],
       isHidden: true
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleHidden() {
@@ -43,6 +43,13 @@ class Project extends React.Component {
       });
     });
   }
+
+  handleSubmit() {
+    this.setState({
+      isHidden: true
+    });
+  };
+
   render() {
     return (
       <div>
@@ -69,24 +76,32 @@ class Project extends React.Component {
                   <div className="container mt-4">
                     <h1 key={doc.id}>{doc.projectName}</h1>
                     <hr />
-                    <h6>TIME</h6>
+                    <h6><i className="fa fa-clock-o" style={{ fontSize: "0.7rem"}}></i> TIME</h6>
                     <p> {doc.time} </p>
-                    <h6>LOCATION</h6>
+                    <br />
+                    <h6><i className="fa fa-map-marker" style={{ fontSize: "0.7rem" }}></i> LOCATION</h6>
                     <p> {doc.location} </p>
-                    <h6>DURATION</h6>
+                    <br />
+                    <h6><i className="fa fa-repeat" style={{ fontSize: "0.7rem" }}></i> DURATION</h6>
                     <p> {doc.duration} </p>
-                    <h6>ORGANISATION</h6>
+                    <br />
+                    <h6 style={{textAlign: "bottom"  }}><i className="fa fa-university" style={{ fontSize: "0.7rem", textAlign: "top"  }}></i> ORGANISATION</h6>
                     <p> {doc.organisation} </p>
+                    <br />
                     <hr />
                     <h6> GOAL OF THE PROJECT </h6>
                     <p>{doc.goal}</p>
+                    <br />
                     <h6> YOUR ROLE AS A VOLUNTEER </h6>
                     <p>{doc.role}</p>
+                    <br />
                     <h6> REQUIREMENTS </h6>
                     <p> {doc.requirements} </p>
+                    <br />
                     <hr />
                     <h6>ABOUT THE NON-PROFIT ORGANISATION</h6>
                     <p> {doc.aboutNGO} </p>
+                    <br />
                     <hr />
                   </div>
                 </div>
@@ -95,14 +110,23 @@ class Project extends React.Component {
                   <div className="card">
                     <div className="card-body">
                       <button
+                        style={{
+                          width: "290px",
+                          height: "45px",
+                          background: "#FE6348",
+                          borderRadius: "6px",
+                          color: "white",
+                          border: 0,
+                          zIndex: 2
+                        }}
                         onClick={this.toggleHidden.bind(this)}
-                        className="btn btn-danger btn-lg btn-block mt-3 mb-4"
+                        
                       >
                         Apply for project
                       </button>
                       {!this.state.isHidden && (
                         <Modal>
-                          <JoinProject />
+                          <JoinProject onSubmit={this.handleSubmit} />
                         </Modal>
                       )}
                     </div>
@@ -114,7 +138,7 @@ class Project extends React.Component {
             <Footer />
           </div>
         ))}
-      
+
       </div>
     );
   }

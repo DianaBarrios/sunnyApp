@@ -3,12 +3,10 @@ import { render } from "react-dom";
 import styles from "./App.module.css";
 import peopleSrc from "./assets/bubble-people.svg";
 import joinProjectSrc from "./assets/join-project.svg";
-
 import Footer from "./components/Footer";
 import proposeProjectSrc from "./assets/propose-project.svg";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
-import { Link } from "react-router-dom";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import jellySrc from "./assets/jelly.svg";
@@ -85,26 +83,53 @@ function App() {
             <div className="modall">
               <div
                 style={{
-                  width: "300px",
-                  height: "200px",
+                  width: "600px",
+                  height: "300px",
                   backgroundColor: "white",
                   textAlign: "center",
                   paddingTop: "45px"
                 }}
               >
-                <p>Please Sign up or Sign in to continue.</p>
-                <button
-                  style={{ margin: "5px" }}
-                  onClick={() => setOpenSignin(true)}
-                >
-                  Sign in
-                </button>
-                <button
-                  style={{ margin: "5px" }}
-                  onClick={() => setOpenSignup(true)}
-                >
-                  Sign up
-                </button>
+
+
+                <p><h3>Want to participate?</h3></p>
+
+                <div className="container">
+                  <h6>In order for you to access the projects, you need to create an account.<br /> Don’t worry, it’s really easy.</h6>
+                  <button
+                    style={{
+                      width: "290px",
+                      height: "45px",
+                      background: "#FE6348",
+                      borderRadius: "6px",
+                      color: "white",
+                      border: 0,
+                      zIndex: 2
+                    }}
+                    onClick={() => setOpenSignup(true)}
+                  >
+                    Sign up
+                  </button>
+                </div>
+
+                <div className="container mt-4">
+                  <h6>Already have an account?</h6>
+                  <button
+                    style={{
+                      width: "290px",
+                      height: "45px",
+                      background: "#FE6348",
+                      borderRadius: "6px",
+                      color: "white",
+                      border: 0,
+                      zIndex: 2
+                    }}
+                    onClick={() => setOpenSignin(true)}
+                  >
+                    Sign in
+                  </button>
+                </div>
+
               </div>
             </div>
           </Modal>
@@ -115,7 +140,7 @@ function App() {
               <h1> We provide the time.</h1>
               <h1> You provide the hands.</h1>
               <p className="description">
-                <i className="fa fa-coffee"></i>Corthropy wants to make an impact. You too. Let’s do it! Choose
+                <i className="fa fa-coffee"></i>Corthropy wants to make an impact. You too?. Let’s do it! Choose
                 from the available projects and we’ll give you time off your
                 work week to participate. It’s never been easier.
               </p>
@@ -146,7 +171,13 @@ function App() {
                 really suits you
               </p>
             </div>
-            <div className={[styles.offer, "content"].join(" ")}>
+            <div className={[styles.offer, "content"].join(" ")} onClick={() => {
+              if (!context.user) {
+                setRequestReg(true);
+              } else {
+                setRedirectToProjects(true);
+              }
+            }}>
               <img src={proposeProjectSrc} />
               <h3> Propose project </h3>
               <p>
@@ -175,8 +206,7 @@ function App() {
                   <h4> Every Weekend · 1.5 hours </h4>
                   <h5> Blood Donation </h5>
                   <p>
-                    Give blood and help with one donation up to three humans to
-                    survive.
+                    By donating blood one time, you can help up to three persons survive!
                   </p>
                   <p className={styles.employeesJoined}>
                     16 employees have joined
@@ -193,8 +223,8 @@ function App() {
                   <h4> 7/3 Sun · 1pm · 4 hours </h4>
                   <h5> The Ocean Cleanup </h5>
                   <p>
-                    Plastic and garbage are destroying our oceans. We will save
-                    them together.
+                    Plastic and garbage are destroying our oceans. Together we can save
+                    them.
                   </p>
                   <p className={styles.employeesJoined}>
                     7 employees have joined
@@ -211,8 +241,8 @@ function App() {
                   <h4> 7/3 Wed · 3pm · 3 hours </h4>
                   <h5> Teaching Kids </h5>
                   <p>
-                    You want to help refugee children to make their way in life?
-                    Teach them.
+                    You want to help refugee children have a better life?
+                    Teach them your trait.
                   </p>
                   <p className={styles.employeesJoined}>
                     13 employees have joined
@@ -229,8 +259,7 @@ function App() {
                   <h4> 9/13 Mon · 10am · 5 hours </h4>
                   <h5>Tree Planting </h5>
                   <p>
-                    Planting trees for a better and more healthier world to save
-                    our future.
+                    Plant trees for a better, healthier world. Come save our future!
                   </p>
                   <p className={styles.employeesJoined}>
                     9 employees have joined
@@ -242,19 +271,19 @@ function App() {
                 <div className={styles.howItWorksSteps}>
                   <div className={styles.howItWorksStep}>
                     <h1>01</h1>
-                    <p>Pick a project which you feel excited about</p>
+                    <p>Pick a project that excites you</p>
                   </div>
 
                   <div className={styles.howItWorksStep}>
                     <h1>02</h1>
                     <p>
-                      Choose the date and ask for free time from your company
+                      Apply for the project and ask for free time at your company.
                     </p>
                   </div>
 
                   <div className={styles.howItWorksStep}>
                     <h1>03</h1>
-                    <p>Get confirmation and be part of the community</p>
+                    <p>When your application is accepted, go change the world!</p>
                   </div>
                 </div>
               </section>
@@ -264,7 +293,7 @@ function App() {
         <section className={["content", styles.proposeProject].join(" ")}>
           <h1 className="yellowUnderline"> Propose a project </h1>
           <p>
-            We all want to change the world! Do you know of an existing project
+            We all want to change the world. Do you know of an existing project
             that you want to support? Tell us more and we’ll help you make it a
             reality!
           </p>
@@ -285,17 +314,17 @@ function App() {
           <div className={styles.howItWorksSteps}>
             <div className={styles.howItWorksStep}>
               <h1>01</h1>
-              <p>Fill up a form and tell your company about your idea.</p>
+              <p>Tell your company about your idea.</p>
             </div>
 
             <div className={styles.howItWorksStep}>
               <h1>02</h1>
-              <p>Your company is checking how they can support it.</p>
+              <p>Your company will help you make it happen.</p>
             </div>
 
             <div className={styles.howItWorksStep}>
               <h1>03</h1>
-              <p>Project is listed and you are part of the community</p>
+              <p>Your project is listed and now everyone can join!</p>
             </div>
           </div>
         </section>
