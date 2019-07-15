@@ -1,6 +1,8 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "../Header";
+import Modal from "../Modal";
+import { Link } from "react-router-dom";
 const firebase = require("../firebase.js");
 const db = firebase.db;
 
@@ -23,9 +25,24 @@ class EditProject extends React.Component {
             status: "",
             segmentID: "",
             pictures: null,
+            isHiddenAccept: true,
+            isHiddenReject: true
         };
-        this.handleEdit = this.handleEdit.bind(this);
+        this.handleAccept = this.handleAccept.bind(this);
+        this.handleReject = this.handleReject.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    toggleHiddenAccept() {
+        this.setState({
+            isHiddenAccept: !this.state.isHiddenAccept
+        });
+    }
+
+    toggleHiddenReject() {
+        this.setState({
+            isHiddenReject: !this.state.isHiddenReject
+        });
     }
 
     componentDidMount() {
@@ -55,7 +72,9 @@ class EditProject extends React.Component {
                     time: project.time,
                     status: project.status,
                     segmentID: project.segmentID,
-                    pictures: project.pictures
+                    pictures: project.pictures,
+                    isHiddenAccept: true,
+                    isHiddenReject: true
                 })
             });
 
@@ -73,7 +92,6 @@ class EditProject extends React.Component {
     }
 
     handleAccept(e) {
-        console.log("Project accepted");
         e.preventDefault();
 
         const {
@@ -89,7 +107,9 @@ class EditProject extends React.Component {
             duration,
             time,
             segmentID,
-            pictures
+            pictures,
+            isHiddenAccept,
+            isHiddenReject
         } = this.state;
 
         const updateRef = db.collection('projects').doc(this.state.key);
@@ -108,13 +128,14 @@ class EditProject extends React.Component {
             time,
             status: "active",
             segmentID,
-            pictures: null
+            pictures: null,
+            isHiddenAccept: false,
+            isHiddenReject: true
         });
-
+        this.toggleHiddenAccept();
     }
 
-    handleReject(e){
-        console.log("Project rejected");
+    handleReject(e) {
         e.preventDefault();
 
         const {
@@ -130,7 +151,9 @@ class EditProject extends React.Component {
             duration,
             time,
             segmentID,
-            pictures
+            pictures,
+            isHiddenAccept,
+            isHiddenReject
         } = this.state;
 
         const updateRef = db.collection('projects').doc(this.state.key);
@@ -149,74 +172,16 @@ class EditProject extends React.Component {
             time,
             status: "rejected",
             segmentID,
-            pictures: null
+            pictures: null,
+            isHiddenAccept: true,
+            isHiddenReject: false
         });
-    }
-
-    handleEdit(e) {
-        e.preventDefault();
-        const {
-            projectName,
-            description,
-            goal,
-            location,
-            organisation,
-            aboutNGO,
-            role,
-            requirements,
-            numVolunteers,
-            duration,
-            time,
-            status,
-            segmentID,
-            pictures
-        } = this.state;
-
-        const updateRef = db.collection('projects').doc(this.state.key);
-
-        updateRef.set({
-            projectName,
-            description,
-            goal,
-            location,
-            organisation,
-            aboutNGO,
-            role,
-            requirements,
-            numVolunteers,
-            duration,
-            time,
-            status,
-            segmentID,
-            pictures
-        }).then((docRef) => {
-            this.setState({
-                key: "",
-                projectName: "",
-                description: "",
-                goal: "",
-                location: "",
-                organisation: "",
-                aboutNGO: "",
-                role: "",
-                requirements: "",
-                numVolunteers: "",
-                duration: "",
-                time: "",
-                status: "",
-                segmentID: "",
-                pictures: null
-            });
-        }).catch((error) => {
-            console.error("Error updating document", error);
-        });
-
+        this.toggleHiddenReject();
     }
 
     render() {
         return (
             <div>
-
                 <Header />
 
                 <div class="container my-5">
@@ -388,27 +353,112 @@ class EditProject extends React.Component {
 
                         <button
                             type="submit"
-                            class="btn btn-primary"
-                            onClick={e => this.handleEdit(e)}
-                        >
-                            Edit
-          </button>
-
-          <button
-                            type="submit"
-                            class="btn btn-danger"
+                            className="btn btn-danger btn-lg"
                             onClick={e => this.handleReject(e)}
-                        >
-                            Reject
-          </button>
+                        > Reject
+                        </button>
 
-          <button
+                        {!this.state.isHiddenReject && (<Modal>
+                            <div className="modall">
+                                <div
+                                    style={{
+                                        width: "600px",
+                                        height: "350px",
+                                        backgroundColor: "white",
+                                        textAlign: "center",
+                                        paddingTop: "30px",
+                                        paddingLeft: "20px",
+                                        paddingRight: "20px"
+                                    }}
+                                >
+                                    <div className="d-flex bd-highlight">
+                                        <div className="p-2 w-100 bd-highlight"><h4>Project rejected</h4></div>
+                                        <div className="p-2 flex-shrink-1 bd-highlight">
+                                            <button onClick={this.toggleHiddenReject.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="container">
+                                        <p>Let the employee know about this.</p>
+                                        <Link to={`/projects`}>
+                                            <button
+                                                style={{
+                                                    width: "290px",
+                                                    height: "45px",
+                                                    background: "#FE6348",
+                                                    borderRadius: "6px",
+                                                    color: "white",
+                                                    border: 0,
+                                                    zIndex: 2
+                                                }}
+                                                onClick={this.toggleHiddenReject.bind(this)}
+                                            >
+                                                Go back to projects
+                        </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </Modal>
+                        )}
+
+                        <button
                             type="submit"
-                            class="btn btn-success"
+                            className="btn btn-success btn-lg mx-5"
                             onClick={e => this.handleAccept(e)}
-                        >
-                            Accept
-          </button>
+                        > Accept
+                        </button>
+
+                        {!this.state.isHiddenAccept && (<Modal>
+                            <div className="modall">
+                                <div
+                                    style={{
+                                        width: "600px",
+                                        height: "350px",
+                                        backgroundColor: "white",
+                                        textAlign: "center",
+                                        paddingTop: "30px",
+                                        paddingLeft: "20px",
+                                        paddingRight: "20px"
+                                    }}
+                                >
+                                    <div className="d-flex bd-highlight">
+                                        <div className="p-2 w-100 bd-highlight"><h4>Project accepted</h4></div>
+                                        <div className="p-2 flex-shrink-1 bd-highlight">
+                                            <button onClick={this.toggleHiddenAccept.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="container">
+                                        <p>Project is now visible for all employees.</p>
+                                        <Link to={`/projects`}>
+                                            <button
+                                                style={{
+                                                    width: "290px",
+                                                    height: "45px",
+                                                    background: "#FE6348",
+                                                    borderRadius: "6px",
+                                                    color: "white",
+                                                    border: 0,
+                                                    zIndex: 2
+                                                }}
+                                                onClick={this.toggleHiddenAccept.bind(this)}
+                                            >
+                                                Go back to projects
+                        </button>
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </Modal>
+                        )}
+
                     </form>
 
 
