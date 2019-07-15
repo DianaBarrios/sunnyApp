@@ -59,7 +59,7 @@ class Projects extends React.Component {
         </div>
         <main className={[styles.main, "content"].join(" ")}>
           <div className={styles.slogan}>
-            <h1> Let's make together the world a better place </h1>
+            <h1> Let's make the world a better place </h1>
             <div className={styles.aliensImageWrap}>
               <img src={aliensSrc} />
             </div>
