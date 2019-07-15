@@ -59,13 +59,22 @@ export default function Signup(props) {
             lastName: state.lastName,
             email: state.email
           });
+          res.user.sendEmailVerification().then(function() {
+            console.log("Confirmation email sent");
+          }).catch(function(error) {
+            console.log("Confirmation email could not be sent");
+          });
       })
       .catch(error => {
+        console.log(error);
         // Handle Errors here.
         // const errorCode = error.code;
         // const errorMessage = error.message;
         // ...
       });
+
+      //let user = auth.currentUser;
+      
   };
 
   return (
