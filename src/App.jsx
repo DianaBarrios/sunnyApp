@@ -84,18 +84,26 @@ function App() {
               <div
                 style={{
                   width: "600px",
-                  height: "300px",
+                  height: "350px",
                   backgroundColor: "white",
                   textAlign: "center",
-                  paddingTop: "45px"
+                  paddingTop: "30px",
+                  paddingLeft: "20px",
+                  paddingRight: "20px"
                 }}
               >
 
-
-                <p><h3>Want to participate?</h3></p>
+                <div class="d-flex bd-highlight">
+                  <div class="p-2 w-100 bd-highlight"><h4>Want to participate?</h4></div>
+                  <div class="p-2 flex-shrink-1 bd-highlight">
+                    <button onClick={(e) => {setRequestReg(false)}} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                </div>
 
                 <div className="container">
-                  <h6>In order for you to access the projects, you need to create an account.<br /> Don’t worry, it’s really easy.</h6>
+                  <p>In order for you to access the projects, you need to create an account.<br /> Don’t worry, it’s really easy.</p>
                   <button
                     style={{
                       width: "290px",
@@ -113,7 +121,7 @@ function App() {
                 </div>
 
                 <div className="container mt-4">
-                  <h6>Already have an account?</h6>
+                  <p>Already have an account?</p>
                   <button
                     style={{
                       width: "290px",
