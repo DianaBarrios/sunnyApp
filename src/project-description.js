@@ -76,7 +76,8 @@ class Project extends React.Component {
                   <div className="container mt-4">
                     <h1 key={doc.id}>{doc.projectName}</h1>
                     <hr />
-                    <h6>TIME</h6>
+                    
+                    <h6><i className="fa fa-clock-o"></i> TIME</h6>
                     <p> {doc.time} </p>
                     <br />
                     <h6>LOCATION</h6>

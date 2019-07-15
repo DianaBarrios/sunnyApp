@@ -11,6 +11,7 @@ import Notfound from "./notfound";
 import UserProvider from "./UserProvider";
 import "bootstrap/dist/css/bootstrap.css";
 import ProtectedRoute from "./ProtectedRoute";
+import "font-awesome/css/font-awesome.min.css";
 
 const routing = (
   <UserProvider>
