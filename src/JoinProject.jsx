@@ -20,6 +20,10 @@ class JoinProject extends React.Component {
         });
     }
 
+    handleClose(e) {
+        this.props.onSubmit();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
 
@@ -67,7 +71,14 @@ class JoinProject extends React.Component {
         return (
             <div className="modall">
                 <form className={styles.form}>
-                    <h4>ALMOST THERE!</h4>
+                    <div class="d-flex bd-highlight">
+                        <div class="p-2 w-100 bd-highlight"><h4>ALMOST THERE!</h4></div>
+                        <div class="p-2 flex-shrink-1 bd-highlight">
+                            <button onClick={(e) => this.handleClose(e)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
                     <p class="font-italic"> <hr /> Want to participate with more people? (Optional)
                     </p>
                     <textarea class="form-control" id="textArea" rows="3" placeholder="If you want to participate with colleagues please write their names" name="message" value={this.state.message} onChange={e => this.handleChange(e)}></textarea>
