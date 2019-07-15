@@ -4,6 +4,9 @@ import Modal from "./Modal";
 import Footer from "./components/Footer";
 import { UserAuthContext } from "./UserProvider";
 import Header from "./Header";
+import { Link } from "react-router-dom";
+import { isNullLiteral } from "@babel/types";
+import styles from "./signin.module.css";
 const firebase = require("./firebase.js");
 const db = firebase.db;
 
@@ -12,9 +15,17 @@ class Project extends React.Component {
     super(props);
     this.state = {
       docs: [],
+      message: "",
       isHidden: true
     };
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   }
 
   toggleHidden() {
@@ -44,9 +55,46 @@ class Project extends React.Component {
     });
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
+
+    let id = Number(this.props.match.params.id);
+
+    const data = {
+      first_name: this.context.user.firstName,
+      last_name: this.context.user.lastName,
+      email: this.context.user.email,
+      message: this.state.message,
+      segment_id: id
+    }
+
+    let first_name = data.first_name;
+    let last_name = data.last_name;
+    let email = data.email;
+    let message = data.message;
+    let segment_id = data.segment_id;
+
+    const url = "https://us-central1-smiles-ai.cloudfunctions.net/subscribeUserToProject";
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        first_name,
+        last_name,
+        email,
+        message,
+        segment_id
+      })
+    };
+
+    fetch(url, options);
+
     this.setState({
-      isHidden: true
+      message: "",
+      isHidden: false
     });
   };
 
@@ -63,7 +111,7 @@ class Project extends React.Component {
                     <img
                       src={url}
                       className="img-fluid"
-                      alt="..."
+                      alt="project-photo"
                       style={{ maxHeight: "200px" }}
                     />
                   ))}
@@ -72,11 +120,13 @@ class Project extends React.Component {
 
             <div className="container my-5">
               <div className="row">
+                <h1 key={doc.id}>{doc.projectName}</h1>
+              </div>
+              <div className="row">
                 <div className="col-8">
                   <div className="container mt-4">
-                    <h1 key={doc.id}>{doc.projectName}</h1>
                     <hr />
-                    <h6><i className="fa fa-clock-o" style={{ fontSize: "0.7rem"}}></i> TIME</h6>
+                    <h6><i className="fa fa-clock-o" style={{ fontSize: "0.7rem" }}></i> TIME</h6>
                     <p> {doc.time} </p>
                     <br />
                     <h6><i className="fa fa-map-marker" style={{ fontSize: "0.7rem" }}></i> LOCATION</h6>
@@ -85,7 +135,7 @@ class Project extends React.Component {
                     <h6><i className="fa fa-repeat" style={{ fontSize: "0.7rem" }}></i> DURATION</h6>
                     <p> {doc.duration} </p>
                     <br />
-                    <h6 style={{textAlign: "bottom"  }}><i className="fa fa-university" style={{ fontSize: "0.7rem", textAlign: "top"  }}></i> ORGANISATION</h6>
+                    <h6 style={{ textAlign: "bottom" }}><i className="fa fa-university" style={{ fontSize: "0.7rem", textAlign: "top" }}></i> ORGANISATION</h6>
                     <p> {doc.organisation} </p>
                     <br />
                     <hr />
@@ -107,8 +157,10 @@ class Project extends React.Component {
                 </div>
 
                 <div className="col-4">
-                  <div className="card">
+                  <div className="card mt-4">
                     <div className="card-body">
+                      <label className="text-muted">Optional</label>
+                      <textarea className="form-control mb-3" id="textArea" rows="3" placeholder="If you want to participate with colleagues please write their names" name="message" value={this.state.message} onChange={e => this.handleChange(e)}></textarea>
                       <button
                         style={{
                           width: "290px",
@@ -119,16 +171,61 @@ class Project extends React.Component {
                           border: 0,
                           zIndex: 2
                         }}
-                        onClick={this.toggleHidden.bind(this)}
-                        
+                        onClick={(e) => this.handleSubmit(e)}
                       >
                         Apply for project
                       </button>
-                      {!this.state.isHidden && (
-                        <Modal>
-                          <JoinProject onSubmit={this.handleSubmit} />
-                        </Modal>
+
+                      {!this.state.isHidden && (<Modal>
+                        <div className="modall">
+                          <div
+                            style={{
+                              width: "600px",
+                              height: "350px",
+                              backgroundColor: "white",
+                              textAlign: "center",
+                              paddingTop: "50px",
+                              paddingLeft: "20px",
+                              paddingRight: "20px"
+                            }}
+                          >
+                            <div className="d-flex bd-highlight">
+                              <div className="p-2 w-100 bd-highlight">
+                                <h4>Thanks for applying!</h4>
+                              </div>
+                              <div className="p-2 flex-shrink-1 bd-highlight">
+                                <button onClick={this.toggleHidden.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                            </div>
+
+                            <div className="container">
+                              <p>We will get in touch with you soon to give you further information about the event. <br /> You’ll receive an email with the date and time of the event.</p>
+                              <Link to={`/projects`}>
+                                <button
+                                  style={{
+                                    width: "290px",
+                                    height: "45px",
+                                    background: "#FE6348",
+                                    borderRadius: "6px",
+                                    color: "white",
+                                    border: 0,
+                                    zIndex: 2
+                                  }}
+                                  onClick={this.toggleHidden.bind(this)}
+                                  className="mt-3"
+                                >
+                                  Go back to projects
+                  </button>
+                              </Link>
+                            </div>
+
+                          </div>
+                        </div>
+                      </Modal>
                       )}
+
                     </div>
                   </div>
                 </div>
