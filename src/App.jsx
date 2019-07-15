@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import { render } from "react-dom";
 import styles from "./App.module.css";
 import peopleSrc from "./assets/bubble-people.svg";
 import joinProjectSrc from "./assets/join-project.svg";
@@ -16,6 +17,8 @@ import workersSrc from "./assets/workers.svg";
 import Header from "./Header";
 import { UserAuthContext } from "./UserProvider";
 import Modal from "./Modal";
+
+
 
 function App() {
   const context = useContext(UserAuthContext);
@@ -112,7 +115,7 @@ function App() {
               <h1> We provide the time.</h1>
               <h1> You provide the hands.</h1>
               <p className="description">
-                Corthropy wants to make an impact. You too. Let’s do it! Choose
+                <i className="fa fa-coffee"></i>Corthropy wants to make an impact. You too. Let’s do it! Choose
                 from the available projects and we’ll give you time off your
                 work week to participate. It’s never been easier.
               </p>
@@ -303,6 +306,7 @@ function App() {
       <Footer />
     </>
   );
+  render(<App />, document.getElementById("root"));
 }
 
 export default App;
