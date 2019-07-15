@@ -2,12 +2,10 @@ import React, { useContext, useState, useEffect } from "react";
 import styles from "./App.module.css";
 import peopleSrc from "./assets/bubble-people.svg";
 import joinProjectSrc from "./assets/join-project.svg";
-
 import Footer from "./components/Footer";
 import proposeProjectSrc from "./assets/propose-project.svg";
 import waveMaskSrc from "./assets/wave-mask.svg";
 import valleyMaskSrc from "./assets/valley-mask.svg";
-import { Link } from "react-router-dom";
 import Signin from "./Signin";
 import Signup from "./Signup";
 import jellySrc from "./assets/jelly.svg";
@@ -89,32 +87,32 @@ function App() {
                   paddingTop: "45px"
                 }}
               >
-                 
-            
+
+
                 <p><h3>Want to participate?</h3></p>
 
                 <div className="container">
-                  <h6>In order for you to access the projects, you need to create an account.<br/> Don’t worry, it’s really easy.</h6>
+                  <h6>In order for you to access the projects, you need to create an account.<br /> Don’t worry, it’s really easy.</h6>
                   <button
                     className="btn btn-danger"
-                    //style={{ margin: "5px" }}
+                    style={{ margin: "5px" }}
                     onClick={() => setOpenSignup(true)}
                   >
                     Sign up
                   </button>
                 </div>
-                
+
                 <div className="container mt-4">
                   <h6>Already have an account?</h6>
                   <button
                     className="btn btn-danger"
-                    //style={{ margin: "5px" }}
+                    style={{ margin: "5px" }}
                     onClick={() => setOpenSignin(true)}
                   >
                     Sign in
                   </button>
                 </div>
-                
+
               </div>
             </div>
           </Modal>

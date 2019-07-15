@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import CreateProject from "./components/CreateProject";
 import { Redirect } from "react-router-dom";
 import { UserAuthContext } from "./UserProvider";

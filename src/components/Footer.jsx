@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import styles from "./Footer.module.css";
 import logoWhiteSrc from "./logo_white.png";
 

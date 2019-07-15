@@ -1,9 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import JoinProject from "./JoinProject";
 import Modal from "./Modal";
 import Footer from "./components/Footer";
 import { UserAuthContext } from "./UserProvider";
-import { withRouter } from "react-router-dom";
 import Header from "./Header";
 const firebase = require("./firebase.js");
 const db = firebase.db;
@@ -46,7 +45,7 @@ class Project extends React.Component {
   }
 
   handleSubmit() {
-    this.setState({ 
+    this.setState({
       isHidden: true
     });
   };
@@ -118,7 +117,7 @@ class Project extends React.Component {
                       </button>
                       {!this.state.isHidden && (
                         <Modal>
-                          <JoinProject onSubmit={this.handleSubmit}/>
+                          <JoinProject onSubmit={this.handleSubmit} />
                         </Modal>
                       )}
                     </div>
@@ -130,7 +129,7 @@ class Project extends React.Component {
             <Footer />
           </div>
         ))}
-      
+
       </div>
     );
   }
