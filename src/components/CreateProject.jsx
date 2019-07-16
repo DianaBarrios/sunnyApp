@@ -19,7 +19,7 @@ class CreateProject extends React.Component {
       requirements: "",
       numVolunteers: "",
       duration: "",
-      time: "",
+      recurrence: "",
       contactNameNGO: "",
       contactEmailNGO: "",
       contactPhoneNGO: "",
@@ -62,7 +62,7 @@ class CreateProject extends React.Component {
       requirements: this.state.requirements,
       numVolunteers: this.state.numVolunteers,
       duration: this.state.duration,
-      time: this.state.time,
+      recurrence: this.state.recurrence,
       contactNameNGO: this.state.contactNameNGO,
       contactEmailNGO: this.state.contactEmailNGO,
       contactPhoneNGO: this.state.contactPhoneNGO,
@@ -81,7 +81,7 @@ class CreateProject extends React.Component {
       requirements: "",
       numVolunteers: "",
       duration: "",
-      time: "",
+      recurrence: "",
       contactNameNGO: "",
       contactEmailNGO: "",
       contactPhoneNGO: "",
@@ -226,13 +226,13 @@ class CreateProject extends React.Component {
               Is your project a regular or a one time event?
             </small>
             <textarea
-              name="duration"
+              name="recurrence"
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="1"
               placeholder=""
               onChange={this.handleChange}
-              value={this.state.duration}
+              value={this.state.recurrence}
             />
           </div>
 
@@ -242,13 +242,13 @@ class CreateProject extends React.Component {
               What's the duration of the event? (e.g. half a day, 2 days)
             </small>
             <textarea
-              name="time"
+              name="duration"
               class="form-control"
               id="exampleFormControlTextarea1"
               rows="1"
               placeholder=""
               onChange={this.handleChange}
-              value={this.state.time}
+              value={this.state.duration}
             />
           </div>
 

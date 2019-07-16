@@ -129,9 +129,9 @@ class Project extends React.Component {
                         className="fa fa-clock-o"
                         style={{ fontSize: "0.7rem" }}
                       />{" "}
-                      TIME
+                      DURATION
                     </h6>
-                    <p> {doc.time} </p>
+                    <p> {doc.duration} </p>
                     <br />
                     <h6>
                       <i
@@ -147,9 +147,9 @@ class Project extends React.Component {
                         className="fa fa-repeat"
                         style={{ fontSize: "0.7rem" }}
                       />{" "}
-                      DURATION
+                      RECURRENCE
                     </h6>
-                    <p> {doc.duration} </p>
+                    <p> {doc.recurrence} </p>
                     <br />
                     <h6 style={{ textAlign: "bottom" }}>
                       <i
