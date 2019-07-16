@@ -394,7 +394,7 @@ class CreateProject extends React.Component {
                 >
                   <div className="d-flex bd-highlight">
                     <div className="p-2 w-100 bd-highlight">
-                      <h4>Thanks!</h4>
+                      <h4>Thank you for your proposal!</h4>
                     </div>
                     <div className="p-2 flex-shrink-1 bd-highlight">
                       <button
@@ -410,7 +410,7 @@ class CreateProject extends React.Component {
                   </div>
 
                   <div className="container">
-                    <p>We will review your project proposal</p>
+                    <p>We will look into the project proposal. You will receive an email when we have made a decision.</p>
                     <Link to={`/projects`}>
                       <button
                         style={{
