@@ -59,7 +59,7 @@ export default function Header(props) {
                 Hello, {context.user.firstName}
               </span>
               <a onClick={() => auth.signOut()} style={{ fontSize: "12px" }}>
-                Sign out
+                Log out
               </a>
             </>
           )}
