@@ -23,7 +23,7 @@ class Projects extends React.Component {
 
   componentDidMount() {
     document.getElementById("root").scrollTo(0, 0);
-    
+
     let projectsRef = db
       .collection("projects")
       .where("status", "==", "active")
@@ -70,28 +70,28 @@ class Projects extends React.Component {
             )}
           >
             <div className={styles.offers}>
-              <div className={styles.offer}>
+              <a href="#join-project" style={{ textDecoration: "none", color: "black"  }}> <div className={styles.offer}>
                 <img src={joinProjectSrc} alt="join"/>
                 <h3 style={{ color: "black" }}> Join an existing project </h3>
                 <p>
                   Choose from a huge selection and find exactly the project that
                   really suits you
                 </p>
-              </div>
-              <div className={[styles.offer, "content"].join(" ")}>
+              </div> </a>
+              <a href="#propose-project" style={{ textDecoration: "none", color: "black"  }}><div className={[styles.offer, "content"].join(" ")}>
                 <img src={proposeProjectSrc} />
                 <h3 style={{ color: "black" }}> Propose project </h3>
                 <p>
                   Do you know of a project that you want to support? Tell us
                   more!
                 </p>
-              </div>
+              </div> </a>
             </div>
           </section>
         </main>
 
         <section
-          className="content"
+          id ="join-project" className="content"
           style={{
             backgroundColor: "#E5E5E5",
             paddingTop: "100px",
@@ -167,6 +167,7 @@ class Projects extends React.Component {
         </section>
 
         <section
+          id ="propose-project"
           className="content"
           style={{
             marginTop: "80px",

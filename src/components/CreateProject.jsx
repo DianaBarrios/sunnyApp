@@ -99,7 +99,7 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 mb-0 form-group">
             <label for="exampleFormControlTextarea1">Description</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Describe the project and the work that will be performed. You can highlight what’s special about your cool idea!</small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">Describe the project and the tasks to be performed. Highlight what makes your project unique!</small>
             <textarea
               name="description"
               class="form-control"
@@ -113,7 +113,7 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">Goal</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">What is the goal of your project?</small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">What is the goal of your project?</small>
             <textarea
               name="goal"
               class="form-control"
@@ -129,7 +129,7 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Task of the volunteer
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">What tasks should the carried out? Please be as specific as possible.</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">What tasks should be performed? Please be as specific as possible.</small>
             <textarea
               name="role"
               class="form-control"
@@ -143,9 +143,9 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">
-              Requirements of the volunteer
+              Requirements for the volunteers
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Are there any limitations or special requirements? </small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">Are there any limitations or special requirements? </small>
             <textarea
               name="requirements"
               class="form-control"
@@ -161,7 +161,7 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Number of volunteers
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Is there a limited number of persons who can be part of?</small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">Is there a limited number of volunteers?</small>
             <textarea
               name="numVolunteers"
               class="form-control"
@@ -175,7 +175,7 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">Location</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Please name the city and if you know, the exact address</small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">Please name the city and if you know, the exact address</small>
             <textarea
               name="location"
               class="form-control"
@@ -188,8 +188,8 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Duration</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Is your project a regular or one time event?</small> 
+            <label for="exampleFormControlTextarea1">Recurrence</label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">Is your project a regular or a one time event?</small>
             <textarea
               name="duration"
               class="form-control"
@@ -202,8 +202,8 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Time</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">How long does your project should take?</small> 
+            <label for="exampleFormControlTextarea1">Duration</label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">What's the duration of the event? (e.g. half a day, 2 days)</small>
             <textarea
               name="time"
               class="form-control"
@@ -217,7 +217,7 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">Organisation</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Please name the social club/organisation (NGO)</small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">Is there any club or oganisation (NGO) involved? Please name it!</small>
             <textarea
               name="organisation"
               class="form-control"
@@ -233,7 +233,7 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               About the Organisation/NGO
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">If this project is related to an NGO let us know about it and the contact information for it</small> 
+            <small id="emailHelp" class="mb-2 form-text text-muted">If this project is related to an NGO let us know about it and who we should contact in case of questions.</small>
             <textarea
               name="aboutNGO"
               class="form-control"
@@ -299,19 +299,19 @@ class CreateProject extends React.Component {
                     }}
                     onClick={this.toggleHidden.bind(this)}
                   >
-                    Go back to projects
+                    Back to projects
                   </button>
                   </Link>
                 </div>
 
               </div>
             </div>
-          </Modal> 
+          </Modal>
           )}
 
         </form>
 
-        
+
       </div>
     );
   }
