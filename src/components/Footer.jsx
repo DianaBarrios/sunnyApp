@@ -11,10 +11,10 @@ function Footer() {
             <a href="http://www.corthropy.com">About</a>
           </li>
           <li>
-            <a href="http://www.corthropy.com">Product</a>
+            <a href="https://www.corthropy.com/whitepaper-en/">Whitepaper</a>
           </li>
           <li>
-            <a href="http://www.corthropy.com">Team</a>
+            <a href="http://www.corthropy.com/faq/">FAQ</a>
           </li>
         </ul>
         <img src={logoWhiteSrc} alt="Corthropy logo" />
