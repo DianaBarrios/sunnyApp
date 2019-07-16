@@ -23,6 +23,9 @@ function Footer() {
         <p>
           Made with <span>♥</span> by Corthropy
         </p>
+        <a href="https://digitalproductschool.io/legal-disclosure"><p>
+          Imprint / Legal disclosure
+        </p></a>
       </footer>
     </>
   );

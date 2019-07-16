@@ -127,7 +127,7 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">
-              Task of the volunteer
+              Tasks of the volunteer
             </label>
             <small id="emailHelp" class="mb-2 form-text text-muted">What tasks should be performed? Please be as specific as possible.</small>
             <textarea
