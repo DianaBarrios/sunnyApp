@@ -21,7 +21,11 @@ class EditProject extends React.Component {
             requirements: "",
             numVolunteers: "",
             duration: "",
-            time: "",
+            recurerrence: "",
+            contactNameNGO: "",
+            contactEmailNGO: "",
+            contactPhoneNGO: "",
+            websiteNGO: "",
             status: "",
             segmentID: "",
             pictures: null,
@@ -69,7 +73,11 @@ class EditProject extends React.Component {
                     requirements: project.requirements,
                     numVolunteers: project.numVolunteers,
                     duration: project.duration,
-                    time: project.time,
+                    recurerrence: project.recurrence,
+                    contactNameNGO: project.contactNameNGO,
+                    contactEmailNGO: project.contactEmailNGO,
+                    contactPhoneNGO: project.contactPhoneNGO,
+                    websiteNGO: project.websiteNGO,
                     status: project.status,
                     segmentID: project.segmentID,
                     pictures: project.pictures,
@@ -105,7 +113,10 @@ class EditProject extends React.Component {
             requirements,
             numVolunteers,
             duration,
-            time,
+            recurerrence,
+            contactNameNGO,
+            contactEmailNGO,
+            contactPhoneNGO,
             segmentID,
             pictures,
             isHiddenAccept,
@@ -125,7 +136,10 @@ class EditProject extends React.Component {
             requirements,
             numVolunteers,
             duration,
-            time,
+            recurerrence,
+            contactNameNGO,
+            contactEmailNGO,
+            contactPhoneNGO,
             status: "active",
             segmentID,
             pictures: null,
@@ -149,7 +163,10 @@ class EditProject extends React.Component {
             requirements,
             numVolunteers,
             duration,
-            time,
+            recurerrence,
+            contactNameNGO,
+            contactEmailNGO,
+            contactPhoneNGO,
             segmentID,
             pictures,
             isHiddenAccept,
@@ -169,7 +186,10 @@ class EditProject extends React.Component {
             requirements,
             numVolunteers,
             duration,
-            time,
+            recurerrence,
+            contactNameNGO,
+            contactEmailNGO,
+            contactPhoneNGO,
             status: "rejected",
             segmentID,
             pictures: null,
@@ -191,165 +211,268 @@ class EditProject extends React.Component {
                 <div className="container my-5">
                     <form onSubmit={this.addProject}>
                         <div class="mt-5 form-group">
-                            <label for="exampleInputPName">Name of the project</label>
+                            <label for="exampleInputPName">Name of your project</label>
                             <input
                                 type="text"
                                 name="projectName"
                                 class="form-control"
                                 id="exampleInputProjectName"
-                                placeholder="Listing title"
+                                placeholder=""
                                 onChange={this.handleChange}
                                 value={this.state.projectName}
                             />
                         </div>
-
                         <div class="mt-4 mb-0 form-group">
-                            <label for="exampleFormControlTextarea1">Description</label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">Describe the project and the work that will be performed. You can highlight what’s special about your cool idea!</small>
-                            <textarea
-                                name="description"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder="Tell us about your project"
-                                onChange={this.handleChange}
-                                value={this.state.description}
-                            />
-                        </div>
-
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">Goal</label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">What is the goal of your project?</small>
-                            <textarea
-                                name="goal"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.goal}
-                            />
-                        </div>
-
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">
-                                Task of the volunteer
+            <label for="exampleFormControlTextarea1">
+              Description of your project
             </label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">What tasks should the carried out? Please be as specific as possible.</small>
-                            <textarea
-                                name="role"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.role}
-                            />
-                        </div>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Describe the project and the tasks to be performed. Highlight what
+              makes your project unique!
+            </small>
+            <textarea
+              name="description"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.description}
+            />
+          </div>
 
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">
-                                Requirements of the volunteer
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Goal of your project
             </label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">Are there any limitations or special requirements? </small>
-                            <textarea
-                                name="requirements"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.requirements}
-                            />
-                        </div>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              What is the goal of your project?
+            </small>
+            <textarea
+              name="goal"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.goal}
+            />
+          </div>
 
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">
-                                Number of volunteers
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Requirements for the volunteers
             </label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">Is there a limited number of persons who can be part of?</small>
-                            <textarea
-                                name="numVolunteers"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.numVolunteers}
-                            />
-                        </div>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Are there any limitations or special requirements?{" "}
+            </small>
+            <textarea
+              name="requirements"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.requirements}
+            />
+          </div>
 
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">Location</label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">Please name the city and if you know, the exact address</small>
-                            <textarea
-                                name="location"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder="e.g. Stiftung St. Zeno Berufsbildungswerk Kirchseeon"
-                                onChange={this.handleChange}
-                                value={this.state.location}
-                            />
-                        </div>
-
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">Duration</label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">Is your project a regular or one time event?</small>
-                            <textarea
-                                name="duration"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.duration}
-                            />
-                        </div>
-
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">Time</label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">How long does your project should take?</small>
-                            <textarea
-                                name="time"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.time}
-                            />
-                        </div>
-
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">Organisation</label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">Please name the social club/organisation (NGO)</small>
-                            <textarea
-                                name="organisation"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.organisation}
-                            />
-                        </div>
-
-                        <div class="mt-4 form-group">
-                            <label for="exampleFormControlTextarea1">
-                                About the Organisation/NGO
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Task of the volunteer
             </label>
-                            <small id="emailHelp" class="mb-2 form-text text-muted">If this project is related to an NGO let us know about it and the contact information for it</small>
-                            <textarea
-                                name="aboutNGO"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                rows="3"
-                                placeholder=""
-                                onChange={this.handleChange}
-                                value={this.state.aboutNGO}
-                            />
-                        </div>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              What tasks should be performed? Please be as specific as possible.
+            </small>
+            <textarea
+              name="role"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.role}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Maximum number of volunteers
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Is there a limited number of volunteers for your project?
+            </small>
+            <textarea
+              name="numVolunteers"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.numVolunteers}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Where does the event takes place?
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Please name the city and if you know, the exact address
+            </small>
+            <textarea
+              name="location"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.location}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Recurrence of your project
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Is your project a regular or a one time event?
+            </small>
+            <textarea
+              name="recurrence"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.recurerrence}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">Duration</label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              What's the duration of the event? (e.g. half a day, 2 days)
+            </small>
+            <textarea
+              name="duration"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.duration}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Name of the organisation
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Is there any club or oganisation (NGO) involved? Please name it!
+            </small>
+            <textarea
+              name="organisation"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.organisation}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              About the organisation
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              If this project is related to an oganisation (NGO), let us know
+              about it and who we should contact in case of questions.
+            </small>
+            <textarea
+              name="aboutNGO"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.aboutNGO}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Website of the organisation
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              We want to know more about the NGO.
+            </small>
+            <textarea
+              name="websiteNGO"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.websiteNGO}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Contact person within the organisation
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Name(s)
+            </small>
+            <textarea
+              name="contactNameNGO"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.contactNameNGO}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Email of the contact person
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Email
+            </small>
+            <textarea
+              name="contactEmailNGO"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.contactEmailNGO}
+            />
+          </div>
+
+          <div class="mt-4 form-group">
+            <label for="exampleFormControlTextarea1">
+              Phone number of the contact person
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Phone number
+            </small>
+            <textarea
+              name="contactPhoneNGO"
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="1"
+              placeholder=""
+              onChange={this.handleChange}
+              value={this.state.contactPhoneNGO}
+            />
+          </div>
 
                         <button
                             type="submit"

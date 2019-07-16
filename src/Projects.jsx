@@ -157,7 +157,7 @@ class Projects extends React.Component {
                     {doc.projectName}
                   </h5>
 
-                  <h6 style={{ color: "#FE6348" }}>{doc.time}</h6>
+                  <h6 style={{ color: "#FE6348" }}>{doc.duration}</h6>
 
                   <p> {doc.description.slice(0, 150) + "..."}</p>
                 </Link>
