@@ -117,11 +117,12 @@ class Project extends React.Component {
             </div>
 
             <div className="container my-5">
-              <div className="row">
+              <div className="row ml-3">
                 <h1 key={doc.id}>{doc.projectName}</h1>
               </div>
+
               <div className="row">
-                <div className="col-8">
+                <div className="col-10">
                   <div className="container mt-4">
                     <hr />
                     <h6>
@@ -178,100 +179,97 @@ class Project extends React.Component {
                   </div>
                 </div>
 
-                <div className="col-4">
-                  <div className="card mt-4">
-                    <div className="card-body">
-                      <label className="text-muted">Optional</label>
-                      <textarea
-                        className="form-control mb-3"
-                        id="textArea"
-                        rows="3"
-                        placeholder="If you want to participate with colleagues please write their names"
-                        name="message"
-                        value={this.state.message}
-                        onChange={e => this.handleChange(e)}
-                      />
-                      <button
-                        style={{
-                          width: "290px",
-                          height: "45px",
-                          background: "#FE6348",
-                          borderRadius: "6px",
-                          color: "white",
-                          border: 0,
-                          zIndex: 2
-                        }}
-                        onClick={e => this.handleSubmit(e)}
-                      >
-                        Apply for project
-                      </button>
+              </div>
 
-                      {!this.state.isHidden && (
-                        <Modal>
-                          <div className="modall">
-                            <div
-                              style={{
-                                width: "600px",
-                                height: "350px",
-                                backgroundColor: "white",
-                                textAlign: "center",
-                                paddingTop: "50px",
-                                paddingLeft: "20px",
-                                paddingRight: "20px"
-                              }}
-                            >
-                              <div className="d-flex bd-highlight">
-                                <div className="p-2 w-100 bd-highlight">
-                                  <h4>Thanks for applying!</h4>
-                                </div>
-                                <div className="p-2 flex-shrink-1 bd-highlight">
-                                  <button
-                                    onClick={this.toggleHidden.bind(this)}
-                                    type="button"
-                                    class="close"
-                                    data-dismiss="modal"
-                                    aria-label="Close"
-                                  >
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
+              <div className="row">
+                <div className="card mt-4">
+                  <div className="card-body">
+                    <label className="text-muted">Optional</label>
+                    <textarea
+                      className="form-control mb-3"
+                      id="textArea"
+                      rows="3"
+                      placeholder="If you want to participate with colleagues please write their names"
+                      name="message"
+                      value={this.state.message}
+                      onChange={e => this.handleChange(e)}
+                    />
+                    <button
+                      style={{
+                        width: "290px",
+                        height: "45px",
+                        background: "#FE6348",
+                        borderRadius: "6px",
+                        color: "white",
+                        border: 0,
+                        zIndex: 2
+                      }}
+                      onClick={e => this.handleSubmit(e)}
+                    > Apply for project </button>
+                    {!this.state.isHidden && (
+                      <Modal>
+                        <div className="modall">
+                          <div
+                            style={{
+                              width: "600px",
+                              height: "350px",
+                              backgroundColor: "white",
+                              textAlign: "center",
+                              paddingTop: "50px",
+                              paddingLeft: "20px",
+                              paddingRight: "20px"
+                            }}
+                          >
+                            <div className="d-flex bd-highlight">
+                              <div className="p-2 w-100 bd-highlight">
+                                <h4>Thanks for applying!</h4>
                               </div>
-
-                              <div className="container">
-                                <p>
-                                  We will get in touch with you soon to give you
-                                  further information about the event. <br />{" "}
-                                  You’ll receive an email with the date and time
-                                  of the event.
-                                </p>
-                                <Link to={`/projects`}>
-                                  <button
-                                    style={{
-                                      width: "290px",
-                                      height: "45px",
-                                      background: "#FE6348",
-                                      borderRadius: "6px",
-                                      color: "white",
-                                      border: 0,
-                                      zIndex: 2
-                                    }}
-                                    onClick={this.toggleHidden.bind(this)}
-                                    className="mt-3"
-                                  >
-                                    Go back to projects
-                                  </button>
-                                </Link>
+                              <div className="p-2 flex-shrink-1 bd-highlight">
+                                <button
+                                  onClick={this.toggleHidden.bind(this)}
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close"
+                                >
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
                               </div>
                             </div>
+
+                            <div className="container">
+                              <p>
+                                We will get in touch with you soon to give you
+                                  further information about the event. <br />{" "}
+                                You’ll receive an email with the date and time
+                                of the event.
+                                </p>
+                              <Link to={`/projects`}>
+                                <button
+                                  style={{
+                                    width: "290px",
+                                    height: "45px",
+                                    background: "#FE6348",
+                                    borderRadius: "6px",
+                                    color: "white",
+                                    border: 0,
+                                    zIndex: 2
+                                  }}
+                                  onClick={this.toggleHidden.bind(this)}
+                                  className="mt-3"
+                                >
+                                  Go back to projects
+                                  </button>
+                              </Link>
+                            </div>
                           </div>
-                        </Modal>
-                      )}
-                    </div>
+                        </div>
+                      </Modal>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
-
             <Footer />
           </div>
         ))}
