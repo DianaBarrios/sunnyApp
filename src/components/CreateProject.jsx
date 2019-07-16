@@ -20,7 +20,7 @@ class CreateProject extends React.Component {
       numVolunteers: "",
       duration: "",
       time: "",
-      contactNameNGO: "", 
+      contactNameNGO: "",
       contactEmailNGO: "",
       contactPhoneNGO: "",
       websiteNGO: "",
@@ -64,7 +64,7 @@ class CreateProject extends React.Component {
       duration: this.state.duration,
       time: this.state.time,
       contactNameNGO: this.state.contactNameNGO,
-      contactEmailNGO: this.state.contactEmailNGO, 
+      contactEmailNGO: this.state.contactEmailNGO,
       contactPhoneNGO: this.state.contactPhoneNGO,
       websiteNGO: this.state.websiteNGO,
       status: "pending",
@@ -82,7 +82,7 @@ class CreateProject extends React.Component {
       numVolunteers: "",
       duration: "",
       time: "",
-      contactNameNGO: "", 
+      contactNameNGO: "",
       contactEmailNGO: "",
       contactPhoneNGO: "",
       websiteNGO: "",
@@ -110,8 +110,13 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 mb-0 form-group">
-            <label for="exampleFormControlTextarea1">Description of your project</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Describe the project and the tasks to be performed. Highlight what makes your project unique!</small>
+            <label for="exampleFormControlTextarea1">
+              Description of your project
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Describe the project and the tasks to be performed. Highlight what
+              makes your project unique!
+            </small>
             <textarea
               name="description"
               class="form-control"
@@ -124,8 +129,12 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Goal of your project</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">What is the goal of your project?</small>
+            <label for="exampleFormControlTextarea1">
+              Goal of your project
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              What is the goal of your project?
+            </small>
             <textarea
               name="goal"
               class="form-control"
@@ -139,13 +148,11 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">
-<<<<<<< HEAD
-              Tasks of the volunteer
-=======
               Requirements for the volunteers
->>>>>>> propose form
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Are there any limitations or special requirements? </small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Are there any limitations or special requirements?{" "}
+            </small>
             <textarea
               name="requirements"
               class="form-control"
@@ -161,7 +168,9 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Task of the volunteer
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">What tasks should be performed? Please be as specific as possible.</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              What tasks should be performed? Please be as specific as possible.
+            </small>
             <textarea
               name="role"
               class="form-control"
@@ -177,7 +186,9 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Maximum number of volunteers
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Is there a limited number of volunteers for your project?</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Is there a limited number of volunteers for your project?
+            </small>
             <textarea
               name="numVolunteers"
               class="form-control"
@@ -190,8 +201,12 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Where does the event takes place?</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Please name the city and if you know, the exact address</small>
+            <label for="exampleFormControlTextarea1">
+              Where does the event takes place?
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Please name the city and if you know, the exact address
+            </small>
             <textarea
               name="location"
               class="form-control"
@@ -204,8 +219,12 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Recurrence of your project</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Is your project a regular or a one time event?</small>
+            <label for="exampleFormControlTextarea1">
+              Recurrence of your project
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Is your project a regular or a one time event?
+            </small>
             <textarea
               name="duration"
               class="form-control"
@@ -219,7 +238,9 @@ class CreateProject extends React.Component {
 
           <div class="mt-4 form-group">
             <label for="exampleFormControlTextarea1">Duration</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">What's the duration of the event? (e.g. half a day, 2 days)</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              What's the duration of the event? (e.g. half a day, 2 days)
+            </small>
             <textarea
               name="time"
               class="form-control"
@@ -232,8 +253,12 @@ class CreateProject extends React.Component {
           </div>
 
           <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Name of the organisation</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Is there any club or oganisation (NGO) involved? Please name it!</small>
+            <label for="exampleFormControlTextarea1">
+              Name of the organisation
+            </label>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Is there any club or oganisation (NGO) involved? Please name it!
+            </small>
             <textarea
               name="organisation"
               class="form-control"
@@ -249,7 +274,10 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               About the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">If this project is related to an oganisation (NGO), let us know about it and who we should contact in case of questions.</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              If this project is related to an oganisation (NGO), let us know
+              about it and who we should contact in case of questions.
+            </small>
             <textarea
               name="aboutNGO"
               class="form-control"
@@ -265,7 +293,9 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Website of the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">We want to know more about the NGO.</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              We want to know more about the NGO.
+            </small>
             <textarea
               name="websiteNGO"
               class="form-control"
@@ -281,7 +311,9 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Contact person within the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Name(s)</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Name(s)
+            </small>
             <textarea
               name="contactNameNGO"
               class="form-control"
@@ -297,7 +329,9 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Email of the contact person
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Email</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Email
+            </small>
             <textarea
               name="contactEmailNGO"
               class="form-control"
@@ -313,7 +347,9 @@ class CreateProject extends React.Component {
             <label for="exampleFormControlTextarea1">
               Phone number of the contact person
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">Phone number</small>
+            <small id="emailHelp" class="mb-2 form-text text-muted">
+              Phone number
+            </small>
             <textarea
               name="contactPhoneNGO"
               class="form-control"
@@ -342,56 +378,61 @@ class CreateProject extends React.Component {
             Submit
           </button>
 
-          {!this.state.isHidden && (<Modal>
-            <div className="modall">
-              <div
-                style={{
-                  width: "600px",
-                  height: "350px",
-                  backgroundColor: "white",
-                  textAlign: "center",
-                  paddingTop: "30px",
-                  paddingLeft: "20px",
-                  paddingRight: "20px"
-                }}
-              >
-                <div className="d-flex bd-highlight">
-                  <div className="p-2 w-100 bd-highlight"><h4>Thanks!</h4></div>
-                  <div className="p-2 flex-shrink-1 bd-highlight">
-                    <button onClick={this.toggleHidden.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+          {!this.state.isHidden && (
+            <Modal>
+              <div className="modall">
+                <div
+                  style={{
+                    width: "600px",
+                    height: "350px",
+                    backgroundColor: "white",
+                    textAlign: "center",
+                    paddingTop: "30px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px"
+                  }}
+                >
+                  <div className="d-flex bd-highlight">
+                    <div className="p-2 w-100 bd-highlight">
+                      <h4>Thanks!</h4>
+                    </div>
+                    <div className="p-2 flex-shrink-1 bd-highlight">
+                      <button
+                        onClick={this.toggleHidden.bind(this)}
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="container">
+                    <p>We will review your project proposal</p>
+                    <Link to={`/projects`}>
+                      <button
+                        style={{
+                          width: "290px",
+                          height: "45px",
+                          background: "#FE6348",
+                          borderRadius: "6px",
+                          color: "white",
+                          border: 0,
+                          zIndex: 2
+                        }}
+                        onClick={this.toggleHidden.bind(this)}
+                      >
+                        Back to projects
+                      </button>
+                    </Link>
                   </div>
                 </div>
-
-                <div className="container">
-                  <p>We will review your project proposal</p>
-                  <Link to={`/projects`}>
-                  <button
-                    style={{
-                      width: "290px",
-                      height: "45px",
-                      background: "#FE6348",
-                      borderRadius: "6px",
-                      color: "white",
-                      border: 0,
-                      zIndex: 2
-                    }}
-                    onClick={this.toggleHidden.bind(this)}
-                  >
-                    Back to projects
-                  </button>
-                  </Link>
-                </div>
-
               </div>
-            </div>
-          </Modal>
+            </Modal>
           )}
-
         </form>
-
-
       </div>
     );
   }
