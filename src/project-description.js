@@ -182,7 +182,7 @@ class Project extends React.Component {
               </div>
 
               <div className="row">
-                <div className="card mt-4">
+                <div className="card mt-4 ml-5">
                   <div className="card-body">
                     <label className="text-muted">Optional</label>
                     <textarea
