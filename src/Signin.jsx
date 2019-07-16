@@ -56,8 +56,8 @@ export default function Signin(props) {
   return (
     <div className="modall">
       <form className={styles.form}>
-        <label for="name of the form"><h3>Sign into my account</h3></label>
-        
+        <label for="name of the form"><h3>Log into my account</h3></label>
+
         <div className="form-group mt-3">
         <input
           type="email"
@@ -70,7 +70,7 @@ export default function Signin(props) {
           }
         />
         </div>
-    
+
         <div className="form-group">
         <input
           type="password"

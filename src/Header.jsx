@@ -66,7 +66,7 @@ export default function Header(props) {
 
           {!context.user && (
             <>
-              <a onClick={() => setShowSignin(true)}> Sign in </a>
+              <a onClick={() => setShowSignin(true)}> Log in </a>
               <a onClick={() => setShowSignup(true)}> Sign up </a>
             </>
           )}

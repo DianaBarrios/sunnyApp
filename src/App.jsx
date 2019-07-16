@@ -134,7 +134,7 @@ function App() {
                     }}
                     onClick={() => setOpenSignin(true)}
                   >
-                    Sign in
+                    Log in
                   </button>
                 </div>
 
