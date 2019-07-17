@@ -27,6 +27,9 @@ class EditProject extends React.Component {
       contactPhoneNGO: "",
       websiteNGO: "",
       status: "",
+      email: "",
+      firstName: "",
+      lastName: "",
       isHiddenAccept: true,
       isHiddenReject: true,
       isHiddenUpdate: true
@@ -84,7 +87,10 @@ class EditProject extends React.Component {
           contactEmailNGO: project.contactEmailNGO,
           contactPhoneNGO: project.contactPhoneNGO,
           websiteNGO: project.websiteNGO,
-          status: project.status
+          status: project.status,
+          email: project.email,
+          firstName: project.firstName,
+          lastName: project.lastName,
         })
       });
     }).catch(err => {
@@ -239,13 +245,16 @@ class EditProject extends React.Component {
       <div>
         <Header />
 
-        <div className="container my-5">
-          <h1>Project review</h1>
+        <div className="row">
+          <div className="container mt-5">
+            <h1>Project review</h1>
+          </div>
         </div>
 
-        <div className="container my-5">
-          <form onSubmit={this.addProject}>
-            <div className="mt-5 form-group">
+        <div className="row">
+            <div className="container">
+          <form>
+            <div className="mt-4 form-group">
               <input
                 type="text"
                 name="projectName"
@@ -369,7 +378,7 @@ class EditProject extends React.Component {
               />
             </div>
 
-            <div class="mt-4 form-group">
+            <div class="my-4 form-group">
               <h6>ABOUT THE NON-PROFIT ORGANISATION</h6>
               <textarea
                 name="aboutNGO"
@@ -382,7 +391,9 @@ class EditProject extends React.Component {
               />
             </div>
 
+            < br />
             < hr />
+            < br />
 
             <h2>Additional information</h2>
 
@@ -472,7 +483,29 @@ class EditProject extends React.Component {
               />
             </div>
 
-            <button
+            
+          </form>
+        </div>
+        </div>
+
+        <div className="row">
+          <div className="container mb-5">
+          <div className="card">
+              <div className="card-header">
+                <h6>Employee proposing the project</h6>
+              </div>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">{this.state.firstName}</li>
+                <li className="list-group-item">{this.state.lastName}</li>
+                <li className="list-group-item">{this.state.email}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="container mb-4">
+          <button
               type="submit"
               class="btn btn-primary btn-lg"
               onClick={e => this.handleUpdate(e)}
@@ -483,11 +516,11 @@ class EditProject extends React.Component {
               <div className="modall">
                 <div
                   style={{
-                    width: "600px",
-                    height: "350px",
+                    width: "550px",
+                    height: "300px",
                     backgroundColor: "white",
                     textAlign: "center",
-                    paddingTop: "30px",
+                    paddingTop: "50px",
                     paddingLeft: "20px",
                     paddingRight: "20px"
                   }}
@@ -495,7 +528,7 @@ class EditProject extends React.Component {
                   <div className="d-flex bd-highlight">
                     <div className="p-2 w-100 bd-highlight"><h4>Project updated</h4></div>
                     <div className="p-2 flex-shrink-1 bd-highlight">
-                      <button onClick={this.toggleHiddenUpdate.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <button onClick={this.toggleHiddenUpdate.bind(this)} type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
@@ -515,6 +548,7 @@ class EditProject extends React.Component {
                           zIndex: 2
                         }}
                         onClick={this.toggleHiddenUpdate.bind(this)}
+                        className="mt-3"
                       >
                         Go back to projects
                         </button>
@@ -536,8 +570,8 @@ class EditProject extends React.Component {
               <div className="modall">
                 <div
                   style={{
-                    width: "600px",
-                    height: "350px",
+                    width: "550px",
+                    height: "300px",
                     backgroundColor: "white",
                     textAlign: "center",
                     paddingTop: "30px",
@@ -568,6 +602,7 @@ class EditProject extends React.Component {
                           zIndex: 2
                         }}
                         onClick={this.toggleHiddenReject.bind(this)}
+                        className="mt-3"
                       >
                         Go back to projects
                         </button>
@@ -590,8 +625,8 @@ class EditProject extends React.Component {
               <div className="modall">
                 <div
                   style={{
-                    width: "600px",
-                    height: "350px",
+                    width: "550px",
+                    height: "300px",
                     backgroundColor: "white",
                     textAlign: "center",
                     paddingTop: "30px",
@@ -622,6 +657,7 @@ class EditProject extends React.Component {
                           zIndex: 2
                         }}
                         onClick={this.toggleHiddenAccept.bind(this)}
+                        className="mt-3"
                       >
                         Go back to projects
                         </button>
@@ -632,11 +668,11 @@ class EditProject extends React.Component {
               </div>
             </Modal>
             )}
-          </form>
+          </div>
         </div>
+
         <Footer />
       </div>
-
     );
   }
 }
