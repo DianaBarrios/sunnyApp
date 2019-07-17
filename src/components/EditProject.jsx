@@ -21,19 +21,18 @@ class EditProject extends React.Component {
       requirements: "",
       numVolunteers: "",
       duration: "",
-      recurerrence: "",
+      recurrence: "",
       contactNameNGO: "",
       contactEmailNGO: "",
       contactPhoneNGO: "",
       websiteNGO: "",
       status: "",
-      segmentID: "",
-      pictures: null,
       isHiddenAccept: true,
       isHiddenReject: true
     };
     this.handleAccept = this.handleAccept.bind(this);
     this.handleReject = this.handleReject.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -73,16 +72,12 @@ class EditProject extends React.Component {
           requirements: project.requirements,
           numVolunteers: project.numVolunteers,
           duration: project.duration,
-          recurerrence: project.recurrence,
+          recurrence: project.recurrence,
           contactNameNGO: project.contactNameNGO,
           contactEmailNGO: project.contactEmailNGO,
           contactPhoneNGO: project.contactPhoneNGO,
           websiteNGO: project.websiteNGO,
-          status: project.status,
-          segmentID: project.segmentID,
-          pictures: project.pictures,
-          isHiddenAccept: true,
-          isHiddenReject: true
+          status: project.status
         })
       });
 
@@ -113,19 +108,16 @@ class EditProject extends React.Component {
       requirements,
       numVolunteers,
       duration,
-      recurerrence,
+      recurrence,
       contactNameNGO,
       contactEmailNGO,
       contactPhoneNGO,
-      segmentID,
-      pictures,
-      isHiddenAccept,
-      isHiddenReject
+      websiteNGO
     } = this.state;
 
     const updateRef = db.collection('projects').doc(this.state.key);
 
-    updateRef.set({
+    updateRef.update({
       projectName,
       description,
       goal,
@@ -136,17 +128,15 @@ class EditProject extends React.Component {
       requirements,
       numVolunteers,
       duration,
-      recurerrence,
+      recurrence,
       contactNameNGO,
       contactEmailNGO,
       contactPhoneNGO,
-      status: "active",
-      segmentID,
-      pictures: null,
-      isHiddenAccept: false,
-      isHiddenReject: true
+      websiteNGO,
+      status: "active"
     });
     this.toggleHiddenAccept();
+    console.log("Project accepted");
   }
 
   handleReject(e) {
@@ -163,19 +153,16 @@ class EditProject extends React.Component {
       requirements,
       numVolunteers,
       duration,
-      recurerrence,
+      recurrence,
       contactNameNGO,
       contactEmailNGO,
       contactPhoneNGO,
-      segmentID,
-      pictures,
-      isHiddenAccept,
-      isHiddenReject
+      websiteNGO
     } = this.state;
 
     const updateRef = db.collection('projects').doc(this.state.key);
 
-    updateRef.set({
+    updateRef.update({
       projectName,
       description,
       goal,
@@ -186,18 +173,59 @@ class EditProject extends React.Component {
       requirements,
       numVolunteers,
       duration,
-      recurerrence,
+      recurrence,
       contactNameNGO,
       contactEmailNGO,
       contactPhoneNGO,
-      status: "rejected",
-      segmentID,
-      pictures: null,
-      isHiddenAccept: true,
-      isHiddenReject: false
+      websiteNGO,
+      status: "rejected"
     });
     this.toggleHiddenReject();
+    console.log("Project rejected");
   }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    const {
+      projectName,
+      description,
+      goal,
+      location,
+      organisation,
+      aboutNGO,
+      role,
+      requirements,
+      numVolunteers,
+      duration,
+      recurrence,
+      contactNameNGO,
+      contactEmailNGO,
+      contactPhoneNGO,
+      websiteNGO
+    } = this.state;
+
+    const updateRef = db.collection('projects').doc(this.state.key);
+
+    updateRef.update({
+      projectName,
+      description,
+      goal,
+      location,
+      organisation,
+      aboutNGO,
+      role,
+      requirements,
+      numVolunteers,
+      duration,
+      recurrence,
+      contactNameNGO,
+      contactEmailNGO,
+      contactPhoneNGO,
+      websiteNGO
+    });
+    console.log("Project updated");
+}
+
 
   render() {
     return (
@@ -274,7 +302,7 @@ class EditProject extends React.Component {
                 rows="1"
                 placeholder=""
                 onChange={this.handleChange}
-                value={this.state.recurerrence}
+                value={this.state.recurrence}
               />
             </div>
 
@@ -448,7 +476,15 @@ class EditProject extends React.Component {
 
             <button
               type="submit"
-              className="btn btn-danger btn-lg"
+              class="btn btn-primary btn-lg"
+              onClick={e => this.handleUpdate(e)}
+            >
+              Update
+          </button>
+
+            <button
+              type="submit"
+              className="btn btn-danger btn-lg mx-3"
               onClick={e => this.handleReject(e)}
             > Reject
                         </button>
@@ -502,7 +538,7 @@ class EditProject extends React.Component {
 
             <button
               type="submit"
-              className="btn btn-success btn-lg mx-5"
+              className="btn btn-success btn-lg"
               onClick={e => this.handleAccept(e)}
             > Accept
                         </button>
