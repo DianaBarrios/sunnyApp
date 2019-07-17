@@ -374,8 +374,8 @@ class CreateProject extends React.Component {
               <div className="modall">
                 <div
                   style={{
-                    width: "600px",
-                    height: "350px",
+                    width: "550px",
+                    height: "300px",
                     backgroundColor: "white",
                     textAlign: "center",
                     paddingTop: "30px",
@@ -391,7 +391,7 @@ class CreateProject extends React.Component {
                       <button
                         onClick={this.toggleHidden.bind(this)}
                         type="button"
-                        class="close"
+                        className="close"
                         data-dismiss="modal"
                         aria-label="Close"
                       >
@@ -414,6 +414,8 @@ class CreateProject extends React.Component {
                           zIndex: 2
                         }}
                         onClick={this.toggleHidden.bind(this)}
+                        className="mt-3"
+
                       >
                         Back to projects
                       </button>

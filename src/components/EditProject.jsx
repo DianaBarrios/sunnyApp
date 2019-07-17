@@ -149,6 +149,8 @@ class EditProject extends React.Component {
     });
     this.toggleHiddenAccept();
     console.log("Project accepted");
+
+
   }
 
   handleReject(e) {
