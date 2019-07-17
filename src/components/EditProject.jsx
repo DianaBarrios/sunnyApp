@@ -28,7 +28,8 @@ class EditProject extends React.Component {
       websiteNGO: "",
       status: "",
       isHiddenAccept: true,
-      isHiddenReject: true
+      isHiddenReject: true,
+      isHiddenUpdate: true
     };
     this.handleAccept = this.handleAccept.bind(this);
     this.handleReject = this.handleReject.bind(this);
@@ -45,6 +46,12 @@ class EditProject extends React.Component {
   toggleHiddenReject() {
     this.setState({
       isHiddenReject: !this.state.isHiddenReject
+    });
+  }
+
+  toggleHiddenUpdate() {
+    this.setState({
+      isHiddenUpdate: !this.state.isHiddenUpdate
     });
   }
 
@@ -80,7 +87,6 @@ class EditProject extends React.Component {
           status: project.status
         })
       });
-
     }).catch(err => {
       console.log("Error getting the project", err);
     })
@@ -223,8 +229,9 @@ class EditProject extends React.Component {
       contactPhoneNGO,
       websiteNGO
     });
+    this.toggleHiddenUpdate();
     console.log("Project updated");
-}
+  }
 
 
   render() {
@@ -232,17 +239,17 @@ class EditProject extends React.Component {
       <div>
         <Header />
 
-        <div class="container my-5">
+        <div className="container my-5">
           <h1>Project review</h1>
         </div>
 
         <div className="container my-5">
           <form onSubmit={this.addProject}>
-            <div class="mt-5 form-group">
+            <div className="mt-5 form-group">
               <input
                 type="text"
                 name="projectName"
-                class="form-control"
+                className="form-control"
                 id="exampleInputProjectName"
                 placeholder=""
                 onChange={this.handleChange}
@@ -254,21 +261,20 @@ class EditProject extends React.Component {
 
             <div class="mt-4 form-group">
               <h6><i className="fa fa-clock-o"
-              style={{ fontSize: "0.7rem" }}
+                style={{ fontSize: "0.7rem" }}
               />{" "} DURATION </h6>
-              <textarea
+              <input
                 name="duration"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.duration}
               />
-              
+
             </div>
 
-            <div class="mt-4 form-group">
+            <div className="mt-4 form-group">
               <h6>
                 <i
                   className="fa fa-map-marker"
@@ -276,49 +282,46 @@ class EditProject extends React.Component {
                 />{" "}
                 LOCATION
                     </h6>
-              <textarea
+              <input
                 name="location"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.location}
               />
             </div>
 
-            <div class="mt-4 form-group">
-            <h6>
-                      <i
-                        className="fa fa-repeat"
-                        style={{ fontSize: "0.7rem" }}
-                      />{" "}
-                      RECURRENCE
+            <div className="mt-4 form-group">
+              <h6>
+                <i
+                  className="fa fa-repeat"
+                  style={{ fontSize: "0.7rem" }}
+                />{" "}
+                RECURRENCE
                     </h6>
-              <textarea
+              <input
                 name="recurrence"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.recurrence}
               />
             </div>
 
-            <div class="mt-4 form-group">
-            <h6 style={{ textAlign: "bottom" }}>
-                      <i
-                        className="fa fa-university"
-                        style={{ fontSize: "0.7rem", textAlign: "top" }}
-                      />{" "}
-                      ORGANISATION
+            <div className="mt-4 form-group">
+              <h6 style={{ textAlign: "bottom" }}>
+                <i
+                  className="fa fa-university"
+                  style={{ fontSize: "0.7rem", textAlign: "top" }}
+                />{" "}
+                ORGANISATION
                     </h6>
-              <textarea
+              <input
                 name="organisation"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.organisation}
@@ -327,11 +330,11 @@ class EditProject extends React.Component {
 
             <hr />
 
-            <div class="mt-4 form-group">
-            <h6> GOAL OF THE PROJECT </h6>
+            <div className="mt-4 form-group">
+              <h6> GOAL OF THE PROJECT </h6>
               <textarea
                 name="goal"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="6"
                 placeholder=""
@@ -340,11 +343,11 @@ class EditProject extends React.Component {
               />
             </div>
 
-            <div class="mt-4 form-group">
-            <h6> YOUR ROLE AS A VOLUNTEER </h6>
+            <div className="mt-4 form-group">
+              <h6> YOUR ROLE AS A VOLUNTEER </h6>
               <textarea
                 name="role"
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
                 rows="3"
                 placeholder=""
@@ -354,7 +357,7 @@ class EditProject extends React.Component {
             </div>
 
             <div class="mt-4 form-group">
-            <h6> REQUIREMENTS </h6>
+              <h6> REQUIREMENTS </h6>
               <textarea
                 name="requirements"
                 class="form-control"
@@ -367,7 +370,7 @@ class EditProject extends React.Component {
             </div>
 
             <div class="mt-4 form-group">
-            <h6>ABOUT THE NON-PROFIT ORGANISATION</h6>
+              <h6>ABOUT THE NON-PROFIT ORGANISATION</h6>
               <textarea
                 name="aboutNGO"
                 class="form-control"
@@ -379,19 +382,18 @@ class EditProject extends React.Component {
               />
             </div>
 
-            < hr/>
+            < hr />
 
             <h2>Additional information</h2>
 
             <div class="mt-4 form-group">
               <label for="exampleFormControlTextarea1">
-              CONTACT PERSON WITHIN THE NGO 
+                CONTACT PERSON WITHIN THE NGO
             </label>
-              <textarea
+              <input
                 name="contactNameNGO"
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.contactNameNGO}
@@ -402,11 +404,10 @@ class EditProject extends React.Component {
               <label for="exampleFormControlTextarea1">
                 EMAIL OF CONTACT PERSON
             </label>
-              <textarea
+              <input
                 name="contactEmailNGO"
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.contactEmailNGO}
@@ -417,11 +418,10 @@ class EditProject extends React.Component {
               <label for="exampleFormControlTextarea1">
                 PHONE NUMBER OF CONTACT PERSON
             </label>
-              <textarea
+              <input
                 name="contactPhoneNGO"
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.contactPhoneNGO}
@@ -432,11 +432,10 @@ class EditProject extends React.Component {
               <label for="exampleFormControlTextarea1">
                 WEBSITE OF THE NGO
             </label>
-              <textarea
+              <input
                 name="websiteNGO"
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.websiteNGO}
@@ -447,11 +446,10 @@ class EditProject extends React.Component {
               <label for="exampleFormControlTextarea1">
                 MAXIMUM NUMBER OF PARTICIPANTS
             </label>
-              <textarea
+              <input
                 name="numVolunteers"
                 class="form-control"
                 id="exampleFormControlTextarea1"
-                rows="1"
                 placeholder=""
                 onChange={this.handleChange}
                 value={this.state.numVolunteers}
@@ -481,6 +479,52 @@ class EditProject extends React.Component {
             >
               Update
           </button>
+          {!this.state.isHiddenUpdate && (<Modal>
+              <div className="modall">
+                <div
+                  style={{
+                    width: "600px",
+                    height: "350px",
+                    backgroundColor: "white",
+                    textAlign: "center",
+                    paddingTop: "30px",
+                    paddingLeft: "20px",
+                    paddingRight: "20px"
+                  }}
+                >
+                  <div className="d-flex bd-highlight">
+                    <div className="p-2 w-100 bd-highlight"><h4>Project updated</h4></div>
+                    <div className="p-2 flex-shrink-1 bd-highlight">
+                      <button onClick={this.toggleHiddenUpdate.bind(this)} type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="container">
+                    <p>Don’t forget to Accept it or Reject it!</p>
+                    <Link to={`/projects`}>
+                      <button
+                        style={{
+                          width: "290px",
+                          height: "45px",
+                          background: "#FE6348",
+                          borderRadius: "6px",
+                          color: "white",
+                          border: 0,
+                          zIndex: 2
+                        }}
+                        onClick={this.toggleHiddenUpdate.bind(this)}
+                      >
+                        Go back to projects
+                        </button>
+                    </Link>
+                  </div>
+
+                </div>
+              </div>
+            </Modal>
+            )}
 
             <button
               type="submit"
@@ -488,7 +532,6 @@ class EditProject extends React.Component {
               onClick={e => this.handleReject(e)}
             > Reject
                         </button>
-
             {!this.state.isHiddenReject && (<Modal>
               <div className="modall">
                 <div
@@ -589,14 +632,9 @@ class EditProject extends React.Component {
               </div>
             </Modal>
             )}
-
           </form>
-
-
         </div>
-
         <Footer />
-
       </div>
 
     );

@@ -96,12 +96,12 @@ class CreateProject extends React.Component {
     return (
       <div>
         <form onSubmit={this.addProject}>
-          <div class="mt-5 form-group">
-            <label for="exampleInputPName">Name of your project</label>
+          <div className="mt-5 form-group">
+            <label htmlFor="exampleInputPName">Name of your project</label>
             <input
               type="text"
               name="projectName"
-              class="form-control"
+              className="form-control"
               id="exampleInputProjectName"
               placeholder=""
               onChange={this.handleChange}
@@ -109,17 +109,17 @@ class CreateProject extends React.Component {
             />
           </div>
 
-          <div class="mt-4 mb-0 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 mb-0 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Description of your project
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Describe the project and the tasks to be performed. Highlight what
               makes your project unique!
             </small>
             <textarea
               name="description"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder=""
@@ -128,16 +128,16 @@ class CreateProject extends React.Component {
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Goal of your project
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               What is the goal of your project?
             </small>
             <textarea
               name="goal"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder=""
@@ -146,16 +146,16 @@ class CreateProject extends React.Component {
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Requirements for the volunteers
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Are there any limitations or special requirements?{" "}
             </small>
             <textarea
               name="requirements"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder=""
@@ -164,16 +164,16 @@ class CreateProject extends React.Component {
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Task of the volunteer
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               What tasks should be performed? Please be as specific as possible.
             </small>
             <textarea
               name="role"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder=""
@@ -182,105 +182,100 @@ class CreateProject extends React.Component {
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Maximum number of volunteers
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Is there a limited number of volunteers for your project?
             </small>
-            <textarea
+            <input
               name="numVolunteers"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.numVolunteers}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Where does the event takes place?
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Please name the city and if you know, the exact address
             </small>
-            <textarea
+            <input
               name="location"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.location}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Recurrence of your project
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Is your project a regular or a one time event?
             </small>
-            <textarea
+            <input
               name="recurrence"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.recurrence}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">Duration</label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">Duration</label>
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               What's the duration of the event? (e.g. half a day, 2 days)
             </small>
-            <textarea
+            <input
               name="duration"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.duration}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Name of the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Is there any club or oganisation (NGO) involved? Please name it!
             </small>
-            <textarea
+            <input
               name="organisation"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.organisation}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               About the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               If this project is related to an oganisation (NGO), let us know
               about it and who we should contact in case of questions.
             </small>
             <textarea
               name="aboutNGO"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
               rows="3"
               placeholder=""
@@ -289,72 +284,68 @@ class CreateProject extends React.Component {
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Website of the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               We want to know more about the NGO.
             </small>
-            <textarea
+            <input
               name="websiteNGO"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.websiteNGO}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Contact person within the organisation
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Name(s)
             </small>
-            <textarea
+            <input
               name="contactNameNGO"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.contactNameNGO}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Email of the contact person
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Email
             </small>
-            <textarea
+            <input
               name="contactEmailNGO"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.contactEmailNGO}
             />
           </div>
 
-          <div class="mt-4 form-group">
-            <label for="exampleFormControlTextarea1">
+          <div className="mt-4 form-group">
+            <label htmlFor="exampleFormControlTextarea1">
               Phone number of the contact person
             </label>
-            <small id="emailHelp" class="mb-2 form-text text-muted">
+            <small id="emailHelp" className="mb-2 form-text text-muted">
               Phone number
             </small>
-            <textarea
+            <input
               name="contactPhoneNGO"
-              class="form-control"
+              className="form-control"
               id="exampleFormControlTextarea1"
-              rows="1"
               placeholder=""
               onChange={this.handleChange}
               value={this.state.contactPhoneNGO}
