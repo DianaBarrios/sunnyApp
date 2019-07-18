@@ -18,10 +18,10 @@ class ProjectProposal extends React.Component {
     return (
       <div>
         <Header />
-        <div className="container my-5">
+        <div className="container my-5 col-8">
           <h1>Propose a project!</h1>
         </div>
-        <div className="container my-5">
+        <div className="container my-5 col-8">
           <CreateProject />
         </div>
         <Footer />

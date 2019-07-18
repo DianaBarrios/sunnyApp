@@ -248,13 +248,13 @@ class EditProject extends React.Component {
         <Header />
 
         <div className="row">
-          <div className="container mt-5">
+          <div className="container mt-5 col-8">
             <h1>Project review</h1>
           </div>
         </div>
 
         <div className="row">
-            <div className="container">
+            <div className="container col-8">
           <form>
             <div className="mt-4 form-group">
               <input
@@ -491,7 +491,7 @@ class EditProject extends React.Component {
         </div>
 
         <div className="row">
-          <div className="container mb-5">
+          <div className="container mb-5 col-8">
           <div className="card">
               <div className="card-header">
                 <h6>Employee proposing the project</h6>
@@ -506,13 +506,13 @@ class EditProject extends React.Component {
         </div>
 
         <div className="row">
-          <div className="container mb-4">
+          <div className="container mb-4 col-8">
           <button
               type="submit"
               class="btn btn-primary btn-lg"
               onClick={e => this.handleUpdate(e)}
             >
-              Update
+              Save
           </button>
           {!this.state.isHiddenUpdate && (<Modal>
               <div className="modall">
