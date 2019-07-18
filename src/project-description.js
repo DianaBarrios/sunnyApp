@@ -182,14 +182,13 @@ class Project extends React.Component {
               </div>
 
               <div className="row">
-                <div className="card mt-4 ml-5">
-                  <div className="card-body">
-                    <label className="text-muted">Optional</label>
+                <div className="col-6 ml-3">
+                <label className="text-muted">Optional</label>
                     <textarea
                       className="form-control mb-3"
                       id="textArea"
-                      rows="3"
-                      placeholder="If you want to participate with colleagues please write their names"
+                      rows="2"
+                      placeholder="If you want to participate with colleagues please write their emails"
                       name="message"
                       value={this.state.message}
                       onChange={e => this.handleChange(e)}
@@ -266,9 +265,9 @@ class Project extends React.Component {
                         </div>
                       </Modal>
                     )}
-                  </div>
                 </div>
               </div>
+
             </div>
             <Footer />
           </div>
